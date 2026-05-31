@@ -95,8 +95,8 @@
     "subdomain": "decision-intelligence",
     "difficulty": "low",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-05-31T23:46:42.783610+00:00"
   },
   {
     "keyword": "AI change management insurance organization transformation",

@@ -372,5 +372,27 @@
     "subdomain_name": "Embedded Insurance",
     "date_display": "May 31, 2026",
     "generated_at": "2026-05-31T20:44:31.938768+00:00"
+  },
+  {
+    "keyword": "AI chatbots insurance use cases 2026 trends",
+    "type": "explainer",
+    "subdomain": "ai-policy-cx",
+    "url": "/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/",
+    "title": "Why 70% of carriers won’t have a profitable AI chatbot by 2026",
+    "description": "Insurers spent $1.2B on AI chatbots in 2023. By 2026, that number will hit $4.1B, according to Gartner. Yet only 30% of those deployments will deliver a sub-5%...",
+    "subdomain_name": "AI Policy & CX",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T23:46:14.085240+00:00"
+  },
+  {
+    "keyword": "insurance data quality AI readiness assessment checklist",
+    "type": "tutorial",
+    "subdomain": "decision-intelligence",
+    "url": "/decision-intelligence/insurance-data-quality-ai-readiness-assessment-a-practitioners-checklist/",
+    "title": "Insurance Data Quality AI Readiness Assessment: A Practitioner’s Checklist",
+    "description": "I’ve seen claims teams burn months of runway because they treated data quality as an afterthought. One mid-size P&C carrier kicked off a fraud detection pilot...",
+    "subdomain_name": "Decision Intelligence",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T23:46:42.783947+00:00"
   }
 ]
