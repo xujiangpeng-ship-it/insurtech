@@ -1,18 +1,146 @@
 [
-  {"keyword": "embedded insurance AI technology trends 2026", "type": "explainer", "subdomain": "embedded-insurance", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "API first embedded insurance architecture guide", "type": "tutorial", "subdomain": "embedded-insurance", "difficulty": "medium", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "AI powered embedded insurance platforms comparison", "type": "comparison", "subdomain": "embedded-insurance", "difficulty": "medium", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "how embedded insurance works with AI technology explained", "type": "explainer", "subdomain": "embedded-insurance", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "176 billion embedded insurance market AI opportunity 2026", "type": "news", "subdomain": "embedded-insurance", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "travel insurance embedded AI real time underwriting", "type": "tutorial", "subdomain": "embedded-insurance", "difficulty": "medium", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "ecommerce embedded insurance AI product recommendation", "type": "explainer", "subdomain": "embedded-insurance", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "white label embedded insurance AI platforms for carriers", "type": "comparison", "subdomain": "embedded-insurance", "difficulty": "medium", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "micro insurance AI embedded distribution channels", "type": "explainer", "subdomain": "embedded-insurance", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "parametric insurance AI embedded IoT data sources", "type": "tutorial", "subdomain": "embedded-insurance", "difficulty": "medium", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "embedded insurance customer experience AI personalization", "type": "explainer", "subdomain": "embedded-insurance", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "open insurance API standards embedded ecosystem guide", "type": "tutorial", "subdomain": "embedded-insurance", "difficulty": "medium", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "automotive embedded insurance AI telematics integration", "type": "explainer", "subdomain": "embedded-insurance", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "embedded insurance regulatory landscape 2026 global", "type": "news", "subdomain": "embedded-insurance", "difficulty": "medium", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "BNPL embedded insurance AI risk scoring models", "type": "explainer", "subdomain": "embedded-insurance", "difficulty": "medium", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "embedded insurance distribution strategy for insurers AI driven", "type": "tutorial", "subdomain": "embedded-insurance", "difficulty": "medium", "intent": "commercial", "is_used": false, "generated_at": null}
+  {
+    "keyword": "embedded insurance AI technology trends 2026",
+    "type": "explainer",
+    "subdomain": "embedded-insurance",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "API first embedded insurance architecture guide",
+    "type": "tutorial",
+    "subdomain": "embedded-insurance",
+    "difficulty": "medium",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "AI powered embedded insurance platforms comparison",
+    "type": "comparison",
+    "subdomain": "embedded-insurance",
+    "difficulty": "medium",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "how embedded insurance works with AI technology explained",
+    "type": "explainer",
+    "subdomain": "embedded-insurance",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "176 billion embedded insurance market AI opportunity 2026",
+    "type": "news",
+    "subdomain": "embedded-insurance",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "travel insurance embedded AI real time underwriting",
+    "type": "tutorial",
+    "subdomain": "embedded-insurance",
+    "difficulty": "medium",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "ecommerce embedded insurance AI product recommendation",
+    "type": "explainer",
+    "subdomain": "embedded-insurance",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "white label embedded insurance AI platforms for carriers",
+    "type": "comparison",
+    "subdomain": "embedded-insurance",
+    "difficulty": "medium",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "micro insurance AI embedded distribution channels",
+    "type": "explainer",
+    "subdomain": "embedded-insurance",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "parametric insurance AI embedded IoT data sources",
+    "type": "tutorial",
+    "subdomain": "embedded-insurance",
+    "difficulty": "medium",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "embedded insurance customer experience AI personalization",
+    "type": "explainer",
+    "subdomain": "embedded-insurance",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "open insurance API standards embedded ecosystem guide",
+    "type": "tutorial",
+    "subdomain": "embedded-insurance",
+    "difficulty": "medium",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "automotive embedded insurance AI telematics integration",
+    "type": "explainer",
+    "subdomain": "embedded-insurance",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "embedded insurance regulatory landscape 2026 global",
+    "type": "news",
+    "subdomain": "embedded-insurance",
+    "difficulty": "medium",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "BNPL embedded insurance AI risk scoring models",
+    "type": "explainer",
+    "subdomain": "embedded-insurance",
+    "difficulty": "medium",
+    "intent": "commercial",
+    "is_used": true,
+    "generated_at": "2026-05-31T17:16:31.657612+00:00"
+  },
+  {
+    "keyword": "embedded insurance distribution strategy for insurers AI driven",
+    "type": "tutorial",
+    "subdomain": "embedded-insurance",
+    "difficulty": "medium",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  }
 ]
