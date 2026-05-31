@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>AI Policy & CX — Insurtech Insights — AI meets Insurance Technology</title>
+    <meta name="description" content="In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence. Daily articles across 6 core domains.">
+    <link rel="canonical" href="/ai-policy-cx/">
+    <meta property="og:title" content="AI Policy & CX — Insurtech Insights — AI meets Insurance Technology">
+    <meta property="og:description" content="In-depth coverage of how artificial intelligence is reshaping insurance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/ai-policy-cx/">
+    
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0B1121;
+            --navy-light: #1A2744;
+            --accent: #2563EB;
+            --accent-hover: #1D4ED8;
+            --accent-light: #EFF6FF;
+            --teal: #0D9488;
+            --teal-light: #F0FDFA;
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --text: #1E293B;
+            --text-secondary: #475569;
+            --muted: #64748B;
+            --muted-light: #94A3B8;
+            --border: #E2E8F0;
+            --border-light: #F1F5F9;
+            --shadow-sm: 0 1px 2px rgba(15,23,42,0.04);
+            --shadow-md: 0 4px 6px -1px rgba(15,23,42,0.06),0 2px 4px -2px rgba(15,23,42,0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(15,23,42,0.06),0 4px 6px -4px rgba(15,23,42,0.04);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --font-sans: 'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+            --content-width: 720px;
+            --site-width: 1200px;
+            --nav-height: 60px;
+
+            --cat-blue:#2563EB;--cat-teal:#0D9488;--cat-amber:#D97706;--cat-indigo:#4F46E5;--cat-emerald:#059669;--cat-purple:#7C3AED;
+        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        body{font-family:var(--font-sans);line-height:1.75;color:var(--text);background:var(--bg);font-size:1rem}
+
+        .nav{background:var(--navy);position:sticky;top:0;z-index:100;height:var(--nav-height);border-bottom:1px solid rgba(255,255,255,0.08)}
+        .nav-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;letter-spacing:-0.01em}
+        .nav-logo-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--teal));display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:#fff;font-weight:800;flex-shrink:0}
+        .nav-links{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+        .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.8rem;font-weight:500;padding:6px 12px;border-radius:var(--radius-sm);transition:all 0.15s;white-space:nowrap;letter-spacing:-0.005em}
+        .nav-links a:hover{color:#fff;background:rgba(255,255,255,0.08)}
+        .nav-links a.active{color:#fff;background:rgba(255,255,255,0.12)}
+        @media(max-width:860px){.nav-links{display:none}.nav-inner{justify-content:center}}
+
+        .main{padding:0 24px}
+
+        /* ====== HERO ====== */
+        .hero{background:linear-gradient(170deg,var(--navy) 0%,#111E3D 50%,#0B1A2E 100%);color:#fff;margin:0 -24px 0 -24px;padding:72px 24px 64px;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 20%,rgba(37,99,235,0.12),transparent),radial-gradient(ellipse 50% 60% at 10% 80%,rgba(13,148,136,0.08),transparent);pointer-events:none}
+        .hero-inner{max-width:var(--site-width);margin:0 auto;position:relative;z-index:1}
+        .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,0.15);border:1px solid rgba(37,99,235,0.3);border-radius:100px;padding:4px 16px;font-size:0.8rem;font-weight:600;color:#93C5FD;margin-bottom:24px;letter-spacing:-0.005em}
+        .hero-badge .pulse{width:7px;height:7px;border-radius:50%;background:#3B82F6;animation:heroPulse 2s ease-in-out infinite}
+        @keyframes heroPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+        .hero h1{font-size:clamp(1.8rem,5.5vw,3rem);font-weight:800;letter-spacing:-0.025em;line-height:1.15;margin-bottom:16px;color:#fff}
+        .hero-subtitle{font-size:1.1rem;color:rgba(255,255,255,0.65);max-width:600px;line-height:1.6;margin-bottom:0;font-weight:400}
+        .hero-stats{display:flex;gap:32px;margin-top:36px;flex-wrap:wrap}
+        .hero-stat{display:flex;align-items:baseline;gap:6px}
+        .hero-stat-value{font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:-0.01em}
+        .hero-stat-label{font-size:0.82rem;color:rgba(255,255,255,0.5);font-weight:500}
+
+        /* ====== SECTION ====== */
+        .section{max-width:var(--site-width);margin:0 auto;padding:56px 0}
+        .section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:12px}
+        .section-header h2{font-size:1.35rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em}
+        .section-header a{font-size:0.85rem;color:var(--accent);text-decoration:none;font-weight:500}
+        .section-header a:hover{color:var(--accent-hover)}
+
+        /* ====== BENTO GRID ====== */
+        .bento-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(160px,auto);gap:16px}
+        .bento-grid .card{grid-row:span 1}
+        .bento-grid .card.featured{grid-column:span 2;grid-row:span 1}
+        @media(max-width:860px){
+            .bento-grid{grid-template-columns:repeat(2,1fr)}
+            .bento-grid .card.featured{grid-column:span 2}
+        }
+        @media(max-width:560px){
+            .bento-grid{grid-template-columns:1fr}
+            .bento-grid .card.featured{grid-column:span 1}
+        }
+
+        /* ====== CARD ====== */
+        .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-decoration:none;display:flex;flex-direction:column;transition:all 0.25s;position:relative;overflow:hidden;cursor:pointer}
+        .card:hover{border-color:var(--accent);box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+        .card:hover .card-accent{transform:scaleX(1)}
+        .card-accent{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+        .card .tag{margin-bottom:12px;align-self:flex-start}
+        .card h3{font-size:1.05rem;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:8px;letter-spacing:-0.01em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+        .card .desc{font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+        .card .meta{font-size:0.78rem;color:var(--muted);font-weight:500;margin-top:auto;display:flex;align-items:center;gap:8px}
+
+        /* ====== CATEGORY GRID ====== */
+        .cat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+        .cat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px 20px;text-decoration:none;transition:all 0.2s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+        .cat-card:hover{border-color:var(--accent);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+        .cat-card .cat-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+        .cat-card .cat-name{font-size:0.8rem;font-weight:600;color:var(--text);letter-spacing:-0.005em;line-height:1.2}
+        @media(max-width:860px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
+        @media(max-width:500px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+
+        /* ====== AD ====== */
+        .ad-slot{background:var(--accent-light);border:1px dashed var(--accent);border-radius:var(--radius-md);padding:16px;text-align:center;margin:0 auto 32px;color:var(--muted);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;min-height:60px;display:flex;align-items:center;justify-content:center;max-width:728px}
+
+        /* ====== FOOTER ====== */
+        .footer{background:var(--navy);color:rgba(255,255,255,0.55);padding:48px 0 32px;margin-top:80px;font-size:0.85rem}
+        .footer-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px}
+        .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+        .footer h4{color:#fff;font-size:0.9rem;font-weight:600;margin-bottom:14px;letter-spacing:-0.005em}
+        .footer p{line-height:1.7;margin-bottom:8px}
+        .footer a{color:rgba(255,255,255,0.5);text-decoration:none;display:block;margin-bottom:6px;transition:color 0.15s}
+        .footer a:hover{color:#fff}
+        .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+        .footer-bottom a{display:inline;margin:0;color:rgba(255,255,255,0.4)}
+        @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:24px}}
+
+        .tag{display:inline-flex;align-items:center;gap:4px;font-size:0.75rem;font-weight:600;padding:3px 10px;border-radius:100px;text-decoration:none;letter-spacing:-0.005em;text-transform:uppercase}
+        .tag-blue{background:#EFF6FF;color:#1D4ED8}
+        .tag-teal{background:var(--teal-light);color:#0F766E}
+        .tag-amber{background:#FFFBEB;color:#92400E}
+        .tag-indigo{background:#EEF2FF;color:#4338CA}
+        .tag-emerald{background:#ECFDF5;color:#065F46}
+        .tag-purple{background:#FAF5FF;color:#6B21A8}
+
+        
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <span class="nav-logo-icon">II</span>
+                AI Policy & CX — Insurtech Insights
+            </a>
+            <div class="nav-links">
+                
+                <a href="/ai-claims/">AI Claims</a>
+                
+                <a href="/ai-underwriting/">AI Underwriting</a>
+                
+                <a href="/ai-fraud-detection/">AI Fraud Detection</a>
+                
+                <a href="/embedded-insurance/">Embedded Insurance</a>
+                
+                <a href="/ai-policy-cx/">AI Policy & CX</a>
+                
+                <a href="/decision-intelligence/">Decision Intelligence</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-badge"><span class="pulse"></span> Daily Auto-Generated</div>
+                <h1>AI meets Insurance<br>Technology</h1>
+                <p class="hero-subtitle">In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence.</p>
+                <div class="hero-stats">
+                    <div class="hero-stat"><span class="hero-stat-value">2+</span><span class="hero-stat-label">Articles</span></div>
+                    <div class="hero-stat"><span class="hero-stat-value">6</span><span class="hero-stat-label">Domains</span></div>
+                    <div class="hero-stat"><span class="hero-stat-value">Daily</span><span class="hero-stat-label">Updates</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORIES -->
+        <div class="section" style="padding-bottom:28px">
+            <div class="cat-grid">
+                
+                <a href="/ai-claims/" class="cat-card">
+                    <div class="cat-icon" style="background:var(--accent-light);color:var(--accent)">
+                        &#9881;
+                    </div>
+                    <span class="cat-name">AI Claims</span>
+                </a>
+                
+                <a href="/ai-underwriting/" class="cat-card">
+                    <div class="cat-icon" style="background:var(--teal-light);color:var(--teal)">
+                        &#9998;
+                    </div>
+                    <span class="cat-name">AI Underwriting</span>
+                </a>
+                
+                <a href="/ai-fraud-detection/" class="cat-card">
+                    <div class="cat-icon" style="background:#FFFBEB;color:#D97706">
+                        &#128737;
+                    </div>
+                    <span class="cat-name">AI Fraud Detection</span>
+                </a>
+                
+                <a href="/embedded-insurance/" class="cat-card">
+                    <div class="cat-icon" style="background:#EEF2FF;color:#4F46E5">
+                        &#128273;
+                    </div>
+                    <span class="cat-name">Embedded Insurance</span>
+                </a>
+                
+                <a href="/ai-policy-cx/" class="cat-card">
+                    <div class="cat-icon" style="background:#ECFDF5;color:#059669">
+                        &#128172;
+                    </div>
+                    <span class="cat-name">AI Policy & CX</span>
+                </a>
+                
+                <a href="/decision-intelligence/" class="cat-card">
+                    <div class="cat-icon" style="background:#FAF5FF;color:#7C3AED">
+                        &#9889;
+                    </div>
+                    <span class="cat-name">Decision Intelligence</span>
+                </a>
+                
+            </div>
+        </div>
+
+        <!-- AD TOP -->
+        
+
+        <!-- LATEST ARTICLES -->
+        <div class="section" style="padding-top:20px">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <a href="#">View All &rarr;</a>
+            </div>
+
+            
+            <div class="bento-grid">
+                
+                
+                <a href="///" class="card featured">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-blue">Ai Policy Cx</span>
+                    <h3>Omnichannel Insurance CX Orchestration: A Practitioner’s Implementation Guide</h3>
+                    <span class="desc">I’ve watched claims teams drown in siloed systems while policyholders bounce between chatbots, portals, and phone trees. The promise of omnichannel customer...</span>
+                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
+                </a>
+                
+                
+                <a href="///" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-blue">Ai Policy Cx</span>
+                    <h3>AI Policy Administration Automation in Insurance: A Practitioner’s Implementation Guide</h3>
+                    
+                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
+                </a>
+                
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div>
+                    <h4>AI Policy & CX — Insurtech Insights</h4>
+                    <p>In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence.</p>
+                </div>
+                <div>
+                    <h4>Categories</h4>
+                    
+                    <a href="/ai-claims/">AI Claims</a>
+                    
+                    <a href="/ai-underwriting/">AI Underwriting</a>
+                    
+                    <a href="/ai-fraud-detection/">AI Fraud Detection</a>
+                    
+                    <a href="/embedded-insurance/">Embedded Insurance</a>
+                    
+                    <a href="/ai-policy-cx/">AI Policy & CX</a>
+                    
+                    <a href="/decision-intelligence/">Decision Intelligence</a>
+                    
+                </div>
+                <div>
+                    <h4>Info</h4>
+                    <a href="/about/">About</a>
+                    <a href="/contact/">Contact</a>
+                    <a href="/privacy/">Privacy Policy</a>
+                    <a href="/terms/">Terms of Use</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 AI Policy & CX — Insurtech Insights. All rights reserved.</span>
+                <span>AI-assisted content &middot; Independent publication</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
