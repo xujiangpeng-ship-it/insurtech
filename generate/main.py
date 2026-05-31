@@ -42,9 +42,24 @@ def load_config():
 # ---------------------------------------------------------------------------
 
 def pick_unused_keywords(config, count: int):
-    """Randomly pick *count* unused keywords across all subdomains."""
+    """Pick *count* unused keywords using load-balanced subdomain selection.
+    
+    Prioritizes subdomains with the fewest published articles to ensure even
+    content distribution across all categories.
+    """
     subdomains = config["subdomains"]
-    pool = []
+
+    # Count existing articles per subdomain
+    sd_counts = {}
+    for sd in subdomains:
+        sd_dir = CONTENT_DIR / sd["slug"]
+        if sd_dir.is_dir():
+            sd_counts[sd["slug"]] = sum(1 for d in sd_dir.iterdir() if d.is_dir())
+        else:
+            sd_counts[sd["slug"]] = 0
+
+    # Load available (unused) keywords per subdomain
+    sd_keywords = {}
     for sd in subdomains:
         kw_path = KEYWORDS_DIR / f"{sd['slug']}.json"
         if not kw_path.exists():
@@ -52,20 +67,37 @@ def pick_unused_keywords(config, count: int):
             continue
         with open(kw_path, encoding="utf-8") as fh:
             keywords = json.load(fh)
-        for kw in keywords:
-            if not kw.get("is_used", False):
-                pool.append(kw)
+        available = [kw for kw in keywords if not kw.get("is_used", False)]
+        if available:
+            sd_keywords[sd["slug"]] = available
 
-    if len(pool) < count:
-        logger.warning("Only %d unused keywords available (requested %d). Using all.", len(pool), count)
-        count = len(pool)
+    if not sd_keywords:
+        logger.error("No unused keywords available in any subdomain.")
+        return []
 
-    selected = random.sample(pool, count)
+    # Sort subdomains by article count ascending (fewest first)
+    sorted_sds = sorted(sd_counts.items(), key=lambda x: x[1])
+    selected = []
+    for sd_slug, _ in sorted_sds:
+        if len(selected) >= count:
+            break
+        if sd_slug in sd_keywords and sd_keywords[sd_slug]:
+            kw = random.choice(sd_keywords[sd_slug])
+            selected.append(kw)
+            sd_keywords[sd_slug].remove(kw)  # prevent double-pick within same run
+
+    if len(selected) < count:
+        logger.warning(
+            "Only %d keywords available across all subdomains (requested %d).",
+            len(selected), count
+        )
+
     return selected
 
 
-def mark_used(keyword_entry):
-    """Persist is_used=True + generated_at in the source JSON."""
+def mark_pending(keyword_entry):
+    """Set is_used=True with pending marker — called BEFORE generation to
+    prevent concurrent runs from picking the same keyword."""
     subdomain = keyword_entry["subdomain"]
     kw_path = KEYWORDS_DIR / f"{subdomain}.json"
     with open(kw_path, encoding="utf-8") as fh:
@@ -73,6 +105,20 @@ def mark_used(keyword_entry):
     for kw in keywords:
         if kw["keyword"] == keyword_entry["keyword"]:
             kw["is_used"] = True
+            kw["generated_at"] = "pending"
+            break
+    with open(kw_path, "w", encoding="utf-8") as fh:
+        json.dump(keywords, fh, indent=2, ensure_ascii=False)
+
+
+def mark_completed(keyword_entry):
+    """Update generated_at to real timestamp — called AFTER successful render."""
+    subdomain = keyword_entry["subdomain"]
+    kw_path = KEYWORDS_DIR / f"{subdomain}.json"
+    with open(kw_path, encoding="utf-8") as fh:
+        keywords = json.load(fh)
+    for kw in keywords:
+        if kw["keyword"] == keyword_entry["keyword"]:
             kw["generated_at"] = datetime.now(timezone.utc).isoformat()
             break
     with open(kw_path, "w", encoding="utf-8") as fh:
@@ -407,6 +453,11 @@ def main():
         sys.exit(1)
     logger.info("Selected %d keywords from pool.", len(selected))
 
+    # Mark all selected keywords as pending BEFORE generation
+    # to prevent concurrent runs from picking the same keywords
+    for kw in selected:
+        mark_pending(kw)
+
     articles_meta = []
 
     for i, kw in enumerate(selected, 1):
@@ -423,7 +474,7 @@ def main():
             logger.error("Failed to render '%s': %s", kw["keyword"], exc)
             continue
 
-        mark_used(kw)
+        mark_completed(kw)
         articles_meta.append({
             "keyword": kw["keyword"],
             "type": kw["type"],
