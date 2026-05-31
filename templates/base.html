@@ -109,28 +109,8 @@
 
     <footer class="footer">
         <div class="footer-inner">
-            <div class="footer-grid">
-                <div>
-                    <h4>{{ site_name }}</h4>
-                    <p>In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence.</p>
-                </div>
-                <div>
-                    <h4>Categories</h4>
-                    {% for sd in subdomains %}
-                    <a href="/{{ sd.slug }}/">{{ sd.name }}</a>
-                    {% endfor %}
-                </div>
-                <div>
-                    <h4>Info</h4>
-                    <a href="/about/">About</a>
-                    <a href="/contact/">Contact</a>
-                    <a href="/privacy/">Privacy Policy</a>
-                    <a href="/terms/">Terms of Use</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
+            <div class="footer-bottom" style="border-top:none;padding-top:0;justify-content:center">
                 <span>&copy; {{ current_year }} {{ site_name }}. All rights reserved.</span>
-                <span>AI-assisted content · Independent publication</span>
             </div>
         </div>
     </footer>

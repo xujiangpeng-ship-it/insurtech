@@ -253,6 +253,8 @@ def _collect_all_articles() -> list:
                     "url": f"/{sf.name}/{af.name}/",
                     "title": title,
                     "description": desc,
+                    "subdomain": sf.name,
+                    "slug": af.name,
                     "subdomain_name": sf.name.replace("-", " ").title(),
                     "date_display": ""  # approximate; we store timestamps in keyword JSON
                 })

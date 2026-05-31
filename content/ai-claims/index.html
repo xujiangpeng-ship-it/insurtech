@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block head %}
-    <title>{{ site_name }} — AI meets Insurance Technology</title>
+    
+    <title>AI Claims — Insurtech Insights — AI meets Insurance Technology</title>
     <meta name="description" content="In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence. Daily articles across 6 core domains.">
-    <link rel="canonical" href="{{ canonical_url }}">
-    <meta property="og:title" content="{{ site_name }} — AI meets Insurance Technology">
+    <link rel="canonical" href="/ai-claims/">
+    <meta property="og:title" content="AI Claims — Insurtech Insights — AI meets Insurance Technology">
     <meta property="og:description" content="In-depth coverage of how artificial intelligence is reshaping insurance.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ canonical_url }}">
-    {% endblock %}
-    {% if adsense_pub_id %}
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ adsense_pub_id }}" crossorigin="anonymous"></script>
-    {% endif %}
-    {% if ga_id %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_id }}"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ ga_id }}');</script>
-    {% endif %}
+    <meta property="og:url" content="/ai-claims/">
+    
+    
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -144,14 +139,7 @@
         .tag-emerald{background:#ECFDF5;color:#065F46}
         .tag-purple{background:#FAF5FF;color:#6B21A8}
 
-        {% set tag_colors = {
-            'ai-claims':'tag-blue',
-            'ai-underwriting':'tag-teal',
-            'ai-fraud-detection':'tag-amber',
-            'embedded-insurance':'tag-indigo',
-            'ai-policy-cx':'tag-emerald',
-            'decision-intelligence':'tag-purple'
-        } %}
+        
     </style>
 </head>
 <body>
@@ -159,12 +147,22 @@
         <div class="nav-inner">
             <a href="/" class="nav-logo">
                 <span class="nav-logo-icon">II</span>
-                {{ site_name }}
+                AI Claims — Insurtech Insights
             </a>
             <div class="nav-links">
-                {% for sd in subdomains %}
-                <a href="/{{ sd.slug }}/">{{ sd.name }}</a>
-                {% endfor %}
+                
+                <a href="/ai-claims/">AI Claims</a>
+                
+                <a href="/ai-underwriting/">AI Underwriting</a>
+                
+                <a href="/ai-fraud-detection/">AI Fraud Detection</a>
+                
+                <a href="/embedded-insurance/">Embedded Insurance</a>
+                
+                <a href="/ai-policy-cx/">AI Policy & CX</a>
+                
+                <a href="/decision-intelligence/">Decision Intelligence</a>
+                
             </div>
         </div>
     </nav>
@@ -177,21 +175,64 @@
                 <h1>AI meets Insurance<br>Technology</h1>
                 <p class="hero-subtitle">In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence.</p>
                 <div class="hero-stats">
-                    <div class="hero-stat"><span class="hero-stat-value">{{ articles|length if articles else 100 }}+</span><span class="hero-stat-label">Articles</span></div>
+                    <div class="hero-stat"><span class="hero-stat-value">5+</span><span class="hero-stat-label">Articles</span></div>
                     <div class="hero-stat"><span class="hero-stat-value">6</span><span class="hero-stat-label">Domains</span></div>
                     <div class="hero-stat"><span class="hero-stat-value">Daily</span><span class="hero-stat-label">Updates</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- AD MID-PAGE -->
+        <!-- CATEGORIES -->
         <div class="section" style="padding-bottom:28px">
-            <div style="max-width:728px;margin:0 auto">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3057389153621190" crossorigin="anonymous"></script>
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3057389153621190" data-ad-slot="5189099721" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            <div class="cat-grid">
+                
+                <a href="/ai-claims/" class="cat-card">
+                    <div class="cat-icon" style="background:var(--accent-light);color:var(--accent)">
+                        &#9881;
+                    </div>
+                    <span class="cat-name">AI Claims</span>
+                </a>
+                
+                <a href="/ai-underwriting/" class="cat-card">
+                    <div class="cat-icon" style="background:var(--teal-light);color:var(--teal)">
+                        &#9998;
+                    </div>
+                    <span class="cat-name">AI Underwriting</span>
+                </a>
+                
+                <a href="/ai-fraud-detection/" class="cat-card">
+                    <div class="cat-icon" style="background:#FFFBEB;color:#D97706">
+                        &#128737;
+                    </div>
+                    <span class="cat-name">AI Fraud Detection</span>
+                </a>
+                
+                <a href="/embedded-insurance/" class="cat-card">
+                    <div class="cat-icon" style="background:#EEF2FF;color:#4F46E5">
+                        &#128273;
+                    </div>
+                    <span class="cat-name">Embedded Insurance</span>
+                </a>
+                
+                <a href="/ai-policy-cx/" class="cat-card">
+                    <div class="cat-icon" style="background:#ECFDF5;color:#059669">
+                        &#128172;
+                    </div>
+                    <span class="cat-name">AI Policy & CX</span>
+                </a>
+                
+                <a href="/decision-intelligence/" class="cat-card">
+                    <div class="cat-icon" style="background:#FAF5FF;color:#7C3AED">
+                        &#9889;
+                    </div>
+                    <span class="cat-name">Decision Intelligence</span>
+                </a>
+                
             </div>
         </div>
+
+        <!-- AD TOP -->
+        
 
         <!-- LATEST ARTICLES -->
         <div class="section" style="padding-top:20px">
@@ -200,39 +241,93 @@
                 <a href="#">View All &rarr;</a>
             </div>
 
-            {% if articles %}
+            
             <div class="bento-grid">
-                {% for a in articles %}
-                {% set tag_class = tag_colors.get(a.subdomain, 'tag-blue') %}
-                <a href="/{{ a.subdomain }}/{{ a.slug }}/" class="card{% if loop.first %} featured{% endif %}">
+                
+                
+                <a href="///" class="card featured">
                     <span class="card-accent"></span>
-                    <span class="tag {{ tag_class }}">{{ a.subdomain_name }}</span>
-                    <h3>{{ a.title }}</h3>
-                    {% if loop.first %}<span class="desc">{{ a.description }}</span>{% endif %}
-                    <span class="meta">{{ a.date_display }}<span style="color:var(--muted-light)">&bull;</span>{{ ((a.description|length)//1500)+1 }} min read</span>
+                    <span class="tag tag-blue">Ai Claims</span>
+                    <h3>Natural Language Processing for Insurance Claims Documents: A Practitioner’s Implementation Guide</h3>
+                    <span class="desc">I’ve processed thousands of claims documents across P&C, life, and specialty lines. Most carriers still rely on armies of clerks to extract data from PDFs,...</span>
+                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
                 </a>
-                {% endfor %}
-            </div>
-            {% else %}
-            <div class="bento-grid">
-                {% for i in range(7) %}
-                <a href="#" class="card{% if loop.first %} featured{% endif %}">
+                
+                
+                <a href="///" class="card">
                     <span class="card-accent"></span>
-                    <span class="tag tag-blue">AI Claims</span>
-                    <h3>Sample Article Title — The Future of Automated Claims Processing</h3>
-                    {% if loop.first %}<span class="desc">A placeholder for the featured article description that gives readers a compelling reason to click through.</span>{% endif %}
-                    <span class="meta">May 31, 2026 <span style="color:var(--muted-light)">&bull;</span> 5 min read</span>
+                    <span class="tag tag-blue">Ai Claims</span>
+                    <h3>Cut Claims Cycle Time by 40%: A Step-by-Step AI Playbook</h3>
+                    
+                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
                 </a>
-                {% endfor %}
+                
+                
+                <a href="///" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-blue">Ai Claims</span>
+                    <h3>Can AI really cut claims audit labor by 60%? Not yet—but it can cut the nonsense first</h3>
+                    
+                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
+                </a>
+                
+                
+                <a href="///" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-blue">Ai Claims</span>
+                    <h3>Can AI-driven claims processing cut your loss ratio by 15% or just move the fraud?</h3>
+                    
+                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
+                </a>
+                
+                
+                <a href="///" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-blue">Ai Claims</span>
+                    <h3>AI Claims Documentation Automation Tools: Three Weeks with the Big Three</h3>
+                    
+                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
+                </a>
+                
             </div>
-            {% endif %}
+            
         </div>
     </main>
 
     <footer class="footer">
         <div class="footer-inner">
-            <div class="footer-bottom" style="border-top:none;padding-top:0;justify-content:center">
-                <span>&copy; {{ current_year }} {{ site_name }}. All rights reserved.</span>
+            <div class="footer-grid">
+                <div>
+                    <h4>AI Claims — Insurtech Insights</h4>
+                    <p>In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence.</p>
+                </div>
+                <div>
+                    <h4>Categories</h4>
+                    
+                    <a href="/ai-claims/">AI Claims</a>
+                    
+                    <a href="/ai-underwriting/">AI Underwriting</a>
+                    
+                    <a href="/ai-fraud-detection/">AI Fraud Detection</a>
+                    
+                    <a href="/embedded-insurance/">Embedded Insurance</a>
+                    
+                    <a href="/ai-policy-cx/">AI Policy & CX</a>
+                    
+                    <a href="/decision-intelligence/">Decision Intelligence</a>
+                    
+                </div>
+                <div>
+                    <h4>Info</h4>
+                    <a href="/about/">About</a>
+                    <a href="/contact/">Contact</a>
+                    <a href="/privacy/">Privacy Policy</a>
+                    <a href="/terms/">Terms of Use</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 AI Claims — Insurtech Insights. All rights reserved.</span>
+                <span>AI-assisted content &middot; Independent publication</span>
             </div>
         </div>
     </footer>
