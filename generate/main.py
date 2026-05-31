@@ -366,7 +366,7 @@ def rebuild_home(config) -> None:
         ga_id=config.get("analytics", {}).get("ga_id", ""),
     )
     (CONTENT_DIR / "index.html").write_text(html, encoding="utf-8")
-    logger.info("Rebuilt home page with %d articles.", len(articles[:20]))
+    logger.info("Rebuilt home page with %d articles.", len(picked))
 
 
 def rebuild_sitemap(config) -> None:
