@@ -81,21 +81,11 @@
         .section{max-width:var(--site-width);margin:0 auto;padding:56px 0}
         .section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:12px}
         .section-header h2{font-size:1.35rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em}
-        .section-header a{font-size:0.85rem;color:var(--accent);text-decoration:none;font-weight:500}
-        .section-header a:hover{color:var(--accent-hover)}
 
         /* ====== BENTO GRID ====== */
-        .bento-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(160px,auto);gap:16px}
-        .bento-grid .card{grid-row:span 1}
-        .bento-grid .card.featured{grid-column:span 2;grid-row:span 1}
-        @media(max-width:860px){
-            .bento-grid{grid-template-columns:repeat(2,1fr)}
-            .bento-grid .card.featured{grid-column:span 2}
-        }
-        @media(max-width:560px){
-            .bento-grid{grid-template-columns:1fr}
-            .bento-grid .card.featured{grid-column:span 1}
-        }
+        .bento-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(160px,auto);gap:16px}
+        @media(max-width:860px){.bento-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:560px){.bento-grid{grid-template-columns:1fr}}
 
         /* ====== CARD ====== */
         .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-decoration:none;display:flex;flex-direction:column;transition:all 0.25s;position:relative;overflow:hidden;cursor:pointer}
@@ -122,14 +112,7 @@
         /* ====== FOOTER ====== */
         .footer{background:var(--navy);color:rgba(255,255,255,0.55);padding:48px 0 32px;margin-top:80px;font-size:0.85rem}
         .footer-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px}
-        .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
-        .footer h4{color:#fff;font-size:0.9rem;font-weight:600;margin-bottom:14px;letter-spacing:-0.005em}
-        .footer p{line-height:1.7;margin-bottom:8px}
-        .footer a{color:rgba(255,255,255,0.5);text-decoration:none;display:block;margin-bottom:6px;transition:color 0.15s}
-        .footer a:hover{color:#fff}
         .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-        .footer-bottom a{display:inline;margin:0;color:rgba(255,255,255,0.4)}
-        @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:24px}}
 
         .tag{display:inline-flex;align-items:center;gap:4px;font-size:0.75rem;font-weight:600;padding:3px 10px;border-radius:100px;text-decoration:none;letter-spacing:-0.005em;text-transform:uppercase}
         .tag-blue{background:#EFF6FF;color:#1D4ED8}
@@ -171,11 +154,11 @@
         <!-- HERO -->
         <section class="hero">
             <div class="hero-inner">
-                <div class="hero-badge"><span class="pulse"></span> Daily Auto-Generated</div>
+                <div class="hero-badge"><span class="pulse"></span> Sharp Insights Provided</div>
                 <h1>AI meets Insurance<br>Technology</h1>
                 <p class="hero-subtitle">In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence.</p>
                 <div class="hero-stats">
-                    <div class="hero-stat"><span class="hero-stat-value">7+</span><span class="hero-stat-label">Articles</span></div>
+                    <div class="hero-stat"><span class="hero-stat-value">4+</span><span class="hero-stat-label">Articles</span></div>
                     <div class="hero-stat"><span class="hero-stat-value">6</span><span class="hero-stat-label">Domains</span></div>
                     <div class="hero-stat"><span class="hero-stat-value">Daily</span><span class="hero-stat-label">Updates</span></div>
                 </div>
@@ -194,74 +177,46 @@
         <!-- LATEST ARTICLES -->
         <div class="section" style="padding-top:20px">
             <div class="section-header">
-                <h2>Latest Articles</h2>
-                <a href="#">View All &rarr;</a>
+                <h2>Most Viewed Articles</h2>
             </div>
 
             
             <div class="bento-grid">
                 
                 
-                <a href="/ai-fraud-detection/nlp-for-insurance-fraud-investigation-a-practitioners-implementation-guide/" class="card featured">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-amber">Ai Fraud Detection</span>
-                    <h3>NLP for Insurance Fraud Investigation: A Practitioner’s Implementation Guide</h3>
-                    <span class="desc">I’ve spent years watching claims teams drown in unstructured data—adjuster notes, police reports, repair invoices, social media posts—while fraudsters exploit...</span>
-                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
-                </a>
-                
-                
-                <a href="/ai-fraud-detection/is-your-claims-team-losing-10-of-payouts-to-fraudand-not-even-realizing-it/" class="card">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-amber">Ai Fraud Detection</span>
-                    <h3>Is Your Claims Team Losing 10% of Payouts to Fraud—and Not Even Realizing It?</h3>
-                    
-                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
-                </a>
-                
                 
                 <a href="/ai-fraud-detection/how-zurichs-canadian-operation-cut-suspected-fraud-losses-by-35-using-ai/" class="card">
                     <span class="card-accent"></span>
                     <span class="tag tag-amber">Ai Fraud Detection</span>
                     <h3>How Zurich’s Canadian Operation Cut Suspected Fraud Losses by 35% Using AI</h3>
-                    
-                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
+                    <span class="meta"></span>
                 </a>
+                
                 
                 
                 <a href="/ai-fraud-detection/claims-fraud-scoring-ai-model-development-guide/" class="card">
                     <span class="card-accent"></span>
                     <span class="tag tag-amber">Ai Fraud Detection</span>
                     <h3>Claims Fraud Scoring AI Model Development Guide</h3>
-                    
-                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
+                    <span class="meta"></span>
                 </a>
+                
                 
                 
                 <a href="/ai-fraud-detection/can-image-recognition-ai-really-stop-40-billion-in-annual-insurance-fraud/" class="card">
                     <span class="card-accent"></span>
                     <span class="tag tag-amber">Ai Fraud Detection</span>
                     <h3>Can Image Recognition AI Really Stop $40 Billion in Annual Insurance Fraud?</h3>
-                    
-                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
+                    <span class="meta"></span>
                 </a>
                 
-                
-                <a href="/ai-fraud-detection/ai-anomaly-detection-for-claims-fraud-a-practitioners-implementation-guide/" class="card">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-amber">Ai Fraud Detection</span>
-                    <h3>AI Anomaly Detection for Claims Fraud: A Practitioner’s Implementation Guide</h3>
-                    
-                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
-                </a>
                 
                 
                 <a href="/ai-fraud-detection/ai-anomaly-detection-for-claims-fraud-a-practitioners-blueprint/" class="card">
                     <span class="card-accent"></span>
                     <span class="tag tag-amber">Ai Fraud Detection</span>
                     <h3>AI Anomaly Detection for Claims Fraud: A Practitioner’s Blueprint</h3>
-                    
-                    <span class="meta"><span style="color:var(--muted-light)">&bull;</span>1 min read</span>
+                    <span class="meta"></span>
                 </a>
                 
             </div>
@@ -271,8 +226,9 @@
 
     <footer class="footer">
         <div class="footer-inner">
-            <div class="footer-bottom" style="border-top:none;padding-top:0;justify-content:center">
+            <div class="footer-bottom" style="border-top:none;padding-top:0;justify-content:space-between">
                 <span>&copy; 2026 AI Fraud Detection — Insurtech Insights. All rights reserved.</span>
+                <span>contact(@)821224.com</span>
             </div>
         </div>
     </footer>
