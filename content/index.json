@@ -218,5 +218,115 @@
     "subdomain_name": "AI Claims",
     "date_display": "May 31, 2026",
     "generated_at": "2026-05-31T15:10:02.048452+00:00"
+  },
+  {
+    "keyword": "AI automated underwriting workflow implementation",
+    "type": "tutorial",
+    "subdomain": "ai-underwriting",
+    "url": "/ai-underwriting/ai-automated-underwriting-workflow-implementation-a-practitioners-guide/",
+    "title": "AI Automated Underwriting Workflow Implementation: A Practitioner's Guide",
+    "description": "I’ve seen claims teams drown in manual underwriting queues that never close. I’ve watched brokers chase underwriters for binding authority. I’ve seen loss...",
+    "subdomain_name": "AI Underwriting",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:22:04.794006+00:00"
+  },
+  {
+    "keyword": "AI voice assistants insurance customer self service",
+    "type": "explainer",
+    "subdomain": "ai-policy-cx",
+    "url": "/ai-policy-cx/why-78-of-policyholders-quit-a-call-after-90-secondsand-how-voice-ai-keeps-them/",
+    "title": "Why 78% of policyholders quit a call after 90 seconds—and how voice AI keeps them on the line",
+    "description": "It’s not a mystery: the average customer’s patience for a traditional call center call is measured in seconds, not minutes. Studies by Coveo and others show...",
+    "subdomain_name": "AI Policy & CX",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:22:38.583667+00:00"
+  },
+  {
+    "keyword": "AI claims chatbots customer experience insurance",
+    "type": "explainer",
+    "subdomain": "ai-claims",
+    "url": "/ai-claims/are-ai-claims-chatbots-actually-saving-insurers-moneyor-just-annoying-customers/",
+    "title": "Are AI Claims Chatbots Actually Saving Insurers Money—or Just Annoying Customers?",
+    "description": "In 2023, Lemonade’s AI claims chatbot paid out $8.2 million in claims in seconds, not days. By contrast, the industry’s average loss ratio sits at 68%, meaning...",
+    "subdomain_name": "AI Claims",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:23:03.254953+00:00"
+  },
+  {
+    "keyword": "AI governance framework insurance regulatory requirements",
+    "type": "explainer",
+    "subdomain": "decision-intelligence",
+    "url": "/decision-intelligence/ai-in-insurance-is-a-regulatory-powder-keg-and-most-carriers-arent-ready/",
+    "title": "AI in Insurance Is a Regulatory Powder Keg — And Most Carriers Aren’t Ready",
+    "description": "By 2027, the EU’s AI Act will force every insurer operating in Europe to classify AI models as either \"unacceptable risk\" (banned), \"high risk\" (heavily...",
+    "subdomain_name": "Decision Intelligence",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:23:28.284087+00:00"
+  },
+  {
+    "keyword": "real world AI fraud detection results insurance industry data",
+    "type": "case-study",
+    "subdomain": "ai-fraud-detection",
+    "url": "/ai-fraud-detection/how-zurichs-canadian-operation-cut-suspected-fraud-losses-by-35-using-ai/",
+    "title": "How Zurich’s Canadian Operation Cut Suspected Fraud Losses by 35% Using AI",
+    "description": "In 2021, Zurich Canada’s claims team processed more than 40,000 auto and property claims. Like most insurers, they knew fraud was inflating loss ratios but had...",
+    "subdomain_name": "AI Fraud Detection",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:23:44.287300+00:00"
+  },
+  {
+    "keyword": "AI risk assessment insurance use cases and platforms",
+    "type": "comparison",
+    "subdomain": "ai-underwriting",
+    "url": "/ai-underwriting/ai-risk-assessment-in-insurance-5-platforms-compared/",
+    "title": "AI Risk Assessment in Insurance: 5 Platforms Compared",
+    "description": "Risk assessment is the dirty work of insurance. Underwriters hate it, actuaries can’t live without it, and anyone who’s had to explain a denied claim to a...",
+    "subdomain_name": "AI Underwriting",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:24:10.284982+00:00"
+  },
+  {
+    "keyword": "AI anomaly detection claims fraud techniques explained",
+    "type": "tutorial",
+    "subdomain": "ai-fraud-detection",
+    "url": "/ai-fraud-detection/ai-anomaly-detection-for-claims-fraud-a-practitioners-blueprint/",
+    "title": "AI Anomaly Detection for Claims Fraud: A Practitioner’s Blueprint",
+    "description": "Fraud costs U.S. property and casualty insurers roughly $34 billion annually—about 10% of all claims payments—per the FBI and Coalition Against Insurance...",
+    "subdomain_name": "AI Fraud Detection",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:24:39.730652+00:00"
+  },
+  {
+    "keyword": "predictive analytics insurance claims settlement optimization",
+    "type": "tutorial",
+    "subdomain": "ai-claims",
+    "url": "/ai-claims/predictive-analytics-in-insurance-claims-settlement-optimization-a-practitioners/",
+    "title": "Predictive Analytics in Insurance Claims Settlement Optimization: A Practitioner’s Build Guide",
+    "description": "I’ve seen claims teams drown in unstructured data—adjuster notes in PDFs, handwritten estimates, phone recordings—while trying to settle claims faster....",
+    "subdomain_name": "AI Claims",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:25:09.302498+00:00"
+  },
+  {
+    "keyword": "insurance claims AI ROI calculation framework",
+    "type": "tutorial",
+    "subdomain": "ai-claims",
+    "url": "/ai-claims/insurance-claims-ai-roi-calculation-framework-a-practitioners-step-by-step-guide/",
+    "title": "Insurance Claims AI ROI Calculation Framework: A Practitioner’s Step-by-Step Guide",
+    "description": "I’ve reviewed dozens of claims AI ROI models. Most overpromise by 300–500% because they ignore three critical inputs: claim leakage amortized over the policy...",
+    "subdomain_name": "AI Claims",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:25:37.161229+00:00"
+  },
+  {
+    "keyword": "insurance AI talent strategy build vs buy decision",
+    "type": "comparison",
+    "subdomain": "decision-intelligence",
+    "url": "/decision-intelligence/insurance-ai-talent-build-vs-buy-vs-borrow-vs-bypass/",
+    "title": "Insurance AI Talent: Build vs Buy vs Borrow vs Bypass",
+    "description": "Insurers face a brutal choice: who builds and runs the AI systems that will decide underwriting wins, claims outcomes, and customer retention. The talent...",
+    "subdomain_name": "Decision Intelligence",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:26:04.709920+00:00"
   }
 ]
