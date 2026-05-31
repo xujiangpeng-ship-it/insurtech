@@ -333,7 +333,7 @@ def _collect_all_articles() -> list:
 
 
 def rebuild_home(config) -> None:
-    """Rebuild /content/index.html with one article per subdomain + one extra."""
+    """Rebuild /content/index.html with one article per subdomain + one extra (7 total)."""
     import random as _random
     _random.seed(42)  # deterministic per build
     jinja_env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
@@ -344,10 +344,16 @@ def rebuild_home(config) -> None:
     for a in all_articles:
         by_sd.setdefault(a["subdomain"], []).append(a)
 
-    # Pick one random article per subdomain
+    # Pick one random article per subdomain (6 total)
     picked = []
     for sd_slug in sorted(by_sd.keys()):
         picked.append(_random.choice(by_sd[sd_slug]))
+
+    # Pick one extra random article from any subdomain (different from the 6)
+    picked_urls = {a["url"] for a in picked}
+    remaining = [a for a in all_articles if a["url"] not in picked_urls]
+    if remaining:
+        picked.append(_random.choice(remaining))
 
     _random.shuffle(picked)
 
