@@ -90,17 +90,9 @@
         .section-header a:hover{color:var(--accent-hover)}
 
         /* ====== BENTO GRID ====== */
-        .bento-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(160px,auto);gap:16px}
-        .bento-grid .card{grid-row:span 1}
-        .bento-grid .card.featured{grid-column:span 2;grid-row:span 1}
-        @media(max-width:860px){
-            .bento-grid{grid-template-columns:repeat(2,1fr)}
-            .bento-grid .card.featured{grid-column:span 2}
-        }
-        @media(max-width:560px){
-            .bento-grid{grid-template-columns:1fr}
-            .bento-grid .card.featured{grid-column:span 1}
-        }
+        .bento-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(160px,auto);gap:16px}
+        @media(max-width:860px){.bento-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:560px){.bento-grid{grid-template-columns:1fr}}
 
         /* ====== CARD ====== */
         .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-decoration:none;display:flex;flex-direction:column;transition:all 0.25s;position:relative;overflow:hidden;cursor:pointer}
@@ -173,7 +165,7 @@
         <!-- HERO -->
         <section class="hero">
             <div class="hero-inner">
-                <div class="hero-badge"><span class="pulse"></span> Daily Auto-Generated</div>
+                <div class="hero-badge"><span class="pulse"></span> Sharp Insights Provided</div>
                 <h1>AI meets Insurance<br>Technology</h1>
                 <p class="hero-subtitle">In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence.</p>
                 <div class="hero-stats">
@@ -196,33 +188,42 @@
         <!-- LATEST ARTICLES -->
         <div class="section" style="padding-top:20px">
             <div class="section-header">
-                <h2>Latest Articles</h2>
-                <a href="#">View All &rarr;</a>
+                <h2>Most Viewed Articles</h2>
             </div>
 
             {% if articles %}
             <div class="bento-grid">
                 {% for a in articles %}
+                {% if loop.index0 == 4 %}
+                <!-- AdSense In-Feed -->
+                <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:160px;background:var(--accent-light);border:1px dashed var(--accent)">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3057389153621190" crossorigin="anonymous"></script>
+                    <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3057389153621190" data-ad-slot="8131488063"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+                {% endif %}
                 {% set tag_class = tag_colors.get(a.subdomain, 'tag-blue') %}
-                <a href="/{{ a.subdomain }}/{{ a.slug }}/" class="card{% if loop.first %} featured{% endif %}">
+                <a href="{{ a.url }}" class="card">
                     <span class="card-accent"></span>
                     <span class="tag {{ tag_class }}">{{ a.subdomain_name }}</span>
                     <h3>{{ a.title }}</h3>
-                    {% if loop.first %}<span class="desc">{{ a.description }}</span>{% endif %}
-                    <span class="meta">{{ a.date_display }}<span style="color:var(--muted-light)">&bull;</span>{{ ((a.description|length)//1500)+1 }} min read</span>
+                    <span class="meta">{{ a.date_display }}</span>
                 </a>
                 {% endfor %}
             </div>
             {% else %}
             <div class="bento-grid">
-                {% for i in range(7) %}
-                <a href="#" class="card{% if loop.first %} featured{% endif %}">
+                {% for i in range(8) %}
+                {% if loop.index0 == 4 %}
+                <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:160px;background:var(--accent-light);border:1px dashed var(--accent);color:var(--muted);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em">AdSense In-Feed</div>
+                {% else %}
+                <a href="#" class="card">
                     <span class="card-accent"></span>
                     <span class="tag tag-blue">AI Claims</span>
                     <h3>Sample Article Title — The Future of Automated Claims Processing</h3>
-                    {% if loop.first %}<span class="desc">A placeholder for the featured article description that gives readers a compelling reason to click through.</span>{% endif %}
-                    <span class="meta">May 31, 2026 <span style="color:var(--muted-light)">&bull;</span> 5 min read</span>
+                    <span class="meta">May 31, 2026</span>
                 </a>
+                {% endif %}
                 {% endfor %}
             </div>
             {% endif %}
@@ -231,8 +232,9 @@
 
     <footer class="footer">
         <div class="footer-inner">
-            <div class="footer-bottom" style="border-top:none;padding-top:0;justify-content:center">
+            <div class="footer-bottom" style="border-top:none;padding-top:0;justify-content:space-between">
                 <span>&copy; {{ current_year }} {{ site_name }}. All rights reserved.</span>
+                <span>contact(@)821224.com</span>
             </div>
         </div>
     </footer>

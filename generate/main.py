@@ -185,6 +185,27 @@ def make_slug(title: str) -> str:
 # Rendering
 # ---------------------------------------------------------------------------
 
+def split_content_at_third(html_body: str) -> tuple:
+    """Split HTML content at approximately 1/3 mark, at a paragraph boundary."""
+    paragraphs = re.findall(r'<p>.*?</p>', html_body, re.DOTALL)
+    if len(paragraphs) < 4:
+        return html_body, ""
+
+    split_idx = max(1, len(paragraphs) // 3)
+    accumulated = []
+    rest_accumulated = []
+    found_split = False
+
+    for i, para in enumerate(paragraphs):
+        if not found_split and i >= split_idx:
+            first = html_body[:html_body.index(para)]
+            rest = html_body[html_body.index(para):]
+            return first.strip(), rest.strip()
+        accumulated.append(para)
+
+    return html_body, ""
+
+
 def render_article(config, keyword_entry, html_body: str) -> Path:
     """Render one article to content/{subdomain}/{slug}/index.html"""
     jinja_env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
@@ -200,6 +221,8 @@ def render_article(config, keyword_entry, html_body: str) -> Path:
     date_iso = now.strftime("%Y-%m-%dT%H:%M:%S+00:00")
     date_display = now.strftime("%B %d, %Y")
 
+    content_first, content_rest = split_content_at_third(html_body)
+
     adsense = config.get("adsense", {})
     pub_id = adsense.get("pub_id", "")
     ad_slots = adsense.get("ad_units", {})
@@ -211,7 +234,8 @@ def render_article(config, keyword_entry, html_body: str) -> Path:
         title=title,
         description=description,
         keyword=keyword_entry["keyword"],
-        content=html_body,
+        content_first=content_first,
+        content_rest=content_rest,
         date_iso=date_iso,
         date_display=date_display,
         subdomain=subdomain,
@@ -263,9 +287,24 @@ def _collect_all_articles() -> list:
 
 
 def rebuild_home(config) -> None:
-    """Rebuild /content/index.html."""
+    """Rebuild /content/index.html with one article per subdomain + one extra."""
+    import random as _random
+    _random.seed(42)  # deterministic per build
     jinja_env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
-    articles = _collect_all_articles()
+    all_articles = _collect_all_articles()
+
+    # Group articles by subdomain
+    by_sd = {}
+    for a in all_articles:
+        by_sd.setdefault(a["subdomain"], []).append(a)
+
+    # Pick one random article per subdomain
+    picked = []
+    for sd_slug in sorted(by_sd.keys()):
+        picked.append(_random.choice(by_sd[sd_slug]))
+
+    _random.shuffle(picked)
+
     adsense = config.get("adsense", {})
     pub_id = adsense.get("pub_id", "")
     ad_slots = adsense.get("ad_units", {})
@@ -274,7 +313,7 @@ def rebuild_home(config) -> None:
         site_name=config["site"]["name"],
         subdomains=config["subdomains"],
         current_year=datetime.now(timezone.utc).year,
-        articles=articles[:20],  # show latest 20 on home
+        articles=picked,
         canonical_url="/",
         adsense_pub_id=pub_id or None,
         ad_slot_top=ad_slots.get("top_banner", {}).get("slot", ""),
