@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 def _build_mistral_client():
     """Lazy-init Mistral client."""
     try:
-        from mistralai import Mistral
+        from mistralai.client import Mistral
     except ImportError:
         raise ImportError("mistralai package not installed. Run: pip install mistralai")
 
