@@ -350,5 +350,27 @@
     "subdomain_name": "Embedded Insurance",
     "date_display": "May 31, 2026",
     "generated_at": "2026-05-31T17:16:31.657907+00:00"
+  },
+  {
+    "keyword": "AI maturity model insurance assessment framework",
+    "type": "tutorial",
+    "subdomain": "decision-intelligence",
+    "url": "/decision-intelligence/building-an-ai-maturity-model-for-insurance-a-practitioners-guide/",
+    "title": "Building an AI Maturity Model for Insurance: A Practitioner’s Guide",
+    "description": "I’ve reviewed dozens of AI maturity models over the years, and most of them miss the mark for insurers. They either read like academic papers with no...",
+    "subdomain_name": "Decision Intelligence",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T20:43:43.062894+00:00"
+  },
+  {
+    "keyword": "parametric insurance AI embedded IoT data sources",
+    "type": "tutorial",
+    "subdomain": "embedded-insurance",
+    "url": "/embedded-insurance/parametric-insurance-meets-ai-and-embedded-iot-a-build-your-own-guide/",
+    "title": "Parametric Insurance Meets AI and Embedded IoT: A Build-Your-Own Guide",
+    "description": "I’ve helped three MGAs launch parametric products in the last 18 months. Two flamed out because they underestimated the data plumbing; one is now writing $12 M...",
+    "subdomain_name": "Embedded Insurance",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T20:44:31.938768+00:00"
   }
 ]

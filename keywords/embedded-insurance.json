@@ -86,8 +86,8 @@
     "subdomain": "embedded-insurance",
     "difficulty": "medium",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-05-31T20:44:31.938410+00:00"
   },
   {
     "keyword": "embedded insurance customer experience AI personalization",
