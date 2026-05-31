@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}{% endblock %}
+    {% if adsense_pub_id %}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ adsense_pub_id }}" crossorigin="anonymous"></script>
+    {% endif %}
+    {% if ga_id %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_id }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ ga_id }}');
+    </script>
+    {% endif %}
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.7; color: #1a1a1a; background: #fafafa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        nav { background: #fff; border-bottom: 1px solid #e5e5e5; padding: 16px 0; margin-bottom: 32px; position: sticky; top: 0; z-index: 100; }
+        nav .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        nav .logo { font-size: 1.3rem; font-weight: 700; color: #1a1a1a; text-decoration: none; }
+        nav .nav-links { display: flex; gap: 16px; flex-wrap: wrap; }
+        nav .nav-links a { color: #555; text-decoration: none; font-size: 0.85rem; transition: color 0.15s; }
+        nav .nav-links a:hover { color: #1a1a1a; }
+        article { background: #fff; border-radius: 8px; padding: 40px; margin-bottom: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+        article h1 { font-size: 1.8rem; line-height: 1.3; margin-bottom: 12px; }
+        article .meta { color: #888; font-size: 0.85rem; margin-bottom: 24px; }
+        article .meta a { color: #555; text-decoration: none; }
+        article .meta a:hover { text-decoration: underline; }
+        article .content { font-size: 1.05rem; }
+        article .content h2 { font-size: 1.4rem; margin: 32px 0 12px; }
+        article .content h3 { font-size: 1.15rem; margin: 24px 0 8px; }
+        article .content p { margin-bottom: 16px; }
+        article .content ul, article .content ol { margin: 0 0 16px 24px; }
+        article .content li { margin-bottom: 6px; }
+        article .content table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        article .content th, article .content td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+        article .content th { background: #f5f5f5; font-weight: 600; }
+        article .content code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        article .content pre { background: #1a1a1a; color: #e0e0e0; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+        article .content pre code { background: none; padding: 0; color: inherit; }
+        .ad-unit { background: #f9f9f9; border: 1px dashed #ddd; border-radius: 8px; padding: 16px; text-align: center; margin: 24px 0; color: #999; font-size: 0.8rem; }
+        .related { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e5e5e5; }
+        .related h3 { font-size: 1.1rem; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #2563eb; text-decoration: none; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 32px 0; color: #999; font-size: 0.85rem; }
+        footer a { color: #555; text-decoration: none; margin: 0 8px; }
+        footer a:hover { text-decoration: underline; }
+        .home-grid { display: grid; gap: 16px; }
+        .home-card { background: #fff; border-radius: 8px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+        .home-card h2 { font-size: 1.15rem; margin-bottom: 6px; }
+        .home-card h2 a { color: #1a1a1a; text-decoration: none; }
+        .home-card h2 a:hover { color: #2563eb; }
+        .home-card .meta { font-size: 0.8rem; color: #888; margin-bottom: 6px; }
+        .home-card p { font-size: 0.9rem; color: #555; margin: 0; }
+        .tag { display: inline-block; background: #eef2ff; color: #4338ca; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-right: 6px; }
+        @media (max-width: 640px) {
+            article { padding: 20px; }
+            article h1 { font-size: 1.4rem; }
+            nav .nav-links { gap: 8px; }
+            nav .nav-links a { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">{{ site_name }}</a>
+            <div class="nav-links">
+                {% for sd in subdomains %}
+                <a href="/{{ sd.slug }}/">{{ sd.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; {{ current_year }} {{ site_name }}. All rights reserved.</p>
+            <p>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/privacy/">Privacy Policy</a>
+                <a href="/terms/">Terms of Use</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

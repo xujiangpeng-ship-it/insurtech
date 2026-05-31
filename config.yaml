@@ -1,0 +1,48 @@
+# Insurtech Insights — Site Configuration
+site:
+  name: "Insurtech Insights"
+  tagline: "AI meets Insurance Technology"
+  domain: "821224.com"
+  language: "en"
+  timezone: "UTC"
+
+generation:
+  articles_per_run: 10
+  model_primary: "mistral-small-latest"
+  model_fallback: "meta/llama-3.3-70b-instruct"
+  temperature: 0.7
+  max_tokens: 4096
+  retry_attempts: 3
+  retry_delay_seconds: [5, 15, 30]
+
+adsense:
+  pub_id: ""  # Fill in after AdSense approval
+  auto_ads: true
+  ad_units:
+    top_banner:
+      slot: ""
+      format: "responsive"
+    in_content:
+      slot: ""
+      format: "rectangle"
+    bottom:
+      slot: ""
+      format: "responsive"
+
+analytics:
+  ga_id: ""  # Optional: fill in Google Analytics measurement ID
+
+subdomains:
+  - slug: "ai-claims"
+    name: "AI Claims"
+  - slug: "ai-underwriting"
+    name: "AI Underwriting"
+  - slug: "ai-fraud-detection"
+    name: "AI Fraud Detection"
+  - slug: "embedded-insurance"
+    name: "Embedded Insurance"
+  - slug: "ai-policy-cx"
+    name: "AI Policy & CX"
+  - slug: "decision-intelligence"
+    name: "Decision Intelligence"
+（内容由AI生成，仅供参考）

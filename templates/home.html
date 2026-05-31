@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>{{ site_name }} — AI meets Insurance Technology</title>
+<meta name="description" content="{{ site_name }} provides in-depth coverage of AI in insurance technology, including AI claims, underwriting, fraud detection, and embedded insurance trends.">
+<link rel="canonical" href="{{ canonical_url }}">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site_name }}",
+    "url": "{{ canonical_url }}",
+    "description": "AI meets Insurance Technology — in-depth coverage of AI claims, underwriting, fraud detection & embedded insurance trends."
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<h1 style="font-size:1.6rem; margin-bottom:8px;">{{ site_name }}</h1>
+<p style="color:#666; margin-bottom:32px;">AI meets Insurance Technology — in-depth coverage of how artificial intelligence is reshaping claims, underwriting, fraud detection, and more.</p>
+
+{% if adsense_pub_id %}
+<div class="ad-unit">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="{{ adsense_pub_id }}"
+         data-ad-slot="{{ ad_slot_top }}"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{% endif %}
+
+<div class="home-grid">
+    {% for article in articles %}
+    <div class="home-card">
+        <span class="tag">{{ article.subdomain_name }}</span>
+        <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+        <div class="meta">{{ article.date_display }}</div>
+        <p>{{ article.description }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% if not articles %}
+<p style="text-align:center; color:#999; padding:60px 0;">Content coming soon. Our automated system is preparing the first batch of articles.</p>
+{% endif %}
+
+{% endblock %}
