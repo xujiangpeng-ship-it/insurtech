@@ -108,5 +108,115 @@
     "subdomain_name": "AI Policy & CX",
     "date_display": "May 31, 2026",
     "generated_at": "2026-05-31T14:11:20.102366+00:00"
+  },
+  {
+    "keyword": "embedded insurance regulatory landscape 2026 global",
+    "type": "news",
+    "subdomain": "embedded-insurance",
+    "url": "/embedded-insurance/global-regulators-are-circling-embedded-insurance-and-its-not-pretty/",
+    "title": "Global Regulators Are Circling Embedded Insurance – and It’s Not Pretty",
+    "description": "Last week, the European Insurance and Occupational Pensions Authority (EIOPA) dropped a bombshell: it’s reviewing embedded insurance for potential systemic...",
+    "subdomain_name": "Embedded Insurance",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:06:03.229836+00:00"
+  },
+  {
+    "keyword": "parametric insurance AI embedded IoT data sources",
+    "type": "tutorial",
+    "subdomain": "embedded-insurance",
+    "url": "/embedded-insurance/parametric-insurance-on-autopilot-how-to-wire-iot-data-streams-into-ai-models-in/",
+    "title": "Parametric Insurance on Autopilot: How to Wire IoT Data Streams into AI Models in 7 Weeks",
+    "description": "I’ve worked with half a dozen MGAs rolling out parametric products since 2020. The difference between pilots that die on the vine and those that actually price...",
+    "subdomain_name": "Embedded Insurance",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:06:27.634795+00:00"
+  },
+  {
+    "keyword": "how Hiscox reduced quote cycle time 99 percent with AI",
+    "type": "case-study",
+    "subdomain": "ai-underwriting",
+    "url": "/ai-underwriting/how-hiscox-slashed-quote-cycle-time-by-99-with-ai-and-what-it-cost-them/",
+    "title": "How Hiscox Slashed Quote Cycle Time by 99% with AI – And What It Cost Them",
+    "description": "In 2019, Hiscox’s small business insurance unit was drowning in quotes. The manual underwriting (UW) process for commercial policies took an average of 14 days...",
+    "subdomain_name": "AI Underwriting",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:06:46.950072+00:00"
+  },
+  {
+    "keyword": "healthcare insurance fraud AI detection solutions 2026",
+    "type": "explainer",
+    "subdomain": "ai-fraud-detection",
+    "url": "/ai-fraud-detection/is-your-claims-team-losing-10-of-payouts-to-fraudand-not-even-realizing-it/",
+    "title": "Is Your Claims Team Losing 10% of Payouts to Fraud—and Not Even Realizing It?",
+    "description": "By 2026, healthcare insurers will process over $5 trillion in claims globally. A conservative estimate pegs fraud at 3-10% of that spend—roughly $150B to $500B...",
+    "subdomain_name": "AI Fraud Detection",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:07:16.401707+00:00"
+  },
+  {
+    "keyword": "claims fraud scoring AI model development guide",
+    "type": "tutorial",
+    "subdomain": "ai-fraud-detection",
+    "url": "/ai-fraud-detection/claims-fraud-scoring-ai-model-development-guide/",
+    "title": "Claims Fraud Scoring AI Model Development Guide",
+    "description": "I’ve seen claims teams waste months on fraud models that never get past POC. Most failures come from one of three places: bad data assumptions,...",
+    "subdomain_name": "AI Fraud Detection",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:07:39.201886+00:00"
+  },
+  {
+    "keyword": "AI claims audit automation benefits for insurers",
+    "type": "explainer",
+    "subdomain": "ai-claims",
+    "url": "/ai-claims/can-ai-really-cut-claims-audit-labor-by-60-not-yetbut-it-can-cut-the-nonsense-fi/",
+    "title": "Can AI really cut claims audit labor by 60%? Not yet—but it can cut the nonsense first",
+    "description": "I’ve watched claims teams drown in bordereaux that look like they were printed by a Rube Goldberg machine. In 2023, the U.S. P&C industry shipped roughly $160...",
+    "subdomain_name": "AI Claims",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:08:14.706466+00:00"
+  },
+  {
+    "keyword": "AI policy administration automation insurance guide",
+    "type": "tutorial",
+    "subdomain": "ai-policy-cx",
+    "url": "/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/",
+    "title": "AI Policy Administration Automation: A Practitioner’s Implementation Guide",
+    "description": "I’ve seen claims teams drown in paperwork while underwriters struggle with manual data entry. Policy administration automation isn’t just about saving...",
+    "subdomain_name": "AI Policy & CX",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:08:43.726801+00:00"
+  },
+  {
+    "keyword": "image recognition AI insurance claim fraud detection",
+    "type": "explainer",
+    "subdomain": "ai-fraud-detection",
+    "url": "/ai-fraud-detection/can-image-recognition-ai-really-stop-40-billion-in-annual-insurance-fraud/",
+    "title": "Can Image Recognition AI Really Stop $40 Billion in Annual Insurance Fraud?",
+    "description": "In 2023, the Coalition Against Insurance Fraud estimated that property & casualty insurers lost $40 billion to fraudulent claims. That’s 10% of total claims...",
+    "subdomain_name": "AI Fraud Detection",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:09:16.057482+00:00"
+  },
+  {
+    "keyword": "AI anomaly detection claims fraud techniques explained",
+    "type": "tutorial",
+    "subdomain": "ai-fraud-detection",
+    "url": "/ai-fraud-detection/ai-anomaly-detection-for-claims-fraud-a-practitioners-implementation-guide/",
+    "title": "AI Anomaly Detection for Claims Fraud: A Practitioner’s Implementation Guide",
+    "description": "I’ve seen claims teams burn 15–20% of their bandwidth chasing false positives from rule-based fraud engines. That’s not a knock on rules—it’s the ceiling of...",
+    "subdomain_name": "AI Fraud Detection",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:09:45.280730+00:00"
+  },
+  {
+    "keyword": "AI claims documentation automation tools review",
+    "type": "tool-review",
+    "subdomain": "ai-claims",
+    "url": "/ai-claims/ai-claims-documentation-automation-tools-three-weeks-with-the-big-three/",
+    "title": "AI Claims Documentation Automation Tools: Three Weeks with the Big Three",
+    "description": "I embedded myself with claims teams at three different carriers to test the leading AI documentation tools over a three-week sprint. The mission: cut first...",
+    "subdomain_name": "AI Claims",
+    "date_display": "May 31, 2026",
+    "generated_at": "2026-05-31T15:10:02.048452+00:00"
   }
 ]
