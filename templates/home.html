@@ -58,9 +58,11 @@
 
         .nav{background:var(--navy);position:sticky;top:0;z-index:100;height:var(--nav-height);border-bottom:1px solid rgba(255,255,255,0.08)}
         .nav-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between}
-        .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;letter-spacing:-0.01em}
-        .nav-logo-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--teal));display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:#fff;font-weight:800;flex-shrink:0}
+        .nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+        .nav-logo-img{height:36px;width:auto;display:block}
         .nav-inner{justify-content:center}
+        @media(max-width:768px){.nav-logo-img{height:28px}}
+        @media(max-width:480px){.nav-logo-img{height:24px}}
 
         .main{padding:0 24px}
 
@@ -153,8 +155,7 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="/" class="nav-logo">
-                <span class="nav-logo-icon">II</span>
-                {{ site_name }}
+                <img src="/images/logo.png" alt="{{ site_name }}" class="nav-logo-img">
             </a>
         </div>
     </nav>
