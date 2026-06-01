@@ -78,9 +78,14 @@
         .hero-stat-label{font-size:0.82rem;color:rgba(255,255,255,0.5);font-weight:500}
 
         /* ====== CATEGORY BAR ====== */
-        .cat-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-        .cat-bar::-webkit-scrollbar{display:none}
-        .cat-bar-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px;display:flex;gap:8px;white-space:nowrap;min-width:max-content}
+        .cat-bar{display:flex;align-items:center;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:8px 0;max-width:var(--site-width);margin:0 auto}
+        .cat-bar-track{flex:1;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;min-width:0}
+        .cat-bar-track::-webkit-scrollbar{display:none}
+        .cat-bar-inner{display:flex;gap:8px;white-space:nowrap;min-width:max-content;padding:0 4px}
+        .cat-arrow{flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:none;background:transparent;color:var(--muted);cursor:pointer;border-radius:var(--radius-sm);font-size:1.2rem;line-height:1;transition:all 0.15s;user-select:none}
+        .cat-arrow:hover{background:var(--accent-light);color:var(--accent)}
+        .cat-arrow:active{transform:scale(0.9)}
+        @media(min-width:861px){.cat-arrow{display:none}}
         .cat-bar-item{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;text-decoration:none;font-size:0.8rem;font-weight:500;color:var(--text-secondary);background:var(--bg);border:1px solid var(--border);transition:all 0.15s;flex-shrink:0}
         .cat-bar-item:hover{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
         .cat-bar-item.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
@@ -162,6 +167,48 @@
     </nav>
 
     <main class="main">
+        <!-- CATEGORY NAVIGATION BAR (above hero) -->
+        <nav class="cat-bar" aria-label="Category navigation">
+            <button class="cat-arrow cat-arrow-left" aria-label="Scroll left" onclick="document.getElementById('catTrack').scrollBy({left:-200,behavior:'smooth'})">&#8249;</button>
+            <div class="cat-bar-track" id="catTrack">
+                <div class="cat-bar-inner">
+                    
+                    
+                    <a href="/ai-claims/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-blue"></span>
+                        AI Claims
+                    </a>
+                    
+                    <a href="/ai-underwriting/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-teal"></span>
+                        AI Underwriting
+                    </a>
+                    
+                    <a href="/ai-fraud-detection/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-amber"></span>
+                        AI Fraud Detection
+                    </a>
+                    
+                    <a href="/embedded-insurance/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-indigo"></span>
+                        Embedded Insurance
+                    </a>
+                    
+                    <a href="/ai-policy-cx/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-emerald"></span>
+                        AI Policy & CX
+                    </a>
+                    
+                    <a href="/decision-intelligence/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-purple"></span>
+                        Decision Intelligence
+                    </a>
+                    
+                </div>
+            </div>
+            <button class="cat-arrow cat-arrow-right" aria-label="Scroll right" onclick="document.getElementById('catTrack').scrollBy({left:200,behavior:'smooth'})">&#8250;</button>
+        </nav>
+
         <!-- HERO -->
         <section class="hero">
             <div class="hero-inner">
@@ -174,44 +221,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- CATEGORY NAVIGATION BAR -->
-        <nav class="cat-bar" aria-label="Category navigation">
-            <div class="cat-bar-inner">
-                
-                
-                <a href="/ai-claims/" class="cat-bar-item">
-                    <span class="cat-bar-dot cat-dot-blue"></span>
-                    AI Claims
-                </a>
-                
-                <a href="/ai-underwriting/" class="cat-bar-item">
-                    <span class="cat-bar-dot cat-dot-teal"></span>
-                    AI Underwriting
-                </a>
-                
-                <a href="/ai-fraud-detection/" class="cat-bar-item">
-                    <span class="cat-bar-dot cat-dot-amber"></span>
-                    AI Fraud Detection
-                </a>
-                
-                <a href="/embedded-insurance/" class="cat-bar-item">
-                    <span class="cat-bar-dot cat-dot-indigo"></span>
-                    Embedded Insurance
-                </a>
-                
-                <a href="/ai-policy-cx/" class="cat-bar-item">
-                    <span class="cat-bar-dot cat-dot-emerald"></span>
-                    AI Policy & CX
-                </a>
-                
-                <a href="/decision-intelligence/" class="cat-bar-item">
-                    <span class="cat-bar-dot cat-dot-purple"></span>
-                    Decision Intelligence
-                </a>
-                
-            </div>
-        </nav>
 
         <!-- AD (Category pages only: between Hero and Latest Articles) -->
         
@@ -229,36 +238,36 @@
                 
                 <a href="/ai-underwriting/ai-risk-assessment-in-insurance-5-platforms-compared/" class="card">
                     <span class="card-accent"></span>
-                    <span class="tag tag-teal">Ai Underwriting</span>
-                    <h3>AI Risk Assessment in Insurance: 5 Platforms Compared</h3>
-                    <span class="meta">May 31, 2026</span>
+                    <span class="tag tag-teal"></span>
+                    <h3>AI Risk Assessment in Insurance: 5 Platforms Compared | Insurtech Insights</h3>
+                    <span class="meta"></span>
                 </a>
                 
                 
                 
                 <a href="/ai-fraud-detection/ai-anomaly-detection-for-claims-fraud-a-practitioners-blueprint/" class="card">
                     <span class="card-accent"></span>
-                    <span class="tag tag-amber">Ai Fraud Detection</span>
-                    <h3>AI Anomaly Detection for Claims Fraud: A Practitioner’s Blueprint</h3>
-                    <span class="meta">May 31, 2026</span>
+                    <span class="tag tag-amber"></span>
+                    <h3>AI Anomaly Detection for Claims Fraud: A Practitioner’s Blueprint | Insurtech Insights</h3>
+                    <span class="meta"></span>
                 </a>
                 
                 
                 
-                <a href="/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/" class="card">
+                <a href="/ai-policy-cx/omnichannel-insurance-cx-orchestration-a-practitioners-implementation-guide/" class="card">
                     <span class="card-accent"></span>
-                    <span class="tag tag-emerald">Ai Policy Cx</span>
-                    <h3>AI Policy Administration Automation: A Practitioner’s Implementation Guide</h3>
-                    <span class="meta">May 31, 2026</span>
+                    <span class="tag tag-emerald"></span>
+                    <h3>Omnichannel Insurance CX Orchestration: A Practitioner’s Implementation Guide | Insurtech Insights</h3>
+                    <span class="meta"></span>
                 </a>
                 
                 
                 
-                <a href="/ai-claims/predictive-analytics-in-insurance-claims-settlement-optimization-a-practitioners/" class="card">
+                <a href="/ai-claims/are-ai-claims-chatbots-actually-saving-insurers-moneyor-just-annoying-customers/" class="card">
                     <span class="card-accent"></span>
-                    <span class="tag tag-blue">Ai Claims</span>
-                    <h3>Predictive Analytics in Insurance Claims Settlement Optimization: A Practitioner’s Build Guide</h3>
-                    <span class="meta">May 31, 2026</span>
+                    <span class="tag tag-blue"></span>
+                    <h3>Are AI Claims Chatbots Actually Saving Insurers Money—or Just Annoying Customers? | Insurtech Insights</h3>
+                    <span class="meta"></span>
                 </a>
                 
                 
@@ -272,27 +281,27 @@
                 
                 <a href="/decision-intelligence/building-an-ai-maturity-model-for-insurance-a-practitioners-guide/" class="card">
                     <span class="card-accent"></span>
-                    <span class="tag tag-purple">Decision Intelligence</span>
-                    <h3>Building an AI Maturity Model for Insurance: A Practitioner’s Guide</h3>
-                    <span class="meta">May 31, 2026</span>
+                    <span class="tag tag-purple"></span>
+                    <h3>Building an AI Maturity Model for Insurance: A Practitioner’s Guide | Insurtech Insights</h3>
+                    <span class="meta"></span>
                 </a>
                 
                 
                 
-                <a href="/decision-intelligence/insurance-ai-talent-build-vs-buy-vs-borrow-vs-bypass/" class="card">
+                <a href="/ai-claims/cut-claims-cycle-time-by-40-a-step-by-step-ai-playbook/" class="card">
                     <span class="card-accent"></span>
-                    <span class="tag tag-purple">Decision Intelligence</span>
-                    <h3>Insurance AI Talent: Build vs Buy vs Borrow vs Bypass</h3>
-                    <span class="meta">May 31, 2026</span>
+                    <span class="tag tag-blue"></span>
+                    <h3>Cut Claims Cycle Time by 40%: A Step-by-Step AI Playbook | Insurtech Insights</h3>
+                    <span class="meta"></span>
                 </a>
                 
                 
                 
-                <a href="/embedded-insurance/parametric-insurance-meets-ai-and-embedded-iot-a-build-your-own-guide/" class="card">
+                <a href="/embedded-insurance/ai-powered-embedded-insurance-platforms-a-head-to-head-comparison/" class="card">
                     <span class="card-accent"></span>
-                    <span class="tag tag-indigo">Embedded Insurance</span>
-                    <h3>Parametric Insurance Meets AI and Embedded IoT: A Build-Your-Own Guide</h3>
-                    <span class="meta">May 31, 2026</span>
+                    <span class="tag tag-indigo"></span>
+                    <h3>AI-Powered Embedded Insurance Platforms: A Head-to-Head Comparison | Insurtech Insights</h3>
+                    <span class="meta"></span>
                 </a>
                 
             </div>

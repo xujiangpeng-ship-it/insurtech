@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>AI Claims — Insurtech Insights — AI meets Insurance Technology</title>
+    <title>Insurtech Insights — AI meets Insurance Technology</title>
     <meta name="description" content="In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence. Daily articles across 6 core domains.">
     <link rel="canonical" href="/ai-claims/">
-    <meta property="og:title" content="AI Claims — Insurtech Insights — AI meets Insurance Technology">
+    <meta property="og:title" content="Insurtech Insights — AI meets Insurance Technology">
     <meta property="og:description" content="In-depth coverage of how artificial intelligence is reshaping insurance.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="/ai-claims/">
@@ -78,9 +78,14 @@
         .hero-stat-label{font-size:0.82rem;color:rgba(255,255,255,0.5);font-weight:500}
 
         /* ====== CATEGORY BAR ====== */
-        .cat-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-        .cat-bar::-webkit-scrollbar{display:none}
-        .cat-bar-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px;display:flex;gap:8px;white-space:nowrap;min-width:max-content}
+        .cat-bar{display:flex;align-items:center;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:8px 0;max-width:var(--site-width);margin:0 auto}
+        .cat-bar-track{flex:1;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;min-width:0}
+        .cat-bar-track::-webkit-scrollbar{display:none}
+        .cat-bar-inner{display:flex;gap:8px;white-space:nowrap;min-width:max-content;padding:0 4px}
+        .cat-arrow{flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:none;background:transparent;color:var(--muted);cursor:pointer;border-radius:var(--radius-sm);font-size:1.2rem;line-height:1;transition:all 0.15s;user-select:none}
+        .cat-arrow:hover{background:var(--accent-light);color:var(--accent)}
+        .cat-arrow:active{transform:scale(0.9)}
+        @media(min-width:861px){.cat-arrow{display:none}}
         .cat-bar-item{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;text-decoration:none;font-size:0.8rem;font-weight:500;color:var(--text-secondary);background:var(--bg);border:1px solid var(--border);transition:all 0.15s;flex-shrink:0}
         .cat-bar-item:hover{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
         .cat-bar-item.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
@@ -141,7 +146,7 @@
         <div class="nav-inner">
             <a href="/" class="nav-logo">
                 <span class="nav-logo-icon">II</span>
-                AI Claims — Insurtech Insights
+                Insurtech Insights
             </a>
             <div class="nav-links">
                 
@@ -162,56 +167,60 @@
     </nav>
 
     <main class="main">
+        <!-- CATEGORY NAVIGATION BAR (above hero) -->
+        <nav class="cat-bar" aria-label="Category navigation">
+            <button class="cat-arrow cat-arrow-left" aria-label="Scroll left" onclick="document.getElementById('catTrack').scrollBy({left:-200,behavior:'smooth'})">&#8249;</button>
+            <div class="cat-bar-track" id="catTrack">
+                <div class="cat-bar-inner">
+                    
+                    
+                    <a href="/ai-claims/" class="cat-bar-item active">
+                        <span class="cat-bar-dot cat-dot-blue"></span>
+                        AI Claims
+                    </a>
+                    
+                    <a href="/ai-underwriting/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-teal"></span>
+                        AI Underwriting
+                    </a>
+                    
+                    <a href="/ai-fraud-detection/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-amber"></span>
+                        AI Fraud Detection
+                    </a>
+                    
+                    <a href="/embedded-insurance/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-indigo"></span>
+                        Embedded Insurance
+                    </a>
+                    
+                    <a href="/ai-policy-cx/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-emerald"></span>
+                        AI Policy & CX
+                    </a>
+                    
+                    <a href="/decision-intelligence/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-purple"></span>
+                        Decision Intelligence
+                    </a>
+                    
+                </div>
+            </div>
+            <button class="cat-arrow cat-arrow-right" aria-label="Scroll right" onclick="document.getElementById('catTrack').scrollBy({left:200,behavior:'smooth'})">&#8250;</button>
+        </nav>
+
         <!-- HERO -->
         <section class="hero">
             <div class="hero-inner">
-                <div class="hero-badge"><span class="pulse"></span> Claims Automation</div>
-                <h1>AI Claims<br>Intelligence</h1>
-                <p class="hero-subtitle">From FNOL to settlement — how machine learning is rewriting the claims playbook. Real implementations, real results.</p>
+                <div class="hero-badge"><span class="pulse"></span> AI Claims</div>
+                <h1>AI Claims<br>Automation</h1>
+                <p class="hero-subtitle">How intelligent systems are transforming claims processing.</p>
                 <div class="hero-stats">
                     <div class="hero-stat"><span class="hero-stat-value">8+</span><span class="hero-stat-label">Articles</span></div>
                     <div class="hero-stat"><span class="hero-stat-value">Daily</span><span class="hero-stat-label">Updates</span></div>
                 </div>
             </div>
         </section>
-
-        <!-- CATEGORY NAVIGATION BAR -->
-        <nav class="cat-bar" aria-label="Category navigation">
-            <div class="cat-bar-inner">
-                
-                
-                <a href="/ai-claims/" class="cat-bar-item active">
-                    <span class="cat-bar-dot cat-dot-blue"></span>
-                    AI Claims
-                </a>
-                
-                <a href="/ai-underwriting/" class="cat-bar-item">
-                    <span class="cat-bar-dot cat-dot-teal"></span>
-                    AI Underwriting
-                </a>
-                
-                <a href="/ai-fraud-detection/" class="cat-bar-item">
-                    <span class="cat-bar-dot cat-dot-amber"></span>
-                    AI Fraud Detection
-                </a>
-                
-                <a href="/embedded-insurance/" class="cat-bar-item">
-                    <span class="cat-bar-dot cat-dot-indigo"></span>
-                    Embedded Insurance
-                </a>
-                
-                <a href="/ai-policy-cx/" class="cat-bar-item">
-                    <span class="cat-bar-dot cat-dot-emerald"></span>
-                    AI Policy & CX
-                </a>
-                
-                <a href="/decision-intelligence/" class="cat-bar-item">
-                    <span class="cat-bar-dot cat-dot-purple"></span>
-                    Decision Intelligence
-                </a>
-                
-            </div>
-        </nav>
 
         <!-- AD (Category pages only: between Hero and Latest Articles) -->
         
@@ -235,74 +244,74 @@
                 
                 
                 
-                <a href="/ai-claims/insurance-claims-ai-roi-calculation-framework-a-practitioners-step-by-step-guide/" class="card">
+                <a href="/ai-claims/ai-claims-documentation-automation-tools-three-weeks-with-the-big-three/" class="card">
                     <span class="card-accent"></span>
-                    <span class="tag tag-blue">Ai Claims</span>
-                    <h3>Insurance Claims AI ROI Calculation Framework: A Practitioner’s Step-by-Step Guide</h3>
-                    <span class="meta">May 31, 2026</span>
-                </a>
-                
-                
-                
-                <a href="/ai-claims/predictive-analytics-in-insurance-claims-settlement-optimization-a-practitioners/" class="card">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-blue">Ai Claims</span>
-                    <h3>Predictive Analytics in Insurance Claims Settlement Optimization: A Practitioner’s Build Guide</h3>
-                    <span class="meta">May 31, 2026</span>
+                    <span class="tag tag-blue"></span>
+                    <h3>AI Claims Documentation Automation Tools: Three Weeks with the Big Three | Insurtech Insights</h3>
+                    <span class="meta"></span>
                 </a>
                 
                 
                 
                 <a href="/ai-claims/are-ai-claims-chatbots-actually-saving-insurers-moneyor-just-annoying-customers/" class="card">
                     <span class="card-accent"></span>
-                    <span class="tag tag-blue">Ai Claims</span>
-                    <h3>Are AI Claims Chatbots Actually Saving Insurers Money—or Just Annoying Customers?</h3>
-                    <span class="meta">May 31, 2026</span>
-                </a>
-                
-                
-                
-                <a href="/ai-claims/ai-claims-documentation-automation-tools-three-weeks-with-the-big-three/" class="card">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-blue">Ai Claims</span>
-                    <h3>AI Claims Documentation Automation Tools: Three Weeks with the Big Three</h3>
-                    <span class="meta">May 31, 2026</span>
-                </a>
-                
-                
-                
-                <a href="/ai-claims/can-ai-really-cut-claims-audit-labor-by-60-not-yetbut-it-can-cut-the-nonsense-fi/" class="card">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-blue">Ai Claims</span>
-                    <h3>Can AI really cut claims audit labor by 60%? Not yet—but it can cut the nonsense first</h3>
-                    <span class="meta">May 31, 2026</span>
-                </a>
-                
-                
-                
-                <a href="/ai-claims/cut-claims-cycle-time-by-40-a-step-by-step-ai-playbook/" class="card">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-blue">Ai Claims</span>
-                    <h3>Cut Claims Cycle Time by 40%: A Step-by-Step AI Playbook</h3>
-                    <span class="meta">May 31, 2026</span>
-                </a>
-                
-                
-                
-                <a href="/ai-claims/natural-language-processing-for-insurance-claims-documents-a-practitioners-imple/" class="card">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-blue">Ai Claims</span>
-                    <h3>Natural Language Processing for Insurance Claims Documents: A Practitioner’s Implementation Guide</h3>
-                    <span class="meta">May 31, 2026</span>
+                    <span class="tag tag-blue"></span>
+                    <h3>Are AI Claims Chatbots Actually Saving Insurers Money—or Just Annoying Customers? | Insurtech Insights</h3>
+                    <span class="meta"></span>
                 </a>
                 
                 
                 
                 <a href="/ai-claims/can-ai-driven-claims-processing-cut-your-loss-ratio-by-15-or-just-move-the-fraud/" class="card">
                     <span class="card-accent"></span>
-                    <span class="tag tag-blue">Ai Claims</span>
-                    <h3>Can AI-driven claims processing cut your loss ratio by 15% or just move the fraud?</h3>
-                    <span class="meta">May 31, 2026</span>
+                    <span class="tag tag-blue"></span>
+                    <h3>Can AI-driven claims processing cut your loss ratio by 15% or just move the fraud? | Insurtech Insights</h3>
+                    <span class="meta"></span>
+                </a>
+                
+                
+                
+                <a href="/ai-claims/can-ai-really-cut-claims-audit-labor-by-60-not-yetbut-it-can-cut-the-nonsense-fi/" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-blue"></span>
+                    <h3>Can AI really cut claims audit labor by 60%? Not yet—but it can cut the nonsense first | Insurtech Insights</h3>
+                    <span class="meta"></span>
+                </a>
+                
+                
+                
+                <a href="/ai-claims/cut-claims-cycle-time-by-40-a-step-by-step-ai-playbook/" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-blue"></span>
+                    <h3>Cut Claims Cycle Time by 40%: A Step-by-Step AI Playbook | Insurtech Insights</h3>
+                    <span class="meta"></span>
+                </a>
+                
+                
+                
+                <a href="/ai-claims/insurance-claims-ai-roi-calculation-framework-a-practitioners-step-by-step-guide/" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-blue"></span>
+                    <h3>Insurance Claims AI ROI Calculation Framework: A Practitioner’s Step-by-Step Guide | Insurtech Insights</h3>
+                    <span class="meta"></span>
+                </a>
+                
+                
+                
+                <a href="/ai-claims/natural-language-processing-for-insurance-claims-documents-a-practitioners-imple/" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-blue"></span>
+                    <h3>Natural Language Processing for Insurance Claims Documents: A Practitioner’s Implementation Guide | Insurtech Insights</h3>
+                    <span class="meta"></span>
+                </a>
+                
+                
+                
+                <a href="/ai-claims/predictive-analytics-in-insurance-claims-settlement-optimization-a-practitioners/" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-blue"></span>
+                    <h3>Predictive Analytics in Insurance Claims Settlement Optimization: A Practitioner’s Build Guide | Insurtech Insights</h3>
+                    <span class="meta"></span>
                 </a>
                 
             </div>
@@ -316,7 +325,7 @@
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-bottom" style="border-top:none;padding-top:0;justify-content:space-between">
-                <span>&copy; 2026 AI Claims — Insurtech Insights. All rights reserved.</span>
+                <span>&copy; 2026 Insurtech Insights. All rights reserved.</span>
                 <span>contact(@)821224.com</span>
             </div>
         </div>

@@ -83,9 +83,14 @@
         .hero-stat-label{font-size:0.82rem;color:rgba(255,255,255,0.5);font-weight:500}
 
         /* ====== CATEGORY BAR ====== */
-        .cat-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-        .cat-bar::-webkit-scrollbar{display:none}
-        .cat-bar-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px;display:flex;gap:8px;white-space:nowrap;min-width:max-content}
+        .cat-bar{display:flex;align-items:center;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:8px 0;max-width:var(--site-width);margin:0 auto}
+        .cat-bar-track{flex:1;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;min-width:0}
+        .cat-bar-track::-webkit-scrollbar{display:none}
+        .cat-bar-inner{display:flex;gap:8px;white-space:nowrap;min-width:max-content;padding:0 4px}
+        .cat-arrow{flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:none;background:transparent;color:var(--muted);cursor:pointer;border-radius:var(--radius-sm);font-size:1.2rem;line-height:1;transition:all 0.15s;user-select:none}
+        .cat-arrow:hover{background:var(--accent-light);color:var(--accent)}
+        .cat-arrow:active{transform:scale(0.9)}
+        @media(min-width:861px){.cat-arrow{display:none}}
         .cat-bar-item{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;text-decoration:none;font-size:0.8rem;font-weight:500;color:var(--text-secondary);background:var(--bg);border:1px solid var(--border);transition:all 0.15s;flex-shrink:0}
         .cat-bar-item:hover{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
         .cat-bar-item.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
@@ -164,6 +169,30 @@
     </nav>
 
     <main class="main">
+        <!-- CATEGORY NAVIGATION BAR (above hero) -->
+        <nav class="cat-bar" aria-label="Category navigation">
+            <button class="cat-arrow cat-arrow-left" aria-label="Scroll left" onclick="document.getElementById('catTrack').scrollBy({left:-200,behavior:'smooth'})">&#8249;</button>
+            <div class="cat-bar-track" id="catTrack">
+                <div class="cat-bar-inner">
+                    {% set cat_dot_colors = {
+                        'ai-claims':'cat-dot-blue',
+                        'ai-underwriting':'cat-dot-teal',
+                        'ai-fraud-detection':'cat-dot-amber',
+                        'embedded-insurance':'cat-dot-indigo',
+                        'ai-policy-cx':'cat-dot-emerald',
+                        'decision-intelligence':'cat-dot-purple'
+                    } %}
+                    {% for sd in subdomains %}
+                    <a href="/{{ sd.slug }}/" class="cat-bar-item{% if current_category_slug == sd.slug %} active{% endif %}">
+                        <span class="cat-bar-dot {{ cat_dot_colors.get(sd.slug, 'cat-dot-blue') }}"></span>
+                        {{ sd.name }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <button class="cat-arrow cat-arrow-right" aria-label="Scroll right" onclick="document.getElementById('catTrack').scrollBy({left:200,behavior:'smooth'})">&#8250;</button>
+        </nav>
+
         <!-- HERO -->
         <section class="hero">
             <div class="hero-inner">
@@ -176,26 +205,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- CATEGORY NAVIGATION BAR -->
-        <nav class="cat-bar" aria-label="Category navigation">
-            <div class="cat-bar-inner">
-                {% set cat_dot_colors = {
-                    'ai-claims':'cat-dot-blue',
-                    'ai-underwriting':'cat-dot-teal',
-                    'ai-fraud-detection':'cat-dot-amber',
-                    'embedded-insurance':'cat-dot-indigo',
-                    'ai-policy-cx':'cat-dot-emerald',
-                    'decision-intelligence':'cat-dot-purple'
-                } %}
-                {% for sd in subdomains %}
-                <a href="/{{ sd.slug }}/" class="cat-bar-item{% if current_category_slug == sd.slug %} active{% endif %}">
-                    <span class="cat-bar-dot {{ cat_dot_colors.get(sd.slug, 'cat-dot-blue') }}"></span>
-                    {{ sd.name }}
-                </a>
-                {% endfor %}
-            </div>
-        </nav>
 
         <!-- AD (Category pages only: between Hero and Latest Articles) -->
         {% if show_hero_ad %}
