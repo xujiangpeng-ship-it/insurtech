@@ -394,5 +394,16 @@
     "subdomain_name": "Decision Intelligence",
     "date_display": "May 31, 2026",
     "generated_at": "2026-05-31T23:46:42.783947+00:00"
+  },
+  {
+    "keyword": "alternative data sources AI insurance underwriting guide",
+    "type": "explainer",
+    "subdomain": "ai-underwriting",
+    "url": "/ai-underwriting/why-68-of-pc-underwriters-still-ignore-90-of-their-dataand-how-ai-can-fix-it/",
+    "title": "Why 68% of P&C underwriters still ignore 90% of their data—and how AI can fix it",
+    "description": "I’ve watched underwriting teams drown in data for 15 years. They get 10,000 data points per risk: telematics pings, credit scores, IoT feeds, social sentiment,...",
+    "subdomain_name": "AI Underwriting",
+    "date_display": "June 01, 2026",
+    "generated_at": "2026-06-01T14:58:04.500710+00:00"
   }
 ]
