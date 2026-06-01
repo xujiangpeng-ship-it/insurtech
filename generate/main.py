@@ -446,7 +446,7 @@ def rebuild_category_pages(config) -> None:
 
 def main():
     parser = argparse.ArgumentParser(description="Insurtech Insights Content Generator")
-    parser.add_argument("--count", type=int, default=10, help="Number of articles to generate")
+    parser.add_argument("--count", type=int, default=1, help="Number of articles to generate")
     args = parser.parse_args()
 
     config = load_config()
