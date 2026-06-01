@@ -77,6 +77,17 @@
         .hero-stat-value{font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:-0.01em}
         .hero-stat-label{font-size:0.82rem;color:rgba(255,255,255,0.5);font-weight:500}
 
+        /* ====== CATEGORY BAR ====== */
+        .cat-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+        .cat-bar::-webkit-scrollbar{display:none}
+        .cat-bar-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px;display:flex;gap:8px;white-space:nowrap;min-width:max-content}
+        .cat-bar-item{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;text-decoration:none;font-size:0.8rem;font-weight:500;color:var(--text-secondary);background:var(--bg);border:1px solid var(--border);transition:all 0.15s;flex-shrink:0}
+        .cat-bar-item:hover{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
+        .cat-bar-item.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+        .cat-bar-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+        .cat-bar-item.active .cat-bar-dot{background:#fff}
+        .cat-dot-blue{background:var(--cat-blue)}.cat-dot-teal{background:var(--cat-teal)}.cat-dot-amber{background:var(--cat-amber)}.cat-dot-indigo{background:var(--cat-indigo)}.cat-dot-emerald{background:var(--cat-emerald)}.cat-dot-purple{background:var(--cat-purple)}
+
         /* ====== SECTION ====== */
         .section{max-width:var(--site-width);margin:0 auto;padding:56px 0}
         .section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:12px}
@@ -97,15 +108,6 @@
         .card .desc{font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
         .card .meta{font-size:0.78rem;color:var(--muted);font-weight:500;margin-top:auto;display:flex;align-items:center;gap:8px}
 
-        /* ====== CATEGORY GRID ====== */
-        .cat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-        .cat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px 20px;text-decoration:none;transition:all 0.2s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
-        .cat-card:hover{border-color:var(--accent);box-shadow:var(--shadow-md);transform:translateY(-1px)}
-        .cat-card .cat-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem}
-        .cat-card .cat-name{font-size:0.8rem;font-weight:600;color:var(--text);letter-spacing:-0.005em;line-height:1.2}
-        @media(max-width:860px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
-        @media(max-width:500px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
-
         /* ====== PAGINATION ====== */
         .pagination{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:40px;flex-wrap:wrap}
         .pagination a,.pagination span{padding:8px 14px;border-radius:var(--radius-sm);font-size:0.85rem;font-weight:500;text-decoration:none;transition:all 0.15s}
@@ -115,7 +117,8 @@
         .pagination .disabled{color:var(--muted-light);pointer-events:none;cursor:default}
 
         /* ====== AD ====== */
-        .ad-slot{background:var(--accent-light);border:1px dashed var(--accent);border-radius:var(--radius-md);padding:16px;text-align:center;margin:0 auto 32px;color:var(--muted);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;min-height:60px;display:flex;align-items:center;justify-content:center;max-width:728px}
+        .ad-hero-wrap{max-width:var(--site-width);margin:0 auto}
+        .ad-hero{max-width:728px;margin:0 auto}
 
         /* ====== FOOTER ====== */
         .footer{background:var(--navy);color:rgba(255,255,255,0.55);padding:48px 0 32px;margin-top:80px;font-size:0.85rem}
@@ -172,14 +175,46 @@
             </div>
         </section>
 
-        <!-- AD MID-PAGE -->
-        <div class="section" style="padding-bottom:28px">
-            <div style="max-width:728px;margin:0 auto">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3057389153621190" crossorigin="anonymous"></script>
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3057389153621190" data-ad-slot="5189099721" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <!-- CATEGORY NAVIGATION BAR -->
+        <nav class="cat-bar" aria-label="Category navigation">
+            <div class="cat-bar-inner">
+                
+                
+                <a href="/ai-claims/" class="cat-bar-item">
+                    <span class="cat-bar-dot cat-dot-blue"></span>
+                    AI Claims
+                </a>
+                
+                <a href="/ai-underwriting/" class="cat-bar-item">
+                    <span class="cat-bar-dot cat-dot-teal"></span>
+                    AI Underwriting
+                </a>
+                
+                <a href="/ai-fraud-detection/" class="cat-bar-item">
+                    <span class="cat-bar-dot cat-dot-amber"></span>
+                    AI Fraud Detection
+                </a>
+                
+                <a href="/embedded-insurance/" class="cat-bar-item">
+                    <span class="cat-bar-dot cat-dot-indigo"></span>
+                    Embedded Insurance
+                </a>
+                
+                <a href="/ai-policy-cx/" class="cat-bar-item">
+                    <span class="cat-bar-dot cat-dot-emerald"></span>
+                    AI Policy & CX
+                </a>
+                
+                <a href="/decision-intelligence/" class="cat-bar-item">
+                    <span class="cat-bar-dot cat-dot-purple"></span>
+                    Decision Intelligence
+                </a>
+                
             </div>
-        </div>
+        </nav>
+
+        <!-- AD (Category pages only: between Hero and Latest Articles) -->
+        
 
         <!-- ARTICLES SECTION -->
         <div class="section" style="padding-top:20px">
@@ -227,7 +262,7 @@
                 </a>
                 
                 
-                <!-- AdSense In-Feed -->
+                <!-- AdSense In-Feed (homepage only) -->
                 <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:160px;background:var(--accent-light);border:1px dashed var(--accent)">
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3057389153621190" crossorigin="anonymous"></script>
                     <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3057389153621190" data-ad-slot="8131488063"></ins>
@@ -262,7 +297,6 @@
                 
             </div>
 
-            <!-- PAGINATION -->
             
 
             
