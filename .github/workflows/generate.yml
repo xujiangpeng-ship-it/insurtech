@@ -2,8 +2,7 @@ name: Distributed Content Generation
 
 on:
   schedule:
-    - cron: '0 0,5,10,15,20 * * *'
-    - cron: '30 2,7,12,17,22 * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 concurrency: generate
@@ -31,7 +30,7 @@ jobs:
         env:
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
-        run: python generate/main.py --count 2
+        run: python generate/main.py --count 1
 
       - name: Commit and push
         run: |
