@@ -106,6 +106,14 @@
         @media(max-width:860px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
         @media(max-width:500px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
 
+        /* ====== PAGINATION ====== */
+        .pagination{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:40px;flex-wrap:wrap}
+        .pagination a,.pagination span{padding:8px 14px;border-radius:var(--radius-sm);font-size:0.85rem;font-weight:500;text-decoration:none;transition:all 0.15s}
+        .pagination a{background:var(--surface);border:1px solid var(--border);color:var(--text-secondary)}
+        .pagination a:hover{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
+        .pagination .current{background:var(--accent);border:1px solid var(--accent);color:#fff;font-weight:600}
+        .pagination .disabled{color:var(--muted-light);pointer-events:none;cursor:default}
+
         /* ====== AD ====== */
         .ad-slot{background:var(--accent-light);border:1px dashed var(--accent);border-radius:var(--radius-md);padding:16px;text-align:center;margin:0 auto 32px;color:var(--muted);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;min-height:60px;display:flex;align-items:center;justify-content:center;max-width:728px}
 
@@ -154,12 +162,11 @@
         <!-- HERO -->
         <section class="hero">
             <div class="hero-inner">
-                <div class="hero-badge"><span class="pulse"></span> Sharp Insights Provided</div>
-                <h1>AI meets Insurance<br>Technology</h1>
-                <p class="hero-subtitle">In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence.</p>
+                <div class="hero-badge"><span class="pulse"></span> Policy & CX</div>
+                <h1>AI-Powered Policy<br>& Customer Experience</h1>
+                <p class="hero-subtitle">From chatbots to hyper-personalization — how AI is transforming policy administration and customer retention.</p>
                 <div class="hero-stats">
                     <div class="hero-stat"><span class="hero-stat-value">5+</span><span class="hero-stat-label">Articles</span></div>
-                    <div class="hero-stat"><span class="hero-stat-value">6</span><span class="hero-stat-label">Domains</span></div>
                     <div class="hero-stat"><span class="hero-stat-value">Daily</span><span class="hero-stat-label">Updates</span></div>
                 </div>
             </div>
@@ -174,10 +181,10 @@
             </div>
         </div>
 
-        <!-- LATEST ARTICLES -->
+        <!-- ARTICLES SECTION -->
         <div class="section" style="padding-top:20px">
             <div class="section-header">
-                <h2>Most Viewed Articles</h2>
+                <h2>Latest Articles</h2>
             </div>
 
             
@@ -185,20 +192,29 @@
                 
                 
                 
-                <a href="/ai-policy-cx/why-78-of-policyholders-quit-a-call-after-90-secondsand-how-voice-ai-keeps-them/" class="card">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-emerald">Ai Policy Cx</span>
-                    <h3>Why 78% of policyholders quit a call after 90 seconds—and how voice AI keeps them on the line</h3>
-                    <span class="meta"></span>
-                </a>
-                
-                
-                
                 <a href="/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/" class="card">
                     <span class="card-accent"></span>
                     <span class="tag tag-emerald">Ai Policy Cx</span>
                     <h3>Why 70% of carriers won’t have a profitable AI chatbot by 2026</h3>
-                    <span class="meta"></span>
+                    <span class="meta">May 31, 2026</span>
+                </a>
+                
+                
+                
+                <a href="/ai-policy-cx/why-78-of-policyholders-quit-a-call-after-90-secondsand-how-voice-ai-keeps-them/" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-emerald">Ai Policy Cx</span>
+                    <h3>Why 78% of policyholders quit a call after 90 seconds—and how voice AI keeps them on the line</h3>
+                    <span class="meta">May 31, 2026</span>
+                </a>
+                
+                
+                
+                <a href="/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-emerald">Ai Policy Cx</span>
+                    <h3>AI Policy Administration Automation: A Practitioner’s Implementation Guide</h3>
+                    <span class="meta">May 31, 2026</span>
                 </a>
                 
                 
@@ -207,7 +223,7 @@
                     <span class="card-accent"></span>
                     <span class="tag tag-emerald">Ai Policy Cx</span>
                     <h3>Omnichannel Insurance CX Orchestration: A Practitioner’s Implementation Guide</h3>
-                    <span class="meta"></span>
+                    <span class="meta">May 31, 2026</span>
                 </a>
                 
                 
@@ -216,26 +232,14 @@
                     <span class="card-accent"></span>
                     <span class="tag tag-emerald">Ai Policy Cx</span>
                     <h3>AI Policy Administration Automation in Insurance: A Practitioner’s Implementation Guide</h3>
-                    <span class="meta"></span>
-                </a>
-                
-                
-                <!-- AdSense In-Feed -->
-                <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:160px;background:var(--accent-light);border:1px dashed var(--accent)">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3057389153621190" crossorigin="anonymous"></script>
-                    <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3057389153621190" data-ad-slot="8131488063"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-                
-                
-                <a href="/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/" class="card">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-emerald">Ai Policy Cx</span>
-                    <h3>AI Policy Administration Automation: A Practitioner’s Implementation Guide</h3>
-                    <span class="meta"></span>
+                    <span class="meta">May 31, 2026</span>
                 </a>
                 
             </div>
+
+            <!-- PAGINATION -->
+            
+
             
         </div>
     </main>

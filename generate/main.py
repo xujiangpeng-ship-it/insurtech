@@ -28,6 +28,39 @@ logger = logging.getLogger("main")
 
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
+
+CATEGORY_HERO = {
+    "ai-claims": {
+        "badge": "Claims Automation",
+        "heading": "AI Claims<br>Intelligence",
+        "subtitle": "From FNOL to settlement — how machine learning is rewriting the claims playbook. Real implementations, real results."
+    },
+    "ai-underwriting": {
+        "badge": "Underwriting Innovation",
+        "heading": "AI Underwriting<br>Insights",
+        "subtitle": "Risk assessment at machine speed. In-depth analysis of automated underwriting engines and their impact on loss ratios."
+    },
+    "ai-fraud-detection": {
+        "badge": "Fraud Prevention",
+        "heading": "AI Fraud Detection<br>Deep Dives",
+        "subtitle": "Catching what humans miss. Technical breakdowns of anomaly detection, network analysis, and predictive fraud scoring."
+    },
+    "embedded-insurance": {
+        "badge": "Embedded Insurance",
+        "heading": "Embedded Insurance<br>Frontier",
+        "subtitle": "Insurance where customers already are — inside platforms, checkout flows, and digital ecosystems. The architecture and economics."
+    },
+    "ai-policy-cx": {
+        "badge": "Policy & CX",
+        "heading": "AI-Powered Policy<br>& Customer Experience",
+        "subtitle": "From chatbots to hyper-personalization — how AI is transforming policy administration and customer retention."
+    },
+    "decision-intelligence": {
+        "badge": "Decision Science",
+        "heading": "Decision Intelligence<br>for Insurance",
+        "subtitle": "Data strategy, analytics maturity, and the organizational transformation behind AI adoption in insurance."
+    }
+}
 KEYWORDS_DIR = ROOT / "keywords"
 TEMPLATES_DIR = ROOT / "templates"
 
@@ -309,7 +342,19 @@ def render_article(config, keyword_entry, html_body: str) -> Path:
 # ---------------------------------------------------------------------------
 
 def _collect_all_articles() -> list:
-    """Scan content/ for all published articles."""
+    """Scan content/ for all published articles, enriched with index.json metadata."""
+    # Build lookup from index.json for date_display and generated_at
+    index_lookup = {}
+    index_path = CONTENT_DIR / "index.json"
+    if index_path.exists():
+        entries = json.loads(index_path.read_text(encoding="utf-8"))
+        for e in entries:
+            url = e.get("url", "")
+            index_lookup[url] = {
+                "date_display": e.get("date_display", ""),
+                "generated_at": e.get("generated_at", ""),
+            }
+
     articles = []
     for sf in CONTENT_DIR.iterdir():
         if not sf.is_dir():
@@ -319,16 +364,19 @@ def _collect_all_articles() -> list:
                 html = (af / "index.html").read_text(encoding="utf-8")
                 title = extract_title(html)
                 desc = generate_description(html)
+                url = f"/{sf.name}/{af.name}/"
+                meta = index_lookup.get(url, {})
                 articles.append({
-                    "url": f"/{sf.name}/{af.name}/",
+                    "url": url,
                     "title": title,
                     "description": desc,
                     "subdomain": sf.name,
                     "slug": af.name,
                     "subdomain_name": sf.name.replace("-", " ").title(),
-                    "date_display": ""  # approximate; we store timestamps in keyword JSON
+                    "date_display": meta.get("date_display", ""),
+                    "generated_at": meta.get("generated_at", ""),
                 })
-    articles.sort(key=lambda a: a["url"], reverse=True)
+    articles.sort(key=lambda a: a["generated_at"] or a["url"], reverse=True)
     return articles
 
 
@@ -338,6 +386,7 @@ def rebuild_home(config) -> None:
     _random.seed(42)  # deterministic per build
     jinja_env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     all_articles = _collect_all_articles()
+    total_count = len(all_articles)
 
     # Group articles by subdomain
     by_sd = {}
@@ -359,7 +408,6 @@ def rebuild_home(config) -> None:
 
     adsense = config.get("adsense", {})
     pub_id = adsense.get("pub_id", "")
-    ad_slots = adsense.get("ad_units", {})
 
     html = jinja_env.get_template("home.html").render(
         site_name=config["site"]["name"],
@@ -368,11 +416,18 @@ def rebuild_home(config) -> None:
         articles=picked,
         canonical_url="/",
         adsense_pub_id=pub_id or None,
-        ad_slot_top=ad_slots.get("top_banner", {}).get("slot", ""),
+        ad_slot_top="",
         ga_id=config.get("analytics", {}).get("ga_id", ""),
+        is_category_page=False,
+        hero_badge_text="Sharp Insights Provided",
+        hero_heading="AI meets Insurance<br>Technology",
+        hero_subtitle_text="In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence.",
+        total_articles_count=total_count,
+        section_title="Most Viewed Articles",
+        pagination=None,
     )
     (CONTENT_DIR / "index.html").write_text(html, encoding="utf-8")
-    logger.info("Rebuilt home page with %d articles.", len(picked))
+    logger.info("Rebuilt home page with %d articles (total: %d).", len(picked), total_count)
 
 
 def rebuild_sitemap(config) -> None:
@@ -414,30 +469,68 @@ def rebuild_index_json(articles_meta: list) -> None:
 # ---------------------------------------------------------------------------
 
 def rebuild_category_pages(config) -> None:
-    """Generate index.html for each subdomain category."""
+    """Generate index.html (and pageN.html) for each subdomain category, sorted by date."""
+    import math
     jinja_env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     all_articles = _collect_all_articles()
+    total_count = len(all_articles)
     adsense = config.get("adsense", {})
     pub_id = adsense.get("pub_id", "")
     ad_slots = adsense.get("ad_units", {})
+    PAGE_SIZE = 10
 
     for sd in config["subdomains"]:
         slug = sd["slug"]
         cat_articles = [a for a in all_articles if a["url"].startswith(f"/{slug}/")]
-        html = jinja_env.get_template("home.html").render(
-            site_name=f"{sd['name']} — {config['site']['name']}",
-            subdomains=config["subdomains"],
-            current_year=datetime.now(timezone.utc).year,
-            articles=cat_articles[:20],
-            canonical_url=f"/{slug}/",
-            adsense_pub_id=pub_id or None,
-            ad_slot_top=ad_slots.get("top_banner", {}).get("slot", ""),
-            ga_id=config.get("analytics", {}).get("ga_id", ""),
-        )
-        out_dir = CONTENT_DIR / slug
-        out_dir.mkdir(parents=True, exist_ok=True)
-        (out_dir / "index.html").write_text(html, encoding="utf-8")
-        logger.info("Rebuilt category page: /%s/ (%d articles)", slug, len(cat_articles[:20]))
+        # Already sorted by generated_at from _collect_all_articles
+        cat_articles.sort(key=lambda a: a["generated_at"] or "", reverse=True)
+
+        hero = CATEGORY_HERO.get(slug, {
+            "badge": sd.get("name", slug),
+            "heading": sd.get("name", slug),
+            "subtitle": ""
+        })
+
+        base_url = f"/{slug}/"
+        total_pages = max(1, math.ceil(len(cat_articles) / PAGE_SIZE))
+
+        for page in range(1, total_pages + 1):
+            start = (page - 1) * PAGE_SIZE
+            end = start + PAGE_SIZE
+            page_articles = cat_articles[start:end]
+
+            pagination = {
+                "current_page": page,
+                "total_pages": total_pages,
+                "base_url": base_url,
+            }
+
+            html = jinja_env.get_template("home.html").render(
+                site_name=f"{sd['name']} — {config['site']['name']}",
+                subdomains=config["subdomains"],
+                current_year=datetime.now(timezone.utc).year,
+                articles=page_articles,
+                canonical_url=f"/{slug}/",
+                adsense_pub_id=pub_id or None,
+                ad_slot_top=ad_slots.get("top_banner", {}).get("slot", ""),
+                ga_id=config.get("analytics", {}).get("ga_id", ""),
+                is_category_page=True,
+                hero_badge_text=hero["badge"],
+                hero_heading=hero["heading"],
+                hero_subtitle_text=hero["subtitle"],
+                total_articles_count=len(cat_articles),
+                section_title="Latest Articles",
+                pagination=pagination,
+            )
+
+            out_dir = CONTENT_DIR / slug
+            out_dir.mkdir(parents=True, exist_ok=True)
+            if page == 1:
+                (out_dir / "index.html").write_text(html, encoding="utf-8")
+            else:
+                (out_dir / f"page{page}.html").write_text(html, encoding="utf-8")
+
+        logger.info("Rebuilt category page: /%s/ (%d articles, %d pages)", slug, len(cat_articles), total_pages)
 
 
 # ---------------------------------------------------------------------------

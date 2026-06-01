@@ -106,6 +106,14 @@
         @media(max-width:860px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
         @media(max-width:500px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
 
+        /* ====== PAGINATION ====== */
+        .pagination{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:40px;flex-wrap:wrap}
+        .pagination a,.pagination span{padding:8px 14px;border-radius:var(--radius-sm);font-size:0.85rem;font-weight:500;text-decoration:none;transition:all 0.15s}
+        .pagination a{background:var(--surface);border:1px solid var(--border);color:var(--text-secondary)}
+        .pagination a:hover{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
+        .pagination .current{background:var(--accent);border:1px solid var(--accent);color:#fff;font-weight:600}
+        .pagination .disabled{color:var(--muted-light);pointer-events:none;cursor:default}
+
         /* ====== AD ====== */
         .ad-slot{background:var(--accent-light);border:1px dashed var(--accent);border-radius:var(--radius-md);padding:16px;text-align:center;margin:0 auto 32px;color:var(--muted);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;min-height:60px;display:flex;align-items:center;justify-content:center;max-width:728px}
 
@@ -154,12 +162,11 @@
         <!-- HERO -->
         <section class="hero">
             <div class="hero-inner">
-                <div class="hero-badge"><span class="pulse"></span> Sharp Insights Provided</div>
-                <h1>AI meets Insurance<br>Technology</h1>
-                <p class="hero-subtitle">In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence.</p>
+                <div class="hero-badge"><span class="pulse"></span> Underwriting Innovation</div>
+                <h1>AI Underwriting<br>Insights</h1>
+                <p class="hero-subtitle">Risk assessment at machine speed. In-depth analysis of automated underwriting engines and their impact on loss ratios.</p>
                 <div class="hero-stats">
-                    <div class="hero-stat"><span class="hero-stat-value">6+</span><span class="hero-stat-label">Articles</span></div>
-                    <div class="hero-stat"><span class="hero-stat-value">6</span><span class="hero-stat-label">Domains</span></div>
+                    <div class="hero-stat"><span class="hero-stat-value">5+</span><span class="hero-stat-label">Articles</span></div>
                     <div class="hero-stat"><span class="hero-stat-value">Daily</span><span class="hero-stat-label">Updates</span></div>
                 </div>
             </div>
@@ -174,10 +181,10 @@
             </div>
         </div>
 
-        <!-- LATEST ARTICLES -->
+        <!-- ARTICLES SECTION -->
         <div class="section" style="padding-top:20px">
             <div class="section-header">
-                <h2>Most Viewed Articles</h2>
+                <h2>Latest Articles</h2>
             </div>
 
             
@@ -189,25 +196,7 @@
                     <span class="card-accent"></span>
                     <span class="tag tag-teal">Ai Underwriting</span>
                     <h3>Why 68% of P&C underwriters still ignore 90% of their data—and how AI can fix it</h3>
-                    <span class="meta"></span>
-                </a>
-                
-                
-                
-                <a href="/ai-underwriting/is-your-underwriting-data-still-stuck-in-the-1990s/" class="card">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-teal">Ai Underwriting</span>
-                    <h3>Is Your Underwriting Data Still Stuck in the 1990s?</h3>
-                    <span class="meta"></span>
-                </a>
-                
-                
-                
-                <a href="/ai-underwriting/how-hiscox-slashed-quote-cycle-time-by-99-with-ai-and-what-it-cost-them/" class="card">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-teal">Ai Underwriting</span>
-                    <h3>How Hiscox Slashed Quote Cycle Time by 99% with AI – And What It Cost Them</h3>
-                    <span class="meta"></span>
+                    <span class="meta">June 01, 2026</span>
                 </a>
                 
                 
@@ -216,23 +205,7 @@
                     <span class="card-accent"></span>
                     <span class="tag tag-teal">Ai Underwriting</span>
                     <h3>AI Risk Assessment in Insurance: 5 Platforms Compared</h3>
-                    <span class="meta"></span>
-                </a>
-                
-                
-                <!-- AdSense In-Feed -->
-                <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:160px;background:var(--accent-light);border:1px dashed var(--accent)">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3057389153621190" crossorigin="anonymous"></script>
-                    <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3057389153621190" data-ad-slot="8131488063"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-                
-                
-                <a href="/ai-underwriting/ai-driven-life-insurance-underwriting-will-hit-60-adoption-by-2026-per-deloitte/" class="card">
-                    <span class="card-accent"></span>
-                    <span class="tag tag-teal">Ai Underwriting</span>
-                    <h3>AI-Driven Life Insurance Underwriting Will Hit 60% Adoption by 2026, Per Deloitte</h3>
-                    <span class="meta"></span>
+                    <span class="meta">May 31, 2026</span>
                 </a>
                 
                 
@@ -241,10 +214,32 @@
                     <span class="card-accent"></span>
                     <span class="tag tag-teal">Ai Underwriting</span>
                     <h3>AI Automated Underwriting Workflow Implementation: A Practitioner's Guide</h3>
-                    <span class="meta"></span>
+                    <span class="meta">May 31, 2026</span>
+                </a>
+                
+                
+                
+                <a href="/ai-underwriting/how-hiscox-slashed-quote-cycle-time-by-99-with-ai-and-what-it-cost-them/" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-teal">Ai Underwriting</span>
+                    <h3>How Hiscox Slashed Quote Cycle Time by 99% with AI – And What It Cost Them</h3>
+                    <span class="meta">May 31, 2026</span>
+                </a>
+                
+                
+                
+                <a href="/ai-underwriting/is-your-underwriting-data-still-stuck-in-the-1990s/" class="card">
+                    <span class="card-accent"></span>
+                    <span class="tag tag-teal">Ai Underwriting</span>
+                    <h3>Is Your Underwriting Data Still Stuck in the 1990s?</h3>
+                    <span class="meta">May 31, 2026</span>
                 </a>
                 
             </div>
+
+            <!-- PAGINATION -->
+            
+
             
         </div>
     </main>
