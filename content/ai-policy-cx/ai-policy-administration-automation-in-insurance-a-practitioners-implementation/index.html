@@ -418,6 +418,57 @@
 
 <p><strong>Trade-off:</strong> Kafka adds 50–100ms latency per event. For ultra-low latency (<100ms), use Redis Streams or AWS Kinesis Data Streams. But Kafka gives you exactly-once semantics and replayability—critical for audits.</p>
 
+<table border="1" cellpadding="4" cellspacing="0">
+<thead>
+<tr>
+<th>Model Component</th>
+<th>Architecture</th>
+<th>Training Data Required</th>
+<th>Inference Cost (per doc)</th>
+<th>Accuracy (F1/AUC)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Document parser</td>
+<td>LayoutLMv3 (fine-tuned)</td>
+<td>10k+ labeled insurance docs</td>
+<td>$0.003 (A100)</td>
+<td>F1 0.89</td>
+</tr>
+<tr>
+<td>Document parser (fallback)</td>
+<td>LayoutLMv3-base (pre-trained)</td>
+<td>None</td>
+<td>$0.001 (T4)</td>
+<td>F1 0.74</td>
+</tr>
+<tr>
+<td>Coverage classifier</td>
+<td>RoBERTa-base</td>
+<td>25k annotated policy docs</td>
+<td>$0.001</td>
+<td>F1 0.92</td>
+</tr>
+<tr>
+<td>NER (spaCy + rules)</td>
+<td>en_core_web_trf + custom patterns</td>
+<td>2k annotated examples</td>
+<td>$0.0005</td>
+<td>F1 0.85</td>
+</tr>
+<tr>
+<td>Risk scoring (XGBoost)</td>
+<td>200 estimators, max_depth=6</td>
+<td>3 years loss runs + ISO factors</td>
+<td>$0.0001</td>
+<td>AUC 0.84</td>
+</tr>
+</tbody>
+</table>
+
+
+
 <h3>8. Build Human-in-the-Loop Review Queues</h3>
 
 <p>Even with 80% automation, 20% of submissions need human review. Design queues that:</p>

@@ -201,6 +201,64 @@
 
 <p>Resource reality: Expect 6-9 months to go from pilot to production, with $250k-$500k in tooling and data cleanup costs for a mid-market carrier.</p>
 
+<table border="1" cellpadding="4" cellspacing="0">
+<thead>
+<tr>
+<th>Implementation Phase</th>
+<th>Duration</th>
+<th>Team Required</th>
+<th>Cost Range</th>
+<th>Primary Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data audit &amp; ingestion pipeline</td>
+<td>4-6 weeks</td>
+<td>1 data engineer, 1 domain expert</td>
+<td>$40k-$80k</td>
+<td>Dirty ACORD XML causing schema drift</td>
+</tr>
+<tr>
+<td>Canonical schema design + feature store</td>
+<td>3-4 weeks</td>
+<td>1 architect, 1 underwriter</td>
+<td>$30k-$50k</td>
+<td>Over-engineering niche product lines</td>
+</tr>
+<tr>
+<td>LLM extraction model (LayoutLMv3 fine-tune)</td>
+<td>6-8 weeks</td>
+<td>1 ML engineer, 10k+ labeled docs</td>
+<td>$80k-$120k</td>
+<td>Model hallucination on endorsements</td>
+</tr>
+<tr>
+<td>Risk scoring (XGBoost + SHAP)</td>
+<td>4-6 weeks</td>
+<td>1 data scientist, 3yr loss runs</td>
+<td>$60k-$90k</td>
+<td>Regulatory rejection if SHAP <0.65</td>
+</tr>
+<tr>
+<td>STP orchestration (Kafka + Faust)</td>
+<td>3-4 weeks</td>
+<td>1 backend engineer</td>
+<td>$25k-$40k</td>
+<td>Latency exceeding 500ms SLO</td>
+</tr>
+<tr>
+<td>Billing integration + dunning</td>
+<td>3-4 weeks</td>
+<td>1 billing specialist, 1 engineer</td>
+<td>$15k-$30k</td>
+<td>Mid-term premium miscalculation</td>
+</tr>
+</tbody>
+</table>
+
+
+
 <h3>Step 1: Define Your Policy Data Model (The Foundation)</h3>
 
 <p>Start with a canonical policy schema that handles 95% of your product lines. Don’t over-engineer for niche products—handle them via extension points.</p>

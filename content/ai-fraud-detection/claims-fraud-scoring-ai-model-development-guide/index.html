@@ -282,6 +282,78 @@ RETURN count(p) AS provider_count;</code></pre>
 
 <p>Real trade-off: <strong>Feature explosion increases model latency.</strong> We started with 200 features, but our REST API response time jumped from 200ms to 800ms. We pruned to 120 features using SHAP importance and a 100ms latency budget. The top 20 features drove 85% of the model’s predictive power.</p>
 
+<table border="1" cellpadding="4" cellspacing="0">
+<thead>
+<tr>
+<th>Feature Category</th>
+<th>Top Signal</th>
+<th>SHAP Importance</th>
+<th>Data Source</th>
+<th>Risk Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Behavioral</td>
+<td>Claim velocity (12-month claims per policy)</td>
+<td>0.184</td>
+<td>Internal claims warehouse</td>
+<td>>5 claims = high fraud risk</td>
+</tr>
+<tr>
+<td>Behavioral</td>
+<td>Payment lag (days reported to first payment)</td>
+<td>0.142</td>
+<td>Payment ledger</td>
+<td>>45 days = elevated risk</td>
+</tr>
+<tr>
+<td>Behavioral</td>
+<td>Adjuster hops (count per claim)</td>
+<td>0.098</td>
+<td>Claims assignment log</td>
+<td>>3 = suspicious</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>Repair shop connections per claim</td>
+<td>0.133</td>
+<td>Neo4j graph DB</td>
+<td>>2 shops = potential kickback</td>
+</tr>
+<tr>
+<td>External</td>
+<td>MVR risk score (LexisNexis)</td>
+<td>0.121</td>
+<td>LexisNexis API</td>
+<td>>75 = high risk</td>
+</tr>
+<tr>
+<td>External</td>
+<td>PII mismatch score (Accurint)</td>
+<td>0.107</td>
+<td>Accurint API</td>
+<td>>80 = synthetic identity risk</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>Medical provider count per BI claim</td>
+<td>0.089</td>
+<td>Neo4j graph DB</td>
+<td>>3 = fraud ring signal</td>
+</tr>
+<tr>
+<td>External</td>
+<td>Weather anomaly score (ZIP-level)</td>
+<td>0.061</td>
+<td>NOAA weather API</td>
+<td>>2 std dev = suspicious</td>
+</tr>
+</tbody>
+</table>
+
+
+
 ---
 
 <h3>Step 3: Labeling Strategy and Active Learning</h3>
