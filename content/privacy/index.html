@@ -1,61 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy | Insurtech Insights</title>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.7;color:#1a1a1a;background:#fafafa}
-main{max-width:800px;margin:0 auto;padding:40px 20px}
-main h1{font-size:1.8rem;margin-bottom:16px}
-main h2{font-size:1.2rem;margin-top:24px;margin-bottom:8px}
-main p{margin-bottom:14px}
-main ul{margin:0 0 16px 24px}
-main li{margin-bottom:6px}
-nav a:hover{color:#1a1a1a}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Insurtech Insights</title>
+    <meta name="description" content="Privacy Policy for Insurtech Insights — how we collect and handle data.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0B1121;
+            --accent: #2563EB;
+            --teal: #0D9488;
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --text: #1E293B;
+            --text-secondary: #475569;
+            --muted: #64748B;
+            --border: #E2E8F0;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --font-sans: 'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+            --site-width: 1200px;
+            --nav-height: 60px;
+            --cat-blue:#2563EB;--cat-teal:#0D9488;--cat-amber:#D97706;--cat-indigo:#4F46E5;--cat-emerald:#059669;--cat-purple:#7C3AED;
+        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+        body{font-family:var(--font-sans);line-height:1.75;color:var(--text);background:var(--bg);font-size:1rem}
+
+        .nav{background:var(--navy);position:sticky;top:0;z-index:100;height:var(--nav-height);border-bottom:1px solid rgba(255,255,255,0.08)}
+        .nav-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:center}
+        .nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+        .nav-logo-img{height:36px;width:auto;display:block}
+        @media(max-width:768px){.nav-logo-img{height:28px}}
+        @media(max-width:480px){.nav-logo-img{height:24px}}
+
+        .cat-bar{display:flex;align-items:center;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:8px 0;max-width:var(--site-width);margin:0 auto}
+        .cat-bar-track{flex:1;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;min-width:0}
+        .cat-bar-track::-webkit-scrollbar{display:none}
+        .cat-bar-inner{display:flex;gap:8px;white-space:nowrap;min-width:max-content;padding:0 4px;justify-content:center}
+        .cat-bar-item{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;text-decoration:none;font-size:0.8rem;font-weight:500;color:var(--text-secondary);background:var(--bg);border:1px solid var(--border);transition:all 0.15s;flex-shrink:0}
+        .cat-bar-item:hover{background:#EFF6FF;border-color:var(--accent);color:var(--accent)}
+        .cat-bar-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+        .main{padding:0 24px}
+        .page-container{max-width:800px;margin:0 auto;padding:56px 0}
+        .page-container h1{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;letter-spacing:-0.02em;color:var(--navy);margin-bottom:12px;line-height:1.2}
+        .page-container h2{font-size:1.2rem;font-weight:700;color:var(--navy);margin-top:36px;margin-bottom:12px;letter-spacing:-0.01em}
+        .page-container p{margin-bottom:16px;color:var(--text-secondary);line-height:1.8}
+        .page-container a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+        .page-container a:hover{color:#1D4ED8}
+        .page-container ul{margin:8px 0 20px 24px;color:var(--text-secondary)}
+        .page-container li{margin-bottom:8px;line-height:1.7}
+        .page-container .updated{font-size:0.85rem;color:var(--muted);margin-bottom:32px}
+
+        .footer{background:var(--navy);color:rgba(255,255,255,0.55);padding:48px 0 32px;margin-top:80px;font-size:0.85rem}
+        .footer-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px}
+        .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    </style>
 </head>
 <body>
-<nav style="background:#fff;border-bottom:1px solid #e5e5e5;padding:16px 0">
-    <div style="max-width:1100px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between">
-        <a href="/" style="font-size:1.3rem;font-weight:700;color:#1a1a1a;text-decoration:none">Insurtech Insights</a>
-        <div style="display:flex;gap:16px">
-            <a href="/ai-claims/" style="color:#555;text-decoration:none;font-size:.85rem">AI Claims</a>
-            <a href="/ai-underwriting/" style="color:#555;text-decoration:none;font-size:.85rem">AI Underwriting</a>
-            <a href="/ai-fraud-detection/" style="color:#555;text-decoration:none;font-size:.85rem">AI Fraud Detection</a>
-            <a href="/embedded-insurance/" style="color:#555;text-decoration:none;font-size:.85rem">Embedded Insurance</a>
-            <a href="/ai-policy-cx/" style="color:#555;text-decoration:none;font-size:.85rem">AI Policy &amp; CX</a>
-            <a href="/decision-intelligence/" style="color:#555;text-decoration:none;font-size:.85rem">Decision Intelligence</a>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <img src="/images/logo.png" alt="Insurtech Insights" class="nav-logo-img">
+            </a>
         </div>
-    </div>
-</nav>
-<main>
-<h1>Privacy Policy</h1>
-<p>Last updated: May 31, 2026</p>
-<h2>Information We Collect</h2>
-<p>We collect minimal information through standard web server logs (IP address, browser type, referring pages, timestamps) for operational purposes. We do not require user accounts, collect personal identifying data, or track individual user behavior across sessions.</p>
-<h2>Cookies and Tracking</h2>
-<p>Google AdSense, our advertising partner, may use cookies and web beacons to serve ads based on prior visits to our site or other websites. These cookies allow Google and its partners to serve ads based on browsing history. You can opt out of personalized advertising by visiting <a href="https://adssettings.google.com" style="color:#2563eb;">Google Ads Settings</a>.</p>
-<p>We use Google Analytics to understand aggregate site traffic and usage patterns. Google Analytics may set cookies for this purpose.</p>
-<h2>Third-Party Services</h2>
-<ul>
-<li><strong>Google AdSense:</strong> <a href="https://policies.google.com/technologies/ads" style="color:#2563eb;">How Google uses data</a></li>
-<li><strong>Google Analytics:</strong> <a href="https://policies.google.com/privacy" style="color:#2563eb;">Google Privacy Policy</a></li>
-</ul>
-<h2>Data Sharing</h2>
-<p>We do not sell, trade, or share personal information with third parties except as necessary to operate the site (e.g., CDN, hosting provider).</p>
-<h2>Children's Privacy</h2>
-<p>Our site is not directed at children under 13. We do not knowingly collect data from children under 13.</p>
-<h2>Changes to This Policy</h2>
-<p>We may update this policy periodically. Changes will be posted on this page with an updated date.</p>
-<h2>Contact</h2>
-<p>For privacy-related questions: hello@insurtechinsights.com</p>
-</main>
-<footer style="background:#fff;border-top:1px solid #eee;padding:32px 0;text-align:center;color:#999;font-size:.85rem">
-    <div style="max-width:1100px;margin:0 auto;padding:0 20px">
-        <span>&copy; 2026 Insurtech Insights. All rights reserved.</span>
-    </div>
-</footer>
+    </nav>
+
+    <nav class="cat-bar" aria-label="Category navigation">
+        <div class="cat-bar-track">
+            <div class="cat-bar-inner">
+                <a href="/ai-claims/" class="cat-bar-item"><span class="cat-bar-dot" style="background:var(--cat-blue)"></span>AI Claims</a>
+                <a href="/ai-underwriting/" class="cat-bar-item"><span class="cat-bar-dot" style="background:var(--cat-teal)"></span>AI Underwriting</a>
+                <a href="/ai-fraud-detection/" class="cat-bar-item"><span class="cat-bar-dot" style="background:var(--cat-amber)"></span>AI Fraud Detection</a>
+                <a href="/embedded-insurance/" class="cat-bar-item"><span class="cat-bar-dot" style="background:var(--cat-indigo)"></span>Embedded Insurance</a>
+                <a href="/ai-policy-cx/" class="cat-bar-item"><span class="cat-bar-dot" style="background:var(--cat-emerald)"></span>AI Policy &amp; CX</a>
+                <a href="/decision-intelligence/" class="cat-bar-item"><span class="cat-bar-dot" style="background:var(--cat-purple)"></span>Decision Intelligence</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="page-container">
+            <h1>Privacy Policy</h1>
+            <p class="updated">Last updated: June 4, 2026</p>
+
+            <h2>Information We Collect</h2>
+            <p>We collect minimal information through standard web server logs, including IP addresses, browser types, referring pages, and timestamps, solely for operational and security purposes. We do not require user accounts, collect personally identifiable information, or track individual user behavior across browsing sessions.</p>
+
+            <h2>Cookies and Tracking Technologies</h2>
+            <p>Google AdSense, our advertising partner, may use cookies and web beacons to serve advertisements based on prior visits to our site or other websites. These cookies enable Google and its partners to deliver interest-based advertising. You may opt out of personalized advertising by visiting <a href="https://adssettings.google.com">Google Ads Settings</a>.</p>
+            <p>We use Google Analytics to understand aggregate site traffic and usage patterns. Google Analytics may set cookies for this purpose. You can learn more about how Google uses data at <a href="https://policies.google.com/technologies/ads">Google's Advertising Policies</a>.</p>
+
+            <h2>Third-Party Services</h2>
+            <ul>
+                <li><strong>Google AdSense</strong> — <a href="https://policies.google.com/technologies/ads">How Google uses data when you use our partners' sites or apps</a></li>
+                <li><strong>Google Analytics</strong> — <a href="https://policies.google.com/privacy">Google Privacy &amp; Terms</a></li>
+            </ul>
+
+            <h2>Data Sharing</h2>
+            <p>We do not sell, trade, rent, or otherwise share personal information with third parties, except as necessary to operate the site (e.g., content delivery networks, hosting providers). Any third-party service providers we engage are contractually obligated to protect data in accordance with applicable laws.</p>
+
+            <h2>Children's Privacy</h2>
+            <p>Our site is not directed at individuals under the age of 13. We do not knowingly collect or solicit personal data from children under 13. If we become aware that we have inadvertently collected such data, we will take prompt steps to delete it.</p>
+
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy periodically to reflect changes in our practices or applicable legal requirements. The date of the most recent revision will be indicated at the top of this page. We encourage you to review this policy from time to time.</p>
+
+            <h2>Contact</h2>
+            <p>For questions or concerns regarding this Privacy Policy, please contact us at <strong>contact@821224.com</strong>.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <span>&copy; 2026 Insurtech Insights. All rights reserved.</span>
+                <span>
+                    <a href="/about/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">About</a>
+                    <a href="/contact/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">Contact</a>
+                    <a href="/privacy/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">Privacy Policy</a>
+                    <a href="/terms/" style="color:rgba(255,255,255,0.55);text-decoration:none">Terms</a>
+                </span>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
