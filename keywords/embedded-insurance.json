@@ -59,8 +59,8 @@
     "subdomain": "embedded-insurance",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "pending"
   },
   {
     "keyword": "white label embedded insurance AI platforms for carriers",
@@ -122,8 +122,8 @@
     "subdomain": "embedded-insurance",
     "difficulty": "medium",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "pending"
   },
   {
     "keyword": "BNPL embedded insurance AI risk scoring models",

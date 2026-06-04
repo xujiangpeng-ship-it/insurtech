@@ -271,16 +271,17 @@ def split_content_at_third(html_body: str) -> tuple:
         return html_body, ""
 
     split_idx = max(1, len(paragraphs) // 3)
-    accumulated = []
-    rest_accumulated = []
-    found_split = False
 
+    search_start = 0
     for i, para in enumerate(paragraphs):
-        if not found_split and i >= split_idx:
-            first = html_body[:html_body.index(para)]
-            rest = html_body[html_body.index(para):]
+        idx = html_body.find(para, search_start)
+        if idx < 0:
+            return html_body, ""
+        if i >= split_idx:
+            first = html_body[:idx]
+            rest = html_body[idx:]
             return first.strip(), rest.strip()
-        accumulated.append(para)
+        search_start = idx + len(para)
 
     return html_body, ""
 
