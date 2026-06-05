@@ -220,7 +220,7 @@
 </ul>
 <p><strong>Rules Engine:</strong> Drools rule engine with underwriting guidelines (e.g., “if roof age > 20 years, require inspection”)</p>
 <p><strong>Orchestration:</strong> Apache Airflow DAGs with retries and model versioning</p>
-</div>
+
 
 <p><strong>Trade-off:</strong> Fine-tuning LayoutLMv3 requires 10k+ labeled documents. If you don’t have that, use a pre-trained model like Microsoft’s LayoutLMv3-base and accept 15% lower F1 on endorsements. You’ll spend more time on post-processing validation.</p>
 
@@ -234,7 +234,7 @@
 <p>outputs = model(**inputs)</p>
 <p>predictions = outputs.logits.argmax(-1).squeeze().tolist()</p>
 <p>```</p>
-</div>
+
 
 <p>Note: Use GPU instances (A100 40GB) for inference. Batch size of 16 gives ~100 ms per document. Scale horizontally with Ray Serve.</p>
 
@@ -264,15 +264,6 @@
 <p>    general_liability_limit: float = Field(..., gt=0)</p>
 <p>    property_deductible: float = Field(..., ge=0)</p>
 <p>    @validator('coverage_lines')</p>
-                
-                    
-                </div>
-                
-                    
-                </div>
-                
-                    
-                </div>
                 <!-- Ad Mid-Content -->
                 <div class="ad-slot" style="margin:32px 0">
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3057389153621190" crossorigin="anonymous"></script>
@@ -285,7 +276,7 @@
 <p>            raise ValueError("Missing required coverage lines")</p>
 <p>        return v</p>
 <p>```</p>
-</div>
+
 
 <h3>5. Integrate with Your Underwriting Engine</h3>
 
@@ -317,7 +308,7 @@
 <p>model.fit(X_train, y_train)</p>
 <p>print("AUC:", roc_auc_score(y_test, model.predict_proba(X_test)[:,1]))</p>
 <p>```</p>
-</div>
+
 
 <p><strong>Integration with PAS:</strong> Use a middleware service (Node.js + Express) to:</p>
 <ul>
@@ -367,7 +358,7 @@
 <p>    python_callable: issue_endorsement</p>
 <p>    trigger_rule: all_done</p>
 <p>```</p>
-</div>
+
 
 <h3>7. Orchestrate in Real-Time with STP</h3>
 
@@ -411,7 +402,7 @@
 <p>        else:\p
 <p>            await manual_review_topic.send(value=rated)\p
 <p>```</p>
-</div>
+
 
 <p><strong>Trade-off:</strong> Kafka adds 50–100ms latency per event. For ultra-low latency (<100ms), use Redis Streams or AWS Kinesis Data Streams. But Kafka gives you exactly-once semantics and replayability—critical for audits.</p>
 

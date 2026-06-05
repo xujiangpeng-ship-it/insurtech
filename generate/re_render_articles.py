@@ -60,25 +60,29 @@ def extract_article_body(html_text: str) -> str:
 
     body = html_text[start_idx:end_idx].strip()
 
-    # Strip trailing </div> that closes article-content (may be between body and end marker)
-    if body.endswith('</div>'):
-        body = body[:-len('</div>')].rstrip()
-
-    # Remove the mid-content ad block if present
+    # Remove the entire mid-content ad block (wrapper div + all contents)
     body = re.sub(
-        r'<!-- Ad Mid-Content -->.*?</script>',
+        r'<!-- Ad Mid-Content -->\s*<div class="ad-slot"[^>]*>.*?</div>',
         '',
         body,
         flags=re.DOTALL,
     )
 
-    # Remove any stray ad scripts/blocks that were part of template but leaked into body
+    # Remove any remaining ad scripts/blocks
     body = re.sub(
         r'<ins class="adsbygoogle"[^>]*>.*?</ins>\s*<script>\s*\(adsbygoogle[^)]*\)[^<]*</script>',
         '',
         body,
         flags=re.DOTALL,
     )
+
+    # Strip all trailing </div> (closing article-content and any artifacts)
+    while body.rstrip().endswith('</div>'):
+        body = body.rstrip()[:-len('</div>')].rstrip()
+
+    # Remove any stray </div> tags that leaked from previous broken extraction cycles.
+    # LLM-generated content uses only semantic tags (h2/h3/p/ul/li/table) — never <div>.
+    body = re.sub(r'</div>', '', body)
 
     return body.strip()
 
