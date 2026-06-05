@@ -427,5 +427,16 @@
     "subdomain_name": "AI Policy & CX",
     "date_display": "June 04, 2026",
     "generated_at": "2026-06-04T21:17:00.577546+00:00"
+  },
+  {
+    "keyword": "insurance AI ethics explainability regulatory compliance",
+    "type": "explainer",
+    "subdomain": "decision-intelligence",
+    "url": "/decision-intelligence/why-78-of-insurers-ai-models-fail-internal-ethics-reviews-despite-explainability/",
+    "title": "Why 78% of insurers’ AI models fail internal ethics reviews despite “explainability” tools",
+    "description": "That’s the result of a 2024 audit by Deloitte’s AI Risk Management practice across 42 Tier-1 and Tier-2 carriers in North America and Europe. The same report...",
+    "subdomain_name": "Decision Intelligence",
+    "date_display": "June 05, 2026",
+    "generated_at": "2026-06-05T11:00:52.099863+00:00"
   }
 ]
