@@ -65,6 +65,8 @@
             --content-width: 720px;
             --site-width: 1200px;
             --nav-height: 60px;
+
+            --cat-blue:#2563EB;--cat-teal:#0D9488;--cat-amber:#D97706;--cat-indigo:#4F46E5;--cat-emerald:#059669;--cat-purple:#7C3AED;
         }
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
@@ -72,15 +74,11 @@
 
         .nav{background:var(--navy);position:sticky;top:0;z-index:100;height:var(--nav-height);border-bottom:1px solid rgba(255,255,255,0.08)}
         .nav-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between}
-        .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;letter-spacing:-0.01em}
-        .nav-logo-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--teal));display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:#fff;font-weight:800;flex-shrink:0}
-        .nav-links{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
-        .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.8rem;font-weight:500;padding:6px 12px;border-radius:var(--radius-sm);transition:all 0.15s;white-space:nowrap;letter-spacing:-0.005em}
-        .nav-links a:hover{color:#fff;background:rgba(255,255,255,0.08)}
-        .nav-links a.active{color:#fff;background:rgba(255,255,255,0.12)}
+        .nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+        .nav-logo-img{height:36px;width:auto;display:block}
+        .nav-inner{justify-content:center}
         @media(max-width:768px){.nav-logo-img{height:28px}}
         @media(max-width:480px){.nav-logo-img{height:24px}}
-        @media(max-width:860px){.nav-links{display:none}.nav-inner{justify-content:center}}
 
         .main{padding:0 24px}
 
@@ -155,14 +153,8 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="/" class="nav-logo">
-                <span class="nav-logo-icon">II</span>
-                {{ site_name }}
+                <img src="/images/logo.png" alt="Insurtech Insights" class="nav-logo-img">
             </a>
-            <div class="nav-links">
-                {% for sd in subdomains %}
-                <a href="/{{ sd.slug }}/" class="{% if subdomain == sd.slug %}active{% endif %}">{{ sd.name }}</a>
-                {% endfor %}
-            </div>
         </div>
     </nav>
 

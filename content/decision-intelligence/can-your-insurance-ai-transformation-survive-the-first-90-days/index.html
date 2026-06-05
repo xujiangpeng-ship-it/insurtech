@@ -60,6 +60,8 @@
             --content-width: 720px;
             --site-width: 1200px;
             --nav-height: 60px;
+
+            --cat-blue:#2563EB;--cat-teal:#0D9488;--cat-amber:#D97706;--cat-indigo:#4F46E5;--cat-emerald:#059669;--cat-purple:#7C3AED;
         }
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
@@ -67,15 +69,11 @@
 
         .nav{background:var(--navy);position:sticky;top:0;z-index:100;height:var(--nav-height);border-bottom:1px solid rgba(255,255,255,0.08)}
         .nav-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between}
-        .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;letter-spacing:-0.01em}
-        .nav-logo-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--teal));display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:#fff;font-weight:800;flex-shrink:0}
-        .nav-links{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
-        .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.8rem;font-weight:500;padding:6px 12px;border-radius:var(--radius-sm);transition:all 0.15s;white-space:nowrap;letter-spacing:-0.005em}
-        .nav-links a:hover{color:#fff;background:rgba(255,255,255,0.08)}
-        .nav-links a.active{color:#fff;background:rgba(255,255,255,0.12)}
+        .nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+        .nav-logo-img{height:36px;width:auto;display:block}
+        .nav-inner{justify-content:center}
         @media(max-width:768px){.nav-logo-img{height:28px}}
         @media(max-width:480px){.nav-logo-img{height:24px}}
-        @media(max-width:860px){.nav-links{display:none}.nav-inner{justify-content:center}}
 
         .main{padding:0 24px}
 
@@ -143,24 +141,8 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="/" class="nav-logo">
-                <span class="nav-logo-icon">II</span>
-                Insurtech Insights
+                <img src="/images/logo.png" alt="Insurtech Insights" class="nav-logo-img">
             </a>
-            <div class="nav-links">
-                
-                <a href="/ai-claims/" class="">AI Claims</a>
-                
-                <a href="/ai-underwriting/" class="">AI Underwriting</a>
-                
-                <a href="/ai-fraud-detection/" class="">AI Fraud Detection</a>
-                
-                <a href="/embedded-insurance/" class="">Embedded Insurance</a>
-                
-                <a href="/ai-policy-cx/" class="">AI Policy & CX</a>
-                
-                <a href="/decision-intelligence/" class="active">Decision Intelligence</a>
-                
-            </div>
         </div>
     </nav>
 
@@ -211,6 +193,10 @@
 
 <p>Bucket 2: <strong>Incentive Misalignment</strong></p>
 <p>At a U.S. regional carrier, the AI pricing model predicted a 6% rate increase for a profitable book. The CFO wanted immediate deployment; the regional president lobbied to delay because her bonus was tied to retention. Result: the model sat idle for nine months.</p>
+                
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3057389153621190" data-ad-slot="5189099721" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
                 
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3057389153621190" data-ad-slot="5189099721" data-ad-format="auto" data-full-width-responsive="true"></ins>
                     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -343,6 +329,7 @@ A Nordic insurer banned unapproved AI tools. Instead, they created a sanctioned 
     </footer>
 </body>
 </html>
+            </div>
             </div>
 
             
