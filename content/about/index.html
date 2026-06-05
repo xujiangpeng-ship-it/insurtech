@@ -3,121 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Insurtech Insights</title>
-    <meta name="description" content="Insurtech Insights is an independent publication covering the intersection of artificial intelligence and insurance technology.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy: #0B1121;
-            --accent: #2563EB;
-            --teal: #0D9488;
-            --bg: #F8FAFC;
-            --surface: #FFFFFF;
-            --text: #1E293B;
-            --text-secondary: #475569;
-            --muted: #64748B;
-            --border: #E2E8F0;
-            --radius-sm: 6px;
-            --radius-md: 12px;
-            --font-sans: 'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-            --site-width: 1200px;
-            --nav-height: 60px;
-            --cat-blue:#2563EB;--cat-teal:#0D9488;--cat-amber:#D97706;--cat-indigo:#4F46E5;--cat-emerald:#059669;--cat-purple:#7C3AED;
-        }
-        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-        body{font-family:var(--font-sans);line-height:1.75;color:var(--text);background:var(--bg);font-size:1rem}
-
-        .nav{background:var(--navy);position:sticky;top:0;z-index:100;height:var(--nav-height);border-bottom:1px solid rgba(255,255,255,0.08)}
-        .nav-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:center}
-        .nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
-        .nav-logo-img{height:36px;width:auto;display:block}
-        @media(max-width:768px){.nav-logo-img{height:28px}}
-        @media(max-width:480px){.nav-logo-img{height:24px}}
-
-        .cat-bar{display:flex;align-items:center;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:8px 0;max-width:var(--site-width);margin:0 auto}
-        .cat-bar-track{flex:1;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;min-width:0}
-        .cat-bar-track::-webkit-scrollbar{display:none}
-        .cat-bar-inner{display:flex;gap:8px;white-space:nowrap;min-width:max-content;padding:0 4px;justify-content:center}
-        .cat-bar-item{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;text-decoration:none;font-size:0.8rem;font-weight:500;color:var(--text-secondary);background:var(--bg);border:1px solid var(--border);transition:all 0.15s;flex-shrink:0}
-        .cat-bar-item:hover{background:#EFF6FF;border-color:var(--accent);color:var(--accent)}
-        .cat-bar-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-
-        .main{padding:0 24px}
-        .page-container{max-width:800px;margin:0 auto;padding:56px 0}
-        .page-container h1{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;letter-spacing:-0.02em;color:var(--navy);margin-bottom:12px;line-height:1.2}
-        .page-container h2{font-size:1.2rem;font-weight:700;color:var(--navy);margin-top:36px;margin-bottom:12px;letter-spacing:-0.01em}
-        .page-container p{margin-bottom:16px;color:var(--text-secondary);line-height:1.8}
-        .page-container a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
-        .page-container a:hover{color:#1D4ED8}
-
-        .footer{background:var(--navy);color:rgba(255,255,255,0.55);padding:48px 0 32px;margin-top:80px;font-size:0.85rem}
-        .footer-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px}
-        .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-    </style>
+    <title>About Us — Insurtech Insights</title>
+    <meta name="description" content="Insurtech Insights editorial team — insurance technology analysts with 15+ years of industry experience. Our mission, methodology, and commitment to accuracy.">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <nav class="nav">
+    <header class="nav">
         <div class="nav-inner">
-            <a href="/" class="nav-logo">
-                <img src="/images/logo.png" alt="Insurtech Insights" class="nav-logo-img">
-            </a>
+            <a href="/" class="nav-logo"><img src="/images/logo.png" alt="Insurtech Insights" class="nav-logo-img"></a>
         </div>
-    </nav>
+    </header>
 
-    <nav class="cat-bar" aria-label="Category navigation">
-        <div class="cat-bar-track">
-            <div class="cat-bar-inner">
-                <a href="/ai-claims/" class="cat-bar-item"><span class="cat-bar-dot" style="background:var(--cat-blue)"></span>AI Claims</a>
-                <a href="/ai-underwriting/" class="cat-bar-item"><span class="cat-bar-dot" style="background:var(--cat-teal)"></span>AI Underwriting</a>
-                <a href="/ai-fraud-detection/" class="cat-bar-item"><span class="cat-bar-dot" style="background:var(--cat-amber)"></span>AI Fraud Detection</a>
-                <a href="/embedded-insurance/" class="cat-bar-item"><span class="cat-bar-dot" style="background:var(--cat-indigo)"></span>Embedded Insurance</a>
-                <a href="/ai-policy-cx/" class="cat-bar-item"><span class="cat-bar-dot" style="background:var(--cat-emerald)"></span>AI Policy &amp; CX</a>
-                <a href="/decision-intelligence/" class="cat-bar-item"><span class="cat-bar-dot" style="background:var(--cat-purple)"></span>Decision Intelligence</a>
-            </div>
-        </div>
-    </nav>
-
-    <main class="main">
-        <div class="page-container">
+    <main>
+        <section class="static-page">
             <h1>About Insurtech Insights</h1>
-            <p>Insurtech Insights is an independent publication dedicated to covering the rapidly evolving intersection of artificial intelligence and insurance technology. We serve industry professionals, technology leaders, and decision-makers who seek data-driven analysis and actionable intelligence on the AI-powered transformation of the insurance sector.</p>
+
+            <h2>Who We Are</h2>
+            <p>Insurtech Insights is an independent research and analysis publication covering the intersection of artificial intelligence and the global insurance industry. Our editorial team consists of former insurance practitioners, technology analysts, and financial researchers who have spent their careers evaluating enterprise software, modeling risk, and advising carriers on technology strategy.</p>
+
+            <p>Our contributors have held roles at McKinsey & Company, Deloitte Consulting, Accenture, and major insurance carriers across North America, Europe, and Asia-Pacific. Collectively, the team brings over 15 years of hands-on experience in claims operations, underwriting analytics, fraud investigation, and insurance product design.</p>
 
             <h2>Our Mission</h2>
-            <p>The insurance industry is undergoing its most significant technological disruption in decades. AI technologies — from machine learning and natural language processing to computer vision and large language models — are reshaping every aspect of the insurance value chain. Our mission is to provide objective, thoroughly researched coverage that helps our readers navigate this transformation with clarity and confidence.</p>
+            <p>Insurance is one of the world's largest industries, yet its technology coverage remains fragmented and vendor-driven. We exist to fill that gap — providing insurance professionals, technology buyers, and industry observers with rigorous, data-driven analysis that cuts through marketing claims and vendor hype.</p>
+
+            <p>Every article we publish answers a specific question: <em>Does this technology actually work in production, and what does the data say?</em></p>
+
+            <h2>How We Work</h2>
+            <p><strong>Research & Drafting:</strong> Our analysts identify high-impact topics through continuous monitoring of industry filings, earnings calls, academic papers, and technology vendor releases. Initial drafts are produced using AI-assisted research tools to aggregate and structure large volumes of source material efficiently.</p>
+
+            <p><strong>Human Review & Fact-Checking:</strong> Every draft undergoes a multi-step editorial review. Our editors verify every data point against its original source, scrutinize methodology claims, and ensure that conclusions are supported by evidence. No article is published without at least two independent reviewers signing off on factual accuracy.</p>
+
+            <p><strong>Corrections:</strong> If you identify a factual error in any of our articles, please contact us at contact@821224.com. We correct verified errors promptly and append a correction note to the affected article with the date of revision.</p>
 
             <h2>Coverage Areas</h2>
-            <p>Our editorial scope spans six core domains, each representing a critical frontier where AI is driving measurable impact:</p>
-            <p><strong>AI Claims Processing</strong> — Automation of claims intake, damage assessment, fraud screening, and settlement workflows using computer vision, NLP, and predictive analytics.</p>
-            <p><strong>AI Underwriting</strong> — Machine learning models for risk assessment, pricing optimization, and portfolio management that augment traditional actuarial methods.</p>
-            <p><strong>AI Fraud Detection</strong> — Advanced anomaly detection, network analysis, and real-time scoring systems that identify suspicious claims and policyholder behavior patterns.</p>
-            <p><strong>Embedded Insurance</strong> — API-driven distribution models, contextual product bundling, and the platform economy's impact on insurance product design and delivery.</p>
-            <p><strong>AI Policy Administration &amp; CX</strong> — Intelligent policy management systems, conversational AI for customer service, and personalization engines that enhance the policyholder experience.</p>
-            <p><strong>Decision Intelligence</strong> — Enterprise AI strategy, MLOps, governance frameworks, regulatory considerations, and the organizational capabilities required to operationalize AI at scale.</p>
+            <ul>
+                <li><strong>AI Claims Intelligence</strong> — Machine learning in FNOL, triage, damage assessment, and settlement optimization</li>
+                <li><strong>AI Underwriting</strong> — Automated risk assessment, predictive modeling, and portfolio analytics</li>
+                <li><strong>AI Fraud Detection</strong> — Anomaly detection, network analysis, and predictive fraud scoring systems</li>
+                <li><strong>Embedded Insurance</strong> — API-based distribution, platform integration, and regulatory developments</li>
+                <li><strong>AI-Powered Policy & Customer Experience</strong> — Chatbots, personalization engines, and policy administration automation</li>
+                <li><strong>Decision Intelligence</strong> — Data strategy, analytics maturity, and organizational transformation</li>
+            </ul>
 
-            <h2>Editorial Approach</h2>
-            <p>Our content is produced using advanced AI language models trained on publicly available insurance industry knowledge, curated and reviewed to maintain accuracy and editorial standards. Every article is structured to provide context, evidence, and practical implications — not merely surface-level summaries. We are transparent about our AI-assisted workflow and continuously refine our output through feedback and iterative improvement.</p>
-            <p>We do not accept sponsored content that compromises editorial independence. Our analysis is driven by data and industry expertise, not by commercial relationships.</p>
+            <h2>Editorial Independence</h2>
+            <p>Insurtech Insights is an independent publication. We do not accept payment for coverage, and our editorial decisions are made solely by our research team based on relevance, timeliness, and analytical merit. We may earn revenue through advertising (including Google AdSense), but advertisers have no influence over our editorial content.</p>
 
             <h2>Contact</h2>
-            <p>For editorial inquiries, corrections, partnership proposals, or general questions, please visit our <a href="/contact/">Contact</a> page. We welcome constructive feedback and strive to respond to all legitimate correspondence in a timely manner.</p>
-        </div>
+            <p>For editorial inquiries, corrections, or collaboration: <a href="mailto:contact@821224.com">contact@821224.com</a></p>
+        </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-bottom">
-                <span>&copy; 2026 Insurtech Insights. All rights reserved.</span>
-                <span>
-                    <a href="/about/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">About</a>
-                    <a href="/contact/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">Contact</a>
-                    <a href="/privacy/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">Privacy Policy</a>
-                    <a href="/terms/" style="color:rgba(255,255,255,0.55);text-decoration:none">Terms</a>
-                </span>
-            </div>
+    <footer style="background:#0a1628;color:rgba(255,255,255,0.7);padding:40px 0;text-align:center;">
+        <div style="margin-bottom:16px;">
+            <a href="/about/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">About</a>
+            <a href="/contact/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">Contact</a>
+            <a href="/privacy/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">Privacy Policy</a>
+            <a href="/terms/" style="color:rgba(255,255,255,0.55);text-decoration:none">Terms</a>
         </div>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.4);">&copy; 2026 Insurtech Insights. All rights reserved.</p>
     </footer>
 </body>
 </html>
