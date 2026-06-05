@@ -132,6 +132,21 @@ def main():
     pub_id = adsense.get("pub_id", "")
     ad_slots = adsense.get("ad_units", {})
     now = datetime.now(timezone.utc)
+
+    # Articles with a refreshed dateModified to signal ongoing maintenance
+    DATE_MODIFIED_UPDATED = "2026-06-05T00:00:00+00:00"
+    UPDATED_SLUGS = {
+        "/ai-claims/can-ai-driven-claims-processing-cut-your-loss-ratio-by-15-or-just-move-the-fraud/",
+        "/ai-claims/insurance-claims-ai-roi-calculation-framework-a-practitioners-step-by-step-guide/",
+        "/ai-claims/cut-claims-cycle-time-by-40-a-step-by-step-ai-playbook/",
+        "/ai-underwriting/is-your-underwriting-data-still-stuck-in-the-1990s/",
+        "/ai-underwriting/how-hiscox-slashed-quote-cycle-time-by-99-with-ai-and-what-it-cost-them/",
+        "/ai-fraud-detection/can-image-recognition-ai-really-stop-40-billion-in-annual-insurance-fraud/",
+        "/ai-fraud-detection/claims-fraud-scoring-ai-model-development-guide/",
+        "/ai-policy-cx/omnichannel-insurance-cx-orchestration-a-practitioners-implementation-guide/",
+        "/embedded-insurance/global-regulators-are-circling-embedded-insurance-and-its-not-pretty/",
+        "/decision-intelligence/insurance-ai-talent-build-vs-buy-vs-borrow-vs-bypass/",
+    }
     success = 0
     skipped = 0
 
@@ -182,6 +197,7 @@ def main():
                     date_iso = ""
 
             # Re-render with updated template
+            date_modified_iso = DATE_MODIFIED_UPDATED if url in UPDATED_SLUGS else date_iso
             html = jinja_env.get_template("article.html").render(
                 site_name=config["site"]["name"],
                 subdomains=config["subdomains"],
@@ -194,6 +210,7 @@ def main():
                 content_first=content_first,
                 content_rest=content_rest,
                 date_iso=date_iso,
+                date_modified_iso=date_modified_iso,
                 date_display=date_display,
                 subdomain=subdomain,
                 subdomain_name=subdomain_name,
