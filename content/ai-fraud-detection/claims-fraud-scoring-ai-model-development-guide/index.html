@@ -77,6 +77,22 @@
 
         .main{padding:0 24px}
 
+        /* ====== CATEGORY BAR ====== */
+        .cat-bar{display:flex;align-items:center;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:8px 0;max-width:var(--site-width);margin:0 auto}
+        .cat-bar-track{flex:1;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;min-width:0}
+        .cat-bar-track::-webkit-scrollbar{display:none}
+        .cat-bar-inner{display:flex;gap:8px;white-space:nowrap;min-width:max-content;padding:0 4px}
+        .cat-arrow{flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:none;background:transparent;color:var(--muted);cursor:pointer;border-radius:var(--radius-sm);font-size:1.2rem;line-height:1;transition:all 0.15s;user-select:none}
+        .cat-arrow:hover{background:var(--accent-light);color:var(--accent)}
+        .cat-arrow:active{transform:scale(0.9)}
+        @media(min-width:861px){.cat-arrow{display:none}}
+        .cat-bar-item{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;text-decoration:none;font-size:0.8rem;font-weight:500;color:var(--text-secondary);background:var(--bg);border:1px solid var(--border);transition:all 0.15s;flex-shrink:0}
+        .cat-bar-item:hover{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
+        .cat-bar-item.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+        .cat-bar-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+        .cat-bar-item.active .cat-bar-dot{background:#fff}
+        .cat-dot-blue{background:var(--cat-blue)}.cat-dot-teal{background:var(--cat-teal)}.cat-dot-amber{background:var(--cat-amber)}.cat-dot-indigo{background:var(--cat-indigo)}.cat-dot-emerald{background:var(--cat-emerald)}.cat-dot-purple{background:var(--cat-purple)}
+
         /* ====== ARTICLE ====== */
         .article-container{max-width:var(--content-width);margin:0 auto;padding-top:48px}
         .article-breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--muted);margin-bottom:24px}
@@ -145,6 +161,40 @@
             </a>
         </div>
     </nav>
+
+        <!-- CATEGORY NAVIGATION BAR -->
+        <nav class="cat-bar" aria-label="Category navigation">
+            <button class="cat-arrow cat-arrow-left" aria-label="Scroll left" onclick="document.getElementById('catTrack').scrollBy({left:-200,behavior:'smooth'})">&#8249;</button>
+            <div class="cat-bar-track" id="catTrack">
+                <div class="cat-bar-inner">
+                    <a href="/ai-claims/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-blue"></span>
+                        AI Claims
+                    </a>
+                    <a href="/ai-underwriting/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-teal"></span>
+                        AI Underwriting
+                    </a>
+                    <a href="/ai-fraud-detection/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-amber"></span>
+                        AI Fraud Detection
+                    </a>
+                    <a href="/embedded-insurance/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-indigo"></span>
+                        Embedded Insurance
+                    </a>
+                    <a href="/ai-policy-cx/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-emerald"></span>
+                        AI Policy & CX
+                    </a>
+                    <a href="/decision-intelligence/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-purple"></span>
+                        Decision Intelligence
+                    </a>
+                </div>
+            </div>
+            <button class="cat-arrow cat-arrow-right" aria-label="Scroll right" onclick="document.getElementById('catTrack').scrollBy({left:200,behavior:'smooth'})">&#8250;</button>
+        </nav>
 
     <main class="main">
         <article class="article-container">
