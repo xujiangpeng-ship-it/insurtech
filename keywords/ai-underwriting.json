@@ -41,8 +41,8 @@
     "subdomain": "ai-underwriting",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-05T11:52:05.616468+00:00"
   },
   {
     "keyword": "best AI underwriting platforms comparison 2026",

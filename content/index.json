@@ -438,5 +438,16 @@
     "subdomain_name": "Decision Intelligence",
     "date_display": "June 05, 2026",
     "generated_at": "2026-06-05T11:00:52.099863+00:00"
+  },
+  {
+    "keyword": "how Hiscox reduced quote cycle time 99 percent with AI",
+    "type": "case-study",
+    "subdomain": "ai-underwriting",
+    "url": "/ai-underwriting/hiscox-cut-us-property-quote-cycle-time-from-14-days-to-15-minutes-a-99-reductio/",
+    "title": "Hiscox cut U.S. property quote cycle time from 14 days to 15 minutes — a 99% reduction",
+    "description": "In June 2022, Hiscox’s U.S. small business unit rolled out an AI-driven straight-through processing (STP) engine for property quotes. The result: median quote...",
+    "subdomain_name": "AI Underwriting",
+    "date_display": "June 05, 2026",
+    "generated_at": "2026-06-05T11:52:05.616728+00:00"
   }
 ]
