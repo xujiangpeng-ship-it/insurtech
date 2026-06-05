@@ -194,6 +194,25 @@ DATA & STRUCTURE REQUIREMENTS:
 - Mix paragraph lengths: some 1-2 sentence paragraphs for impact, some 4-5 sentence paragraphs for depth.
 - Use <h2> for major sections (4-6 per article), <h3> for sub-sections within each H2.
 
+INFORMATION INTEGRITY RULES — ANTI-HALLUCINATION (CRITICAL):
+- NEVER fabricate or invent third-party ratings, scores, or proprietary market data. This includes but is NOT limited to: G2 star ratings/review counts, Capterra scores/rankings, Gartner Magic Quadrant positions/ratings, Forrester Wave scores, IDC MarketScape positions, TrustRadius scores, or any vendor comparison matrix number you cannot link to a specific public source. Only cite numbers you can verify from real, publicly accessible reports or press releases.
+- Every statistical or numerical claim MUST name the source institution + year + specific report or project name. Never use stand-ins like "studies show", "industry reports suggest", "research indicates", "analysts estimate", or similarly vague attributions. If you cannot name the exact report, do not make the claim.
+- Every article MUST include at least 1 real, clickable external reference link using the format: <a href="https://..." target="_blank" rel="noopener noreferrer">[Source Name, Report Title]</a>. The URL must point to an actual publicly accessible page — an official report landing page, a press release on the company's domain, a regulatory filing (.gov), an academic paper (DOI or institutional repository), or vendor documentation. Do not fabricate URLs or link to generic homepages.
+- When citing a vendor's own performance claims (e.g., cycle time reduction, ROI percentage), explicitly attribute it as a vendor claim with source date — e.g., "Hiscox claimed in its June 2022 press release that..." not "Hiscox reduced cycle time by 99%". Vendor claims are not independent verification.
+
+FORBIDDEN PATTERNS — DO NOT WRITE ANY OF THESE:
+- "According to Gartner, the market will reach $X billion by 20XX" with no specific report title
+- "Rated 4.X/5 on G2 based on X,XXX+ reviews" — this data is behind login walls and cannot be independently verified
+- "Capterra users give it X.X/5" or any Capterra-generated metric
+- "Named a Leader in the 202X Gartner Magic Quadrant" unless you can cite the exact Gartner report publication date and title
+- "McKinsey reports that 70% of insurers..." without year and report name
+- "Studies show that..." / "Industry data indicates..." / "Research suggests..." as attribution for any numeric claim
+
+ANGLE & PERSPECTIVE REQUIREMENT:
+- Every article MUST be written from one specific, identifiable practitioner perspective (pick one): Claims Adjuster / FNOL Specialist (operational, on-the-ground), CTO / VP of Engineering (build-vs-buy, architecture, integration), CFO / Head of FP&A (ROI, unit economics, cost modeling), Chief Compliance Officer / General Counsel (regulatory risk, model governance), Product Manager at an MGA (launch velocity, market fit), or Data Science Lead (model governance, data quality, feature engineering).
+- The chosen perspective must permeate the entire article: which metrics are prioritized, which trade-offs receive scrutiny, what the actionable "so what" is. Readers must identify the perspective within the first 3 paragraphs.
+- Do NOT write from a generic, omniscient "industry analyst" voice. Take a side, name the pain point from experience, speak in first person where appropriate.
+
 FORMAT:
 - Output in raw HTML suitable for direct insertion into a Jinja2 {{ content }} block.
 - Use <h2>, <h3>, <p>, <ul>/<li>, <table> as needed. Tables should use <thead>/<tbody>/<th>/<td>.
