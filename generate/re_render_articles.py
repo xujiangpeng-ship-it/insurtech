@@ -38,8 +38,6 @@ def extract_description(html_content: str, max_chars: int = 160) -> str:
 
 def extract_article_body(html_text: str) -> str:
     """Extract the raw content from within <div class="article-content">...</div>"""
-    # Find article-content div and extract everything inside until the closing </div>
-    # that precedes related-section / editorial-note / ad-slot / closing </article>
     start_marker = '<div class="article-content">'
     start_idx = html_text.find(start_marker)
     if start_idx == -1:
@@ -47,9 +45,8 @@ def extract_article_body(html_text: str) -> str:
 
     start_idx += len(start_marker)
 
-    # Find the editorial-note or related-section or closing </article>
-    # We need to find the end of article-content. Look for next major section.
     end_markers = [
+        '</article>',
         '<div class="editorial-note"',
         '<section class="related-section"',
         '<div class="ad-slot">AD – Responsive Bottom',
@@ -63,9 +60,21 @@ def extract_article_body(html_text: str) -> str:
 
     body = html_text[start_idx:end_idx].strip()
 
+    # Strip trailing </div> that closes article-content (may be between body and end marker)
+    if body.endswith('</div>'):
+        body = body[:-len('</div>')].rstrip()
+
     # Remove the mid-content ad block if present
     body = re.sub(
         r'<!-- Ad Mid-Content -->.*?</script>',
+        '',
+        body,
+        flags=re.DOTALL,
+    )
+
+    # Remove any stray ad scripts/blocks that were part of template but leaked into body
+    body = re.sub(
+        r'<ins class="adsbygoogle"[^>]*>.*?</ins>\s*<script>\s*\(adsbygoogle[^)]*\)[^<]*</script>',
         '',
         body,
         flags=re.DOTALL,
