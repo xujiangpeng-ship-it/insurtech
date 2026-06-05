@@ -405,5 +405,49 @@
     "subdomain_name": "AI Underwriting",
     "date_display": "June 01, 2026",
     "generated_at": "2026-06-01T14:58:04.500710+00:00"
+  },
+  {
+    "keyword": "embedded insurance customer experience AI personalization",
+    "type": "explainer",
+    "subdomain": "embedded-insurance",
+    "url": "/embedded-insurance/embedded-insurance-customer-experience-ais-role-in-personalizing-real-time-prote/",
+    "title": "Embedded insurance customer experience: AI’s role in personalizing real-time protection",
+    "description": "Would you pay $47 more on a $1,000 flight for a policy triggered when the pilot announces “we’re experiencing turbulence”? That’s the average uplift passengers...",
+    "subdomain_name": "Embedded Insurance",
+    "date_display": "June 04, 2026",
+    "generated_at": "2026-06-04T20:56:01.052008+00:00"
+  },
+  {
+    "keyword": "conversational AI insurance sales conversion optimization",
+    "type": "tutorial",
+    "subdomain": "ai-policy-cx",
+    "url": "/ai-policy-cx/why-conversational-ai-is-failing-your-insurance-sales-pipeline-and-how-to-fix-it/",
+    "title": "Why conversational AI is failing your insurance sales pipeline — and how to fix it",
+    "description": "In 2023, Lemonade reported a 28% sales conversion rate for its AI-powered Maya chatbot, while the industry average for direct-to-consumer insurance sales...",
+    "subdomain_name": "AI Policy & CX",
+    "date_display": "June 04, 2026",
+    "generated_at": "2026-06-04T21:17:00.577546+00:00"
+  },
+  {
+    "keyword": "insurance AI ethics explainability regulatory compliance",
+    "type": "explainer",
+    "subdomain": "decision-intelligence",
+    "url": "/decision-intelligence/why-78-of-insurers-ai-models-fail-internal-ethics-reviews-despite-explainability/",
+    "title": "Why 78% of insurers’ AI models fail internal ethics reviews despite “explainability” tools",
+    "description": "That’s the result of a 2024 audit by Deloitte’s AI Risk Management practice across 42 Tier-1 and Tier-2 carriers in North America and Europe. The same report...",
+    "subdomain_name": "Decision Intelligence",
+    "date_display": "June 05, 2026",
+    "generated_at": "2026-06-05T11:00:52.099863+00:00"
+  },
+  {
+    "keyword": "how Hiscox reduced quote cycle time 99 percent with AI",
+    "type": "case-study",
+    "subdomain": "ai-underwriting",
+    "url": "/ai-underwriting/hiscox-cut-us-property-quote-cycle-time-from-14-days-to-15-minutes-a-99-reductio/",
+    "title": "Hiscox cut U.S. property quote cycle time from 14 days to 15 minutes — a 99% reduction",
+    "description": "In June 2022, Hiscox’s U.S. small business unit rolled out an AI-driven straight-through processing (STP) engine for property quotes. The result: median quote...",
+    "subdomain_name": "AI Underwriting",
+    "date_display": "June 05, 2026",
+    "generated_at": "2026-06-05T11:52:05.616728+00:00"
   }
 ]
