@@ -340,6 +340,7 @@ def render_article(config, keyword_entry, html_body: str) -> Path:
         site_name=config["site"]["name"],
         subdomains=config["subdomains"],
         current_year=now.year,
+        current_date=date_display,
         title=title,
         description=description,
         keyword=keyword_entry["keyword"],

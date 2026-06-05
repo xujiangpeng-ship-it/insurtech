@@ -132,8 +132,6 @@ def main():
     pub_id = adsense.get("pub_id", "")
     ad_slots = adsense.get("ad_units", {})
     now = datetime.now(timezone.utc)
-    current_date = now.strftime("%B %d, %Y")
-
     success = 0
     skipped = 0
 
@@ -188,7 +186,7 @@ def main():
                 site_name=config["site"]["name"],
                 subdomains=config["subdomains"],
                 current_year=now.year,
-                current_date=current_date,
+                current_date=date_display or now.strftime("%B %d, %Y"),
                 title=title,
                 description=description,
                 keyword=keyword,
