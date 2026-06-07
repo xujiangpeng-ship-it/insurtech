@@ -510,6 +510,7 @@ def rebuild_html_sitemap(config) -> None:
         articles_by_sd=articles_by_sd,
         sd_names=sd_names,
         canonical_url="/sitemap/",
+        ga_id=config.get("analytics", {}).get("ga_id", ""),
     )
 
     out_dir = CONTENT_DIR / "sitemap"

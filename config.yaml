@@ -30,7 +30,7 @@ adsense:
       format: "responsive"
 
 analytics:
-  ga_id: ""  # Optional: fill in Google Analytics measurement ID
+  ga_id: "G-0BT3L3QFNX"
 
 subdomains:
   - slug: "ai-claims"
