@@ -11,6 +11,8 @@ from pathlib import Path
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
+from main import get_related_articles
+
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
 TEMPLATES_DIR = ROOT / "templates"
@@ -198,6 +200,7 @@ def main():
 
             # Re-render with updated template
             date_modified_iso = DATE_MODIFIED_UPDATED if url in UPDATED_SLUGS else date_iso
+            related = get_related_articles(slug, config)
             html = jinja_env.get_template("article.html").render(
                 site_name=config["site"]["name"],
                 subdomains=config["subdomains"],
@@ -219,7 +222,7 @@ def main():
                 ad_slot_in=ad_slots.get("in_content", {}).get("slot", ""),
                 ad_slot_bottom=ad_slots.get("bottom", {}).get("slot", ""),
                 canonical_url=url,
-                related_articles=None,
+                related_articles=related,
                 ga_id=config.get("analytics", {}).get("ga_id", ""),
             )
 

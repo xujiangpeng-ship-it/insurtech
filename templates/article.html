@@ -252,6 +252,31 @@
                 <strong style="color:#6b7280;">Editorial Note:</strong> This article was researched and drafted with AI assistance, then independently reviewed and fact-checked by our editorial team for accuracy, completeness, and industry relevance. All claims are supported by cited sources and verified against public data. Last reviewed: {{ current_date }}.
             </div>
 
+            <div class="disclaimer" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:16px 20px;margin:32px 0 0;font-size:0.85rem;color:#64748b;line-height:1.6">
+                <strong style="color:#475569">Disclaimer:</strong> The information provided on this page is for general informational and educational purposes only. It does not constitute professional financial, legal, or insurance advice. Insurtech Insights makes no representations as to the accuracy or completeness of any information on this site. Readers should consult qualified professionals before making decisions based on the content herein. Some statistics and market projections cited are sourced from third-party reports and may become outdated; always verify against current primary sources.
+            </div>
+
+            {% if related_articles %}
+            <div class="related-articles" style="margin:32px 0 0;padding:24px 0 0;border-top:2px solid #e2e8f0">
+                <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:0 0 16px">Related Reading</h3>
+                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px">
+                    {% for ra in related_articles %}
+                    <a href="/{{ ra.subdomain }}/{{ ra.slug }}/" style="display:block;padding:12px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;text-decoration:none;color:#2563eb;font-size:0.92rem;font-weight:500;line-height:1.4;transition:all 0.15s">
+                        {{ ra.title }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="feedback-widget" style="margin:28px 0 0;padding:16px 0;text-align:center;border-top:1px solid #e2e8f0">
+                <p style="font-size:0.92rem;color:#64748b;margin:0 0 8px">Was this article helpful?</p>
+                <div style="display:flex;gap:12px;justify-content:center">
+                    <button style="padding:8px 20px;background:#2563eb;color:#fff;border:none;border-radius:6px;font-size:0.88rem;font-weight:500;cursor:pointer">Yes</button>
+                    <button style="padding:8px 20px;background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;border-radius:6px;font-size:0.88rem;font-weight:500;cursor:pointer">No</button>
+                </div>
+            </div>
+            {% endif %}
+
             {% if related_articles %}
             <section class="related-section">
                 <h2>Related Articles</h2>

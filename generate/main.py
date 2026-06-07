@@ -519,6 +519,36 @@ def rebuild_html_sitemap(config) -> None:
     logger.info("Rebuilt HTML sitemap with %d articles across %d categories.", len(all_articles), len(config["subdomains"]))
 
 
+def get_related_articles(slug, config, max_results=4):
+    """Return related articles from the same subdomain, excluding current slug."""
+    index_path = CONTENT_DIR / "index.json"
+    if not index_path.exists():
+        return []
+
+    with open(index_path, encoding="utf-8") as fh:
+        articles = json.load(fh)
+
+    # index.json entries have url but not slug; extract slug from url
+    for a in articles:
+        url = a.get("url", "")
+        parts = url.strip("/").split("/")
+        if len(parts) >= 2:
+            a["slug"] = parts[-1]
+
+    cat = None
+    for a in articles:
+        if a.get("slug") == slug:
+            cat = a.get("subdomain")
+            break
+
+    if not cat:
+        return []
+
+    same_cat = [a for a in articles if a.get("subdomain") == cat and a.get("slug") != slug]
+    same_cat.sort(key=lambda x: x.get("generated_at", ""), reverse=True)
+    return same_cat[:max_results]
+
+
 def rebuild_index_json(articles_meta: list) -> None:
     """Append new articles to index.json for future related-article linking."""
     index_path = CONTENT_DIR / "index.json"
