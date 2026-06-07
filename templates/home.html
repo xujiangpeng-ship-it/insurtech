@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block head %}
     <title>{{ site_name }} — AI meets Insurance Technology</title>
-    <meta name="description" content="In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence. Daily articles across 6 core domains.">
+    <meta name="description" content="{% if category_meta_description %}{{ category_meta_description }}{% else %}In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence. Daily articles across 6 core domains.{% endif %}">
     <link rel="canonical" href="{{ canonical_url }}">
     <meta property="og:title" content="{{ site_name }} — AI meets Insurance Technology">
-    <meta property="og:description" content="In-depth coverage of how artificial intelligence is reshaping insurance.">
+    <meta property="og:description" content="{% if category_meta_description %}{{ category_meta_description }}{% else %}In-depth coverage of how artificial intelligence is reshaping insurance.{% endif %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ canonical_url }}">
     {% endblock %}

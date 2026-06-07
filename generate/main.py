@@ -54,12 +54,16 @@ CATEGORY_HERO = {
         "badge": "Policy & CX",
         "heading": "AI-Powered Policy<br>& Customer Experience",
         "subtitle": "Chatbots, hyper-personalization, and proactive retention — AI is redefining how carriers interact with policyholders. Articles cover conversational AI deployment patterns, churn prediction models, omnichannel orchestration, and the metrics that matter: NPS, retention rate, and lifetime value."
-    },
-    "decision-intelligence": {
-        "badge": "Decision Science",
-        "heading": "Decision Intelligence<br>for Insurance",
-        "subtitle": "Data strategy, analytics maturity, and the organizational transformation behind AI adoption in insurance. Topics include build-vs-buy talent decisions, ROI measurement frameworks, governance models, and the cultural shifts required to move from PoC purgatory to production-grade AI."
     }
+}
+
+CATEGORY_META_DESCRIPTIONS = {
+    "ai-claims": "AI-driven claims processing strategies that cut cycle times by 40-60% and reduce leakage. Practical guides on FNOL triage, damage estimation, fraud screening, settlement automation, and ROI frameworks — all backed by real-world insurance implementations at 821224.com.",
+    "ai-underwriting": "Deep dives into AI underwriting engines using IoT telematics, NLP, and predictive modeling to slash quote cycle time by 99%. Covers automated risk assessment, loss ratio optimization, regulatory compliance, and the shift to 'price and accept' strategies.",
+    "ai-fraud-detection": "Technical analysis of deep learning, graph neural networks, and anomaly detection for insurance fraud prevention. Model development guides, dataset strategy, and explainability — targeting the $40B+ annual fraud leakage problem in global insurance.",
+    "embedded-insurance": "API-first embedded insurance architectures reshaping distribution across checkout flows, ride-hailing, and SaaS platforms. Regulatory fragmentation analysis, risk pooling mechanics, and market projections for the $700B embedded opportunity by 2030.",
+    "ai-policy-cx": "Conversational AI, hyper-personalization, and churn prediction for insurance customer experience. Implementation guides covering chatbots, omnichannel orchestration, NPS optimization, and proactive retention strategies for carriers.",
+    "decision-intelligence": "Insurance AI maturity models, data strategy frameworks, and organizational transformation guides. Build-vs-buy talent decisions, governance, ROI measurement — moving carriers from PoC purgatory to production-grade AI.",
 }
 KEYWORDS_DIR = ROOT / "keywords"
 TEMPLATES_DIR = ROOT / "templates"
@@ -583,6 +587,7 @@ def rebuild_category_pages(config) -> None:
                 total_articles_count=len(cat_articles),
                 section_title="Latest Articles",
                 pagination=pagination,
+                category_meta_description=CATEGORY_META_DESCRIPTIONS.get(slug, ""),
             )
 
             out_dir = CONTENT_DIR / slug

@@ -266,6 +266,32 @@
                 </div>
             </section>
             {% endif %}
+
+            <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://821224.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "{{ subdomain_name }}",
+                  "item": "https://821224.com/{{ subdomain }}/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "{{ title }}"
+                }
+              ]
+            }
+            </script>
         </article>
     </main>
 
