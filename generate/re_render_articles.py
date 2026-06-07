@@ -7,15 +7,80 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from html.parser import HTMLParser
 
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
-from main import get_related_articles
-
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
 TEMPLATES_DIR = ROOT / "templates"
+
+VOID_TAGS = {'br', 'hr', 'img', 'input', 'meta', 'link', 'area', 'base', 'col',
+             'embed', 'source', 'track', 'wbr', 'command', 'keygen', 'param'}
+
+
+class TagBalancer(HTMLParser):
+    """Parse HTML fragment and re-emit with balanced tags."""
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.output = []
+        self.stack = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() in VOID_TAGS:
+            self.output.append(self.get_starttag_text())
+            return
+        self.stack.append(tag.lower())
+        self.output.append(self.get_starttag_text())
+
+    def handle_endtag(self, tag):
+        tag_lower = tag.lower()
+        found = -1
+        for i in range(len(self.stack) - 1, -1, -1):
+            if self.stack[i] == tag_lower:
+                found = i
+                break
+        if found >= 0:
+            while len(self.stack) > found:
+                popped = self.stack.pop()
+                self.output.append(f'</{popped}>')
+
+    def handle_data(self, data):
+        self.output.append(data)
+
+    def handle_comment(self, data):
+        self.output.append(f'<!--{data}-->')
+
+    def handle_entityref(self, name):
+        self.output.append(f'&{name};')
+
+    def handle_charref(self, name):
+        self.output.append(f'&#{name};')
+
+    def close_remaining(self):
+        while self.stack:
+            tag = self.stack.pop()
+            self.output.append(f'</{tag}>')
+
+
+def fix_html_body(html_body: str) -> str:
+    """Fix HTML body: fix malformed tags, strip divs, balance all tags."""
+    # Fix malformed closing tags like </p\n (missing >)
+    html_body = re.sub(r'</(p|li|td|th|tr|pre|code|h[1-6])\s*\n', r'</\1>\n', html_body)
+
+    # Strip all div tags — LLM shouldn't generate these
+    html_body = re.sub(r'<div\b[^>]*>', '', html_body, flags=re.IGNORECASE)
+    html_body = re.sub(r'</div\s*>', '', html_body, flags=re.IGNORECASE)
+
+    # Balance all remaining tags
+    parser = TagBalancer()
+    try:
+        parser.feed(html_body)
+        parser.close_remaining()
+        return ''.join(parser.output)
+    except Exception:
+        return html_body
 
 
 def load_config():
@@ -82,9 +147,8 @@ def extract_article_body(html_text: str) -> str:
     while body.rstrip().endswith('</div>'):
         body = body.rstrip()[:-len('</div>')].rstrip()
 
-    # Remove any stray </div> tags that leaked from previous broken extraction cycles.
-    # LLM-generated content uses only semantic tags (h2/h3/p/ul/li/table) — never <div>.
-    body = re.sub(r'</div>', '', body)
+    # Fix malformed tags, strip stray divs, balance all tags
+    body = fix_html_body(body)
 
     return body.strip()
 
@@ -200,7 +264,6 @@ def main():
 
             # Re-render with updated template
             date_modified_iso = DATE_MODIFIED_UPDATED if url in UPDATED_SLUGS else date_iso
-            related = get_related_articles(slug, config)
             html = jinja_env.get_template("article.html").render(
                 site_name=config["site"]["name"],
                 subdomains=config["subdomains"],
@@ -222,7 +285,6 @@ def main():
                 ad_slot_in=ad_slots.get("in_content", {}).get("slot", ""),
                 ad_slot_bottom=ad_slots.get("bottom", {}).get("slot", ""),
                 canonical_url=url,
-                related_articles=related,
                 ga_id=config.get("analytics", {}).get("ga_id", ""),
             )
 

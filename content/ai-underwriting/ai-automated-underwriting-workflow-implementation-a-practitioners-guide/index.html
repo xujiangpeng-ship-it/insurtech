@@ -130,16 +130,6 @@
         .ad-in-content{float:right;width:300px;margin:8px 0 24px 24px;min-height:250px}
         @media(max-width:640px){.ad-in-content{float:none;width:100%;margin:24px 0}}
 
-        /* ====== RELATED ====== */
-        .related-section{margin-top:64px;padding-top:40px;border-top:2px solid var(--border)}
-        .related-section h2{font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:24px;letter-spacing:-0.01em}
-        .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
-        .related-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;text-decoration:none;transition:all 0.2s;display:block}
-        .related-card:hover{border-color:var(--accent);box-shadow:var(--shadow-md);transform:translateY(-1px)}
-        .related-card .tag{margin-bottom:8px}
-        .related-card h3{font-size:0.9rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:8px;letter-spacing:-0.005em}
-        .related-card .meta{font-size:0.75rem;color:var(--muted)}
-
         /* ====== FOOTER ====== */
         .footer{background:var(--navy);color:rgba(255,255,255,0.55);padding:48px 0 32px;margin-top:80px;font-size:0.85rem}
         .footer-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px}
@@ -233,12 +223,12 @@
 <h3>Scope and Assumptions</h3>
 <p>This guide targets mid-market carriers (premiums $100M–$1B) and MGAs that want to:</p>
 <ul>
-<li>Automate at least 60% of standard lines (small commercial, personal auto, homeowners, cyber, E&S property)</li>
+<li>Automate at least 60% of standard lines (small commercial, personal auto, homeowners, cyber, E&S; property)</li>
 <li>Support straight-through processing (STP) for ~80% of clean submissions</li>
 <li>Keep human-in-the-loop (HITL) for exceptions without creating process drag</li>
 <li>Deploy within 18–24 weeks, with a total investment ceiling of $750k (engineering, licensing, change management)</li>
 </ul>
-<p>If you’re a life insurer or specialty P&C carrier, the model architecture and data pipelines will differ. If you’re a global reinsurer, the regulatory stack changes. Adjust accordingly.</p>
+<p>If you’re a life insurer or specialty P&C; carrier, the model architecture and data pipelines will differ. If you’re a global reinsurer, the regulatory stack changes. Adjust accordingly.</p>
 
 ---
 
@@ -308,7 +298,7 @@
 <tr><th>Feature Type</th><th>Source</th><th>Cost</th><th>Latency</th><th>Use Case</th></tr>
 </thead>
 <tbody>
-<tr><td>Industry risk score</td><td>Dun & Bradstreet (D&B) or Verisk</td><td>$0.02–$0.10 per lookup</td><td>2–5s</td><td>Small commercial UW: flag high-risk NAICS codes (e.g., 722511 for bars).</td></tr>
+<tr><td>Industry risk score</td><td>Dun & Bradstreet (D&B;) or Verisk</td><td>$0.02–$0.10 per lookup</td><td>2–5s</td><td>Small commercial UW: flag high-risk NAICS codes (e.g., 722511 for bars).</td></tr>
 <tr><td>Telematics</td><td>Samsara API or Geotab</td><td>$5–$15 per vehicle/month</td><td>Real-time</td><td>Commercial auto: use harsh braking events to adjust premium.</td></tr>
 <tr><td>Litigation history</td><td>LexisNexis or Westlaw</td><td>$0.50–$2 per query</td><td>1–3s</td><td>Professional liability: flag applicants with recent malpractice suits.</td></tr>
 <tr><td>Credit-based insurance score</td><td>FICO or LexisNexis Risk Solutions</td><td>$0.01–$0.05 per score</td><td>Subsecond</td><td>Personal auto: correlate credit score with loss frequency (r=0.32 in our dataset).</td></tr>
@@ -333,7 +323,7 @@ features = store.get_online_features(
 <p>Use Feast to decouple feature logic from model serving. Cache features at T+1 for batch models, T+5m for real-time models.</p>
 
 <h3>2.2 Embeddings for Unstructured Data</h3>
-<p>For lines like cyber or E&S property, applications include PDFs with narrative descriptions (e.g., “Client stores PII in AWS with SOC 2 Type II”). Don’t parse these—embed them.</p>
+<p>For lines like cyber or E&S; property, applications include PDFs with narrative descriptions (e.g., “Client stores PII in AWS with SOC 2 Type II”). Don’t parse these—embed them.</p>
 <p><strong>Approach:</strong> Fine-tune a domain-specific embedding model (e.g., <code>insurance-bert-base-uncased</code> on Hugging Face) on insurer-specific corpus (policy wordings, claims narratives, underwriting guidelines).</p>
 <p><strong>Resource estimate:</strong> 1 GPU-week for fine-tuning (e.g., NVIDIA A100 80GB). Use ONNX runtime for inference to reduce latency to <50ms.</p>
 <p><strong>Trade-off:</strong> Embeddings compress narrative data but lose interpretability. Pair with SHAP values for explainability in regulatory filings.</p>
@@ -355,7 +345,7 @@ features = store.get_online_features(
 <tr><td>Personal auto</td><td>Hybrid GLM + NN</td><td>0.85</td><td>Medium (GLM coefficients + NN attention)</td><td>Medium (GLM is accepted; NN requires validation)</td></tr>
 <tr><td>Homeowners</td><td>Random Forest</td><td>0.83</td><td>High (feature importance)</td><td>High (used in 7/12 carriers)</td></tr>
 <tr><td>Cyber</td><td>Transformer (BERT-based)</td><td>0.82</td><td>Low (black-box embeddings)</td><td>Low (requires manual underwriting override)</td></tr>
-<tr><td>E&S Property</td><td>Rule Engine + NN</td><td>0.80</td><td>Medium (rule-based exceptions + NN)</td><td>Medium (rules are transparent; NN is not)</td></tr>
+<tr><td>E&S; Property</td><td>Rule Engine + NN</td><td>0.80</td><td>Medium (rule-based exceptions + NN)</td><td>Medium (rules are transparent; NN is not)</td></tr>
 </tbody>
 </table>
 
@@ -469,7 +459,7 @@ class UnderwritingWorkflow:
 <h3>4.2 Integration with Core Systems</h3>
 <p>Your workflow needs to talk to policy admin systems (PAS), rating engines, and TPAs. Below is a reference architecture:</p>
 
-<div style="text-align: center; margin: 30px 0;">
+
 <img src="https://storage.googleapis.com/insurtech-insights/ref-arch.png" alt="Underwriting Workflow Reference Architecture" style="max-width: 100%; height: auto;" />
 <p><small>Figure 1: Workflow integrates with PAS via API, rating engine via CSV upload, and TPA via EDI 144/148.</small></p>
 
@@ -482,7 +472,7 @@ POST /api/v1/policies
   "carrier_id": "CAR-001",
   "policy_term": {
     "start": "2024-06-01",
-    "end":
+    "end":</pre>
             </div>
 
             
@@ -495,30 +485,6 @@ POST /api/v1/policies
                 <strong style="color:#475569">Disclaimer:</strong> The information provided on this page is for general informational and educational purposes only. It does not constitute professional financial, legal, or insurance advice. Insurtech Insights makes no representations as to the accuracy or completeness of any information on this site. Readers should consult qualified professionals before making decisions based on the content herein. Some statistics and market projections cited are sourced from third-party reports and may become outdated; always verify against current primary sources.
             </div>
 
-            
-            <div class="related-articles" style="margin:32px 0 0;padding:24px 0 0;border-top:2px solid #e2e8f0">
-                <h3 style="font-size:1.15rem;font-weight:700;color:#1e293b;margin:0 0 16px">Related Reading</h3>
-                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px">
-                    
-                    <a href="/ai-underwriting/hiscox-cut-us-property-quote-cycle-time-from-14-days-to-15-minutes-a-99-reductio/" style="display:block;padding:12px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;text-decoration:none;color:#2563eb;font-size:0.92rem;font-weight:500;line-height:1.4;transition:all 0.15s">
-                        Hiscox cut U.S. property quote cycle time from 14 days to 15 minutes — a 99% reduction
-                    </a>
-                    
-                    <a href="/ai-underwriting/why-68-of-pc-underwriters-still-ignore-90-of-their-dataand-how-ai-can-fix-it/" style="display:block;padding:12px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;text-decoration:none;color:#2563eb;font-size:0.92rem;font-weight:500;line-height:1.4;transition:all 0.15s">
-                        Why 68% of P&C underwriters still ignore 90% of their data—and how AI can fix it
-                    </a>
-                    
-                    <a href="/ai-underwriting/ai-risk-assessment-in-insurance-5-platforms-compared/" style="display:block;padding:12px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;text-decoration:none;color:#2563eb;font-size:0.92rem;font-weight:500;line-height:1.4;transition:all 0.15s">
-                        AI Risk Assessment in Insurance: 5 Platforms Compared
-                    </a>
-                    
-                    <a href="/ai-underwriting/how-hiscox-slashed-quote-cycle-time-by-99-with-ai-and-what-it-cost-them/" style="display:block;padding:12px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;text-decoration:none;color:#2563eb;font-size:0.92rem;font-weight:500;line-height:1.4;transition:all 0.15s">
-                        How Hiscox Slashed Quote Cycle Time by 99% with AI – And What It Cost Them
-                    </a>
-                    
-                </div>
-            </div>
-
             <div class="feedback-widget" style="margin:28px 0 0;padding:16px 0;text-align:center;border-top:1px solid #e2e8f0">
                 <p style="font-size:0.92rem;color:#64748b;margin:0 0 8px">Was this article helpful?</p>
                 <div style="display:flex;gap:12px;justify-content:center">
@@ -526,40 +492,6 @@ POST /api/v1/policies
                     <button style="padding:8px 20px;background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;border-radius:6px;font-size:0.88rem;font-weight:500;cursor:pointer">No</button>
                 </div>
             </div>
-            
-
-            
-            <section class="related-section">
-                <h2>Related Articles</h2>
-                <div class="related-grid">
-                    
-                    <a href="/ai-underwriting/hiscox-cut-us-property-quote-cycle-time-from-14-days-to-15-minutes-a-99-reductio/" class="related-card">
-                        <span class="tag tag-teal">AI Underwriting</span>
-                        <h3>Hiscox cut U.S. property quote cycle time from 14 days to 15 minutes — a 99% reduction</h3>
-                        <span class="meta">June 03, 2026</span>
-                    </a>
-                    
-                    <a href="/ai-underwriting/why-68-of-pc-underwriters-still-ignore-90-of-their-dataand-how-ai-can-fix-it/" class="related-card">
-                        <span class="tag tag-teal">AI Underwriting</span>
-                        <h3>Why 68% of P&C underwriters still ignore 90% of their data—and how AI can fix it</h3>
-                        <span class="meta">May 29, 2026</span>
-                    </a>
-                    
-                    <a href="/ai-underwriting/ai-risk-assessment-in-insurance-5-platforms-compared/" class="related-card">
-                        <span class="tag tag-teal">AI Underwriting</span>
-                        <h3>AI Risk Assessment in Insurance: 5 Platforms Compared</h3>
-                        <span class="meta">May 23, 2026</span>
-                    </a>
-                    
-                    <a href="/ai-underwriting/how-hiscox-slashed-quote-cycle-time-by-99-with-ai-and-what-it-cost-them/" class="related-card">
-                        <span class="tag tag-teal">AI Underwriting</span>
-                        <h3>How Hiscox Slashed Quote Cycle Time by 99% with AI – And What It Cost Them</h3>
-                        <span class="meta">May 17, 2026</span>
-                    </a>
-                    
-                </div>
-            </section>
-            
 
             <script type="application/ld+json">
             {
