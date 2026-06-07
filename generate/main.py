@@ -33,32 +33,32 @@ CATEGORY_HERO = {
     "ai-claims": {
         "badge": "Claims Automation",
         "heading": "AI Claims<br>Intelligence",
-        "subtitle": "From FNOL to settlement — how machine learning is rewriting the claims playbook. Real implementations, real results."
+        "subtitle": "From FNOL to settlement, machine learning rewrites the claims playbook. Explore practical implementations of automated triage, damage estimation, fraud screening, and subrogation — covering both established carriers and insurtech challengers. Each article goes beyond vendor claims to examine ROI frameworks, implementation timelines, and common failure modes."
     },
     "ai-underwriting": {
         "badge": "Underwriting Innovation",
         "heading": "AI Underwriting<br>Insights",
-        "subtitle": "Risk assessment at machine speed. In-depth analysis of automated underwriting engines and their impact on loss ratios."
+        "subtitle": "Risk assessment at machine speed. This category covers automated underwriting engines powered by structured and unstructured data — from telematics and IoT feeds to NLP-enriched broker submissions. Deep dives into loss ratio impact, regulatory friction, and the shift from 'detect and reject' to 'price and accept.'"
     },
     "ai-fraud-detection": {
         "badge": "Fraud Prevention",
         "heading": "AI Fraud Detection<br>Deep Dives",
-        "subtitle": "Catching what humans miss. Technical breakdowns of anomaly detection, network analysis, and predictive fraud scoring."
+        "subtitle": "Catching what rule-based systems miss. Technical analysis of deep learning, graph neural networks, and NLP applied to claims fraud — covering application fraud, organized rings, provider fraud, and premium leakage. Includes model development guides, dataset strategies, and the thorny problem of explainability."
     },
     "embedded-insurance": {
         "badge": "Embedded Insurance",
         "heading": "Embedded Insurance<br>Frontier",
-        "subtitle": "Insurance where customers already are — inside platforms, checkout flows, and digital ecosystems. The architecture and economics."
+        "subtitle": "Insurance seamlessly embedded into checkout flows, ride-hailing apps, and SaaS platforms. Coverage spans API-first architectures, regulatory fragmentation across jurisdictions, risk pooling mechanics, and the economic fundamentals that will determine which embedded models survive consolidation."
     },
     "ai-policy-cx": {
         "badge": "Policy & CX",
         "heading": "AI-Powered Policy<br>& Customer Experience",
-        "subtitle": "From chatbots to hyper-personalization — how AI is transforming policy administration and customer retention."
+        "subtitle": "Chatbots, hyper-personalization, and proactive retention — AI is redefining how carriers interact with policyholders. Articles cover conversational AI deployment patterns, churn prediction models, omnichannel orchestration, and the metrics that matter: NPS, retention rate, and lifetime value."
     },
     "decision-intelligence": {
         "badge": "Decision Science",
         "heading": "Decision Intelligence<br>for Insurance",
-        "subtitle": "Data strategy, analytics maturity, and the organizational transformation behind AI adoption in insurance."
+        "subtitle": "Data strategy, analytics maturity, and the organizational transformation behind AI adoption in insurance. Topics include build-vs-buy talent decisions, ROI measurement frameworks, governance models, and the cultural shifts required to move from PoC purgatory to production-grade AI."
     }
 }
 KEYWORDS_DIR = ROOT / "keywords"
@@ -487,6 +487,33 @@ def rebuild_sitemap(config) -> None:
     logger.info("Rebuilt sitemap.xml with %d URLs.", len(articles) + 5 + len(config["subdomains"]))
 
 
+def rebuild_html_sitemap(config) -> None:
+    """Rebuild /content/sitemap/index.html — HTML sitemap organized by category."""
+    jinja_env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
+    all_articles = _collect_all_articles()
+
+    sd_names = {sd["slug"]: sd["name"] for sd in config["subdomains"]}
+    articles_by_sd = {}
+    for sd in config["subdomains"]:
+        articles_by_sd[sd["slug"]] = [
+            a for a in all_articles if a["subdomain"] == sd["slug"]
+        ]
+
+    html = jinja_env.get_template("sitemap.html").render(
+        site_name=config["site"]["name"],
+        subdomains=config["subdomains"],
+        current_year=datetime.now(timezone.utc).year,
+        articles_by_sd=articles_by_sd,
+        sd_names=sd_names,
+        canonical_url="/sitemap/",
+    )
+
+    out_dir = CONTENT_DIR / "sitemap"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "index.html").write_text(html, encoding="utf-8")
+    logger.info("Rebuilt HTML sitemap with %d articles across %d categories.", len(all_articles), len(config["subdomains"]))
+
+
 def rebuild_index_json(articles_meta: list) -> None:
     """Append new articles to index.json for future related-article linking."""
     index_path = CONTENT_DIR / "index.json"
@@ -575,9 +602,20 @@ def rebuild_category_pages(config) -> None:
 def main():
     parser = argparse.ArgumentParser(description="Insurtech Insights Content Generator")
     parser.add_argument("--count", type=int, default=1, help="Number of articles to generate")
+    parser.add_argument("--rebuild", action="store_true", help="Only rebuild site infrastructure (home, categories, sitemaps)")
     args = parser.parse_args()
 
     config = load_config()
+
+    if args.rebuild:
+        logger.info("Rebuild-only mode: regenerating home, category pages, and sitemaps.")
+        rebuild_home(config)
+        rebuild_sitemap(config)
+        rebuild_html_sitemap(config)
+        rebuild_category_pages(config)
+        logger.info("Rebuild complete.")
+        return
+
     logger.info("Site: %s | Articles requested: %d", config["site"]["name"], args.count)
 
     # Pick keywords
@@ -626,6 +664,7 @@ def main():
         rebuild_index_json(articles_meta)
         rebuild_home(config)
         rebuild_sitemap(config)
+        rebuild_html_sitemap(config)
         rebuild_category_pages(config)
 
     logger.info("Done. Generated %d/%d articles successfully.", len(articles_meta), len(selected))

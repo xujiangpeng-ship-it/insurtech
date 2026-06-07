@@ -91,6 +91,17 @@
         .cat-bar-item.active .cat-bar-dot{background:#fff}
         .cat-dot-blue{background:var(--cat-blue)}.cat-dot-teal{background:var(--cat-teal)}.cat-dot-amber{background:var(--cat-amber)}.cat-dot-indigo{background:var(--cat-indigo)}.cat-dot-emerald{background:var(--cat-emerald)}.cat-dot-purple{background:var(--cat-purple)}
 
+        /* ====== DOMAIN GRID ====== */
+        .domain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        @media(max-width:860px){.domain-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:560px){.domain-grid{grid-template-columns:1fr}}
+        .domain-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:all 0.2s;position:relative;overflow:hidden}
+        .domain-card:hover{border-color:var(--accent);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+        .domain-card-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+        .domain-card-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+        .domain-card-name{font-size:0.95rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em}
+        .domain-card-desc{font-size:0.85rem;color:var(--text-secondary);line-height:1.65}
+
         /* ====== SECTION ====== */
         .section{max-width:var(--site-width);margin:0 auto;padding:56px 0}
         .section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:12px}
@@ -143,7 +154,7 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="/" class="nav-logo">
-                <img src="/images/logo.png" alt="Insurtech Insights" class="nav-logo-img">
+                <img src="/images/logo.png" alt="Insurtech Insights" class="nav-logo-img" loading="lazy">
             </a>
         </div>
     </nav>
@@ -200,7 +211,73 @@
                 <div class="hero-stats">
                     <div class="hero-stat"><span class="hero-stat-value">28+</span><span class="hero-stat-label">Articles</span></div>
                     <div class="hero-stat"><span class="hero-stat-value">Daily</span><span class="hero-stat-label">Updates</span></div>
+                    <div class="hero-stat"><span class="hero-stat-value">6</span><span class="hero-stat-label">Domains</span></div>
                 </div>
+            </div>
+        </section>
+
+        <!-- DOMAIN INSIGHTS -->
+        <section class="section" style="padding-bottom:12px">
+            <div class="section-header">
+                <h2>Coverage Domains</h2>
+            </div>
+            <div class="domain-grid">
+                
+                
+                
+                <div class="domain-card">
+                    <div class="domain-card-header">
+                        <span class="domain-card-dot" style="background:var(--cat-blue)"></span>
+                        <span class="domain-card-name">AI Claims</span>
+                    </div>
+                    <p class="domain-card-desc">Automated claims processing is reshaping the $1T+ global claims ecosystem. From FNOL triage and damage estimation to subrogation and settlement, machine learning models now cut cycle times by 40-60% while reducing leakage. The frontier is straight-through processing for low-complexity claims — no human touch required.</p>
+                </div>
+                
+                
+                <div class="domain-card">
+                    <div class="domain-card-header">
+                        <span class="domain-card-dot" style="background:var(--cat-teal)"></span>
+                        <span class="domain-card-name">AI Underwriting</span>
+                    </div>
+                    <p class="domain-card-desc">Traditional underwriting relies on static questionnaires and manual risk assessment. AI-driven underwriting engines ingest thousands of data points — IoT telematics, credit behavior, medical records — to produce granular risk scores in seconds. Early adopters report 15-25% improvement in loss ratios.</p>
+                </div>
+                
+                
+                <div class="domain-card">
+                    <div class="domain-card-header">
+                        <span class="domain-card-dot" style="background:var(--cat-amber)"></span>
+                        <span class="domain-card-name">AI Fraud Detection</span>
+                    </div>
+                    <p class="domain-card-desc">Insurance fraud costs the industry $40B+ annually in the US alone. Deep learning models trained on claims histories, social graphs, and unstructured text can flag suspicious patterns that rule-based systems miss. Network analysis and anomaly detection are the new frontline.</p>
+                </div>
+                
+                
+                <div class="domain-card">
+                    <div class="domain-card-header">
+                        <span class="domain-card-dot" style="background:var(--cat-indigo)"></span>
+                        <span class="domain-card-name">Embedded Insurance</span>
+                    </div>
+                    <p class="domain-card-desc">The line between buying a product and insuring it is dissolving. Embedded insurance places coverage inside checkout flows, ride-hailing apps, and SaaS platforms — reaching customers who never actively shopped for insurance. The addressable market is projected at $700B by 2030.</p>
+                </div>
+                
+                
+                <div class="domain-card">
+                    <div class="domain-card-header">
+                        <span class="domain-card-dot" style="background:var(--cat-emerald)"></span>
+                        <span class="domain-card-name">AI Policy & CX</span>
+                    </div>
+                    <p class="domain-card-desc">Customer expectations have been reshaped by Amazon and Uber. Insurance carriers are racing to deploy chatbots, hyper-personalized portals, and proactive policy management tools. AI-powered CX isn't just about cost reduction — it's about retention in a market where switching costs are dropping.</p>
+                </div>
+                
+                
+                <div class="domain-card">
+                    <div class="domain-card-header">
+                        <span class="domain-card-dot" style="background:var(--cat-purple)"></span>
+                        <span class="domain-card-name">Decision Intelligence</span>
+                    </div>
+                    <p class="domain-card-desc">AI adoption in insurance isn't purely a technology problem — it's an organizational one. Decision intelligence sits at the intersection of data strategy, analytics maturity, and change management. The carriers winning today are those that treat AI as a cultural transformation, not a software deployment.</p>
+                </div>
+                
             </div>
         </section>
 
@@ -300,10 +377,13 @@
             <div class="footer-bottom" style="border-top:none;padding-top:0;justify-content:space-between">
                 <span>&copy; 2026 Insurtech Insights. All rights reserved.</span>
                 <span>
-                    <a href="/about/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">About</a>
-                    <a href="/contact/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">Contact</a>
-                    <a href="/privacy/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">Privacy Policy</a>
-                    <a href="/terms/" style="color:rgba(255,255,255,0.55);text-decoration:none">Terms</a>
+                    <a href="/about/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px" rel="noopener">About</a>
+                    <a href="/contact/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px" rel="noopener">Contact</a>
+                    <a href="/privacy/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px" rel="noopener">Privacy Policy</a>
+                    <a href="/terms/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px" rel="noopener">Terms</a>
+                    <a href="/sitemap/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px" rel="noopener">Sitemap</a>
+                    <a href="https://linkedin.com/company/821224" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">LinkedIn</a>
+                    <a href="https://x.com/821224insights" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.55);text-decoration:none">X / Twitter</a>
                 </span>
             </div>
         </div>

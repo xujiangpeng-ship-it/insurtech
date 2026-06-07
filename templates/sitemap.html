@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Map | {{ site_name }}</title>
+    <meta name="description" content="Complete site map of {{ site_name }} — browse all articles organized by category.">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <meta property="og:title" content="Site Map | {{ site_name }}">
+    <meta property="og:description" content="Complete site map of {{ site_name }}.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0B1121;
+            --navy-light: #1A2744;
+            --accent: #2563EB;
+            --accent-hover: #1D4ED8;
+            --accent-light: #EFF6FF;
+            --teal: #0D9488;
+            --teal-light: #F0FDFA;
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --text: #1E293B;
+            --text-secondary: #475569;
+            --muted: #64748B;
+            --muted-light: #94A3B8;
+            --border: #E2E8F0;
+            --border-light: #F1F5F9;
+            --shadow-sm: 0 1px 2px rgba(15,23,42,0.04);
+            --shadow-md: 0 4px 6px -1px rgba(15,23,42,0.06),0 2px 4px -2px rgba(15,23,42,0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(15,23,42,0.06),0 4px 6px -4px rgba(15,23,42,0.04);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --font-sans: 'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+            --content-width: 720px;
+            --site-width: 1200px;
+            --nav-height: 60px;
+
+            --cat-blue:#2563EB;--cat-teal:#0D9488;--cat-amber:#D97706;--cat-indigo:#4F46E5;--cat-emerald:#059669;--cat-purple:#7C3AED;
+        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        body{font-family:var(--font-sans);line-height:1.75;color:var(--text);background:var(--bg);font-size:1rem}
+
+        .nav{background:var(--navy);position:sticky;top:0;z-index:100;height:var(--nav-height);border-bottom:1px solid rgba(255,255,255,0.08)}
+        .nav-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+        .nav-logo-img{height:36px;width:auto;display:block}
+        .nav-inner{justify-content:center}
+        @media(max-width:768px){.nav-logo-img{height:28px}}
+        @media(max-width:480px){.nav-logo-img{height:24px}}
+
+        .main{padding:0 24px}
+
+        /* ====== CATEGORY BAR ====== */
+        .cat-bar{display:flex;align-items:center;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:8px 0;max-width:var(--site-width);margin:0 auto}
+        .cat-bar-track{flex:1;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;min-width:0}
+        .cat-bar-track::-webkit-scrollbar{display:none}
+        .cat-bar-inner{display:flex;gap:8px;white-space:nowrap;min-width:max-content;padding:0 4px}
+        .cat-arrow{flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:none;background:transparent;color:var(--muted);cursor:pointer;border-radius:var(--radius-sm);font-size:1.2rem;line-height:1;transition:all 0.15s;user-select:none}
+        .cat-arrow:hover{background:var(--accent-light);color:var(--accent)}
+        .cat-arrow:active{transform:scale(0.9)}
+        @media(min-width:861px){.cat-arrow{display:none}}
+        .cat-bar-item{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;text-decoration:none;font-size:0.8rem;font-weight:500;color:var(--text-secondary);background:var(--bg);border:1px solid var(--border);transition:all 0.15s;flex-shrink:0}
+        .cat-bar-item:hover{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
+        .cat-bar-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+        .cat-dot-blue{background:var(--cat-blue)}.cat-dot-teal{background:var(--cat-teal)}.cat-dot-amber{background:var(--cat-amber)}.cat-dot-indigo{background:var(--cat-indigo)}.cat-dot-emerald{background:var(--cat-emerald)}.cat-dot-purple{background:var(--cat-purple)}
+
+        /* ====== SITEMAP ====== */
+        .sitemap-container{max-width:var(--site-width);margin:0 auto;padding:64px 0}
+        .sitemap-container h1{font-size:2rem;font-weight:800;color:var(--navy);letter-spacing:-0.02em;margin-bottom:8px}
+        .sitemap-subtitle{color:var(--muted);font-size:0.9rem;margin-bottom:48px}
+        .sitemap-category{margin-bottom:40px}
+        .sitemap-cat-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+        .sitemap-cat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+        .sitemap-cat-name{font-size:1.15rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em}
+        .sitemap-cat-count{font-size:0.8rem;color:var(--muted);font-weight:500;margin-left:4px}
+        .sitemap-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:8px}
+        .sitemap-link{display:block;padding:10px 14px;border-radius:var(--radius-sm);text-decoration:none;color:var(--text-secondary);font-size:0.875rem;transition:all 0.15s;border:1px solid transparent}
+        .sitemap-link:hover{background:var(--accent-light);color:var(--accent);border-color:var(--accent)}
+        .sitemap-link-date{font-size:0.75rem;color:var(--muted-light);margin-left:8px}
+
+        /* ====== FOOTER ====== */
+        .footer{background:var(--navy);color:rgba(255,255,255,0.55);padding:48px 0 32px;margin-top:80px;font-size:0.85rem}
+        .footer-inner{max-width:var(--site-width);margin:0 auto;padding:0 24px}
+        .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <img src="/images/logo.png" alt="{{ site_name }}" class="nav-logo-img" loading="lazy">
+            </a>
+        </div>
+    </nav>
+
+    <nav class="cat-bar" aria-label="Category navigation">
+        <button class="cat-arrow cat-arrow-left" aria-label="Scroll left" onclick="document.getElementById('catTrack').scrollBy({left:-200,behavior:'smooth'})">&#8249;</button>
+        <div class="cat-bar-track" id="catTrack">
+            <div class="cat-bar-inner">
+                {% set cat_dot_colors = {
+                    'ai-claims':'cat-dot-blue',
+                    'ai-underwriting':'cat-dot-teal',
+                    'ai-fraud-detection':'cat-dot-amber',
+                    'embedded-insurance':'cat-dot-indigo',
+                    'ai-policy-cx':'cat-dot-emerald',
+                    'decision-intelligence':'cat-dot-purple'
+                } %}
+                {% for sd in subdomains %}
+                <a href="/{{ sd.slug }}/" class="cat-bar-item">
+                    <span class="cat-bar-dot {{ cat_dot_colors.get(sd.slug, 'cat-dot-blue') }}"></span>
+                    {{ sd.name }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <button class="cat-arrow cat-arrow-right" aria-label="Scroll right" onclick="document.getElementById('catTrack').scrollBy({left:200,behavior:'smooth'})">&#8250;</button>
+    </nav>
+
+    <main class="main">
+        <div class="sitemap-container">
+            <h1>Site Map</h1>
+            <p class="sitemap-subtitle">Complete index of all articles on {{ site_name }}, organized by category.</p>
+
+            {% set cat_colors = {
+                'ai-claims': 'var(--cat-blue)',
+                'ai-underwriting': 'var(--cat-teal)',
+                'ai-fraud-detection': 'var(--cat-amber)',
+                'embedded-insurance': 'var(--cat-indigo)',
+                'ai-policy-cx': 'var(--cat-emerald)',
+                'decision-intelligence': 'var(--cat-purple)'
+            } %}
+
+            {% for sd in subdomains %}
+            {% set cat_articles = articles_by_sd.get(sd.slug, []) %}
+            <div class="sitemap-category">
+                <div class="sitemap-cat-header">
+                    <span class="sitemap-cat-dot" style="background:{{ cat_colors.get(sd.slug, 'var(--cat-blue)') }}"></span>
+                    <a href="/{{ sd.slug }}/" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:8px">
+                        <span class="sitemap-cat-name">{{ sd.name }}</span>
+                        <span class="sitemap-cat-count">({{ cat_articles|length }} articles)</span>
+                    </a>
+                </div>
+                <div class="sitemap-links">
+                    {% for article in cat_articles %}
+                    <a href="{{ article.url }}" class="sitemap-link">
+                        {{ article.title }}
+                        {% if article.date_display %}<span class="sitemap-link-date">{{ article.date_display }}</span>{% endif %}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-bottom" style="border-top:none;padding-top:0;justify-content:space-between">
+                <span>&copy; {{ current_year }} {{ site_name }}. All rights reserved.</span>
+                <span>
+                    <a href="/about/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px" rel="noopener">About</a>
+                    <a href="/contact/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px" rel="noopener">Contact</a>
+                    <a href="/privacy/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px" rel="noopener">Privacy Policy</a>
+                    <a href="/terms/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px" rel="noopener">Terms</a>
+                    <a href="/sitemap/" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px" rel="noopener">Sitemap</a>
+                    <a href="https://linkedin.com/company/821224" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.55);text-decoration:none;margin-right:16px">LinkedIn</a>
+                    <a href="https://x.com/821224insights" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.55);text-decoration:none">X / Twitter</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
