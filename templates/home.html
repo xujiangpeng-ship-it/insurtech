@@ -36,7 +36,12 @@
     {% endif %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     <style>
         :root {
             --navy: #0B1121;
@@ -229,6 +234,15 @@
                 </div>
             </div>
         </section>
+
+        <!-- SEARCH -->
+        <div style="max-width:var(--site-width);margin:20px auto 0;padding:0 24px">
+          <form action="https://duckduckgo.com/" method="get" target="_blank" style="display:flex;gap:8px;max-width:500px">
+            <input type="hidden" name="sites" value="821224.com">
+            <input type="search" name="q" placeholder="Search articles..." style="flex:1;padding:10px 16px;border:2px solid var(--border);border-radius:8px;font-size:0.95rem;outline:none" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+            <button type="submit" style="padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-size:0.95rem">Search</button>
+          </form>
+        </div>
 
         <!-- DOMAIN INSIGHTS -->
         <section class="section" style="padding-bottom:12px">

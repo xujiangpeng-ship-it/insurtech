@@ -65,13 +65,31 @@ class TagBalancer(HTMLParser):
 
 
 def fix_html_body(html_body: str) -> str:
-    """Fix HTML body: fix malformed tags, strip divs, balance all tags."""
+    """Fix HTML body: fix malformed tags, strip divs, balance all tags, add external link attrs, lazy-load imgs."""
     # Fix malformed closing tags like </p\n (missing >)
     html_body = re.sub(r'</(p|li|td|th|tr|pre|code|h[1-6])\s*\n', r'</\1>\n', html_body)
 
     # Strip all div tags — LLM shouldn't generate these
     html_body = re.sub(r'<div\b[^>]*>', '', html_body, flags=re.IGNORECASE)
     html_body = re.sub(r'</div\s*>', '', html_body, flags=re.IGNORECASE)
+
+    # Add target="_blank" rel="noopener noreferrer" to external links (http*), skip internal (/)
+    def _fix_external_link(m):
+        tag = m.group(0)
+        if 'target=' in tag:
+            return tag  # already has target
+        return tag.replace('<a ', '<a target="_blank" rel="noopener noreferrer" ')
+
+    html_body = re.sub(r'<a\s[^>]*href="https?://[^"]*"[^>]*>', _fix_external_link, html_body)
+
+    # Add loading="lazy" to img tags that don't already have it
+    def _fix_img_lazy(m):
+        tag = m.group(0)
+        if 'loading=' in tag.lower():
+            return tag
+        return tag.replace('<img ', '<img loading="lazy" ')
+
+    html_body = re.sub(r'<img\s[^>]*>', _fix_img_lazy, html_body)
 
     # Balance all remaining tags
     parser = TagBalancer()

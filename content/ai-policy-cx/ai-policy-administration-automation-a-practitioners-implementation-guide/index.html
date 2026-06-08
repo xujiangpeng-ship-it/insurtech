@@ -50,7 +50,12 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     <style>
         :root {
             --navy: #0B1121;
@@ -355,7 +360,7 @@
 <p>Policy data comes from everywhere: agents via ACORD XML, brokers via CSV, MGAs via APIs, and carriers via bordereaux. You need a single ingestion point that normalizes everything.</p>
 
 <p>Architecture:</p>
-<p><img src="https://via.placeholder.com/800x200?text=Ingestion+Pipeline+Diagram" alt="Ingestion Pipeline" style="width:100%;"></p>
+<p><img loading="lazy" src="https://via.placeholder.com/800x200?text=Ingestion+Pipeline+Diagram" alt="Ingestion Pipeline" style="width:100%;"></p>
 
 <p>Key components:</p>
 <ul>
@@ -393,8 +398,8 @@ def parse_acord25(xml_file):
 
 <p>Key cleaning steps:</p>
 <ul>
-<li><strong>Address standardization:</strong> Use <a href="https://smarty.com">Smarty (formerly SmartyStreets)</a> or USPS APIs to fix addresses. One ZIP code mismatch can void a policy.</li>
-<li><strong>Entity resolution:</strong> Match insured names to tax IDs using <a href="https://www.experian.com">Experian</a> or <a href="https://www.dunnhumby.com">Dun & Bradstreet</a>. Avoid creating duplicate policies.</li>
+<li><strong>Address standardization:</strong> Use <a target="_blank" rel="noopener noreferrer" href="https://smarty.com">Smarty (formerly SmartyStreets)</a> or USPS APIs to fix addresses. One ZIP code mismatch can void a policy.</li>
+<li><strong>Entity resolution:</strong> Match insured names to tax IDs using <a target="_blank" rel="noopener noreferrer" href="https://www.experian.com">Experian</a> or <a target="_blank" rel="noopener noreferrer" href="https://www.dunnhumby.com">Dun & Bradstreet</a>. Avoid creating duplicate policies.</li>
 <li><strong>Coverage mapping:</strong> Normalize coverage codes (e.g., “HO-001” vs “Homeowners Package A”) to a canonical set. This reduces model training time by 30%.</li>
 <li><strong>Premium validation:</strong> Cross-check premiums against actuarial tables. If the AI-generated premium is 15% below the table, flag it for review—it’s likely a data error.</li>
 </ul>
@@ -435,7 +440,7 @@ def standardize_address(address, city, state, zipcode):
 </ul>
 
 <p>Architecture:</p>
-<p><img src="https://via.placeholder.com/800x200?text=AI+Underwriting+Engine+Diagram" alt="AI Underwriting Engine" style="width:100%;"></p>
+<p><img loading="lazy" src="https://via.placeholder.com/800x200?text=AI+Underwriting+Engine+Diagram" alt="AI Underwriting Engine" style="width:100%;"></p>
 
 <p>Step-by-step:</p>
 <ol>
@@ -570,7 +575,7 @@ print(f"RMSE: {model.score(X_test, y_test):.2f}")</code></pre>
 <ul>
 <li><strong>Premium calculation:</strong> Use the AI pricing engine for pro-rata billing. For example, if a policy is bound mid-term, the system must calculate the short-rate premium.</li>
 <li><strong>Payment plans:</strong> Handle installment billing (e.g., 12-month payment plans) with automatic dunning for failed payments.</li>
-<li><strong>Tax calculation:</strong> Integrate with tax engines like <a href="https://www.vertexinc.com">Vertex</a> or <a href="https://www.avalara.com">Avalara</a>. Tax rules change constantly—don’t hardcode them.</li>
+<li><strong>Tax calculation:</strong> Integrate with tax engines like <a target="_blank" rel="noopener noreferrer" href="https://www.vertexinc.com">Vertex</a> or <a target="_blank" rel="noopener noreferrer" href="https://www.avalara.com">Avalara</a>. Tax rules change constantly—don’t hardcode them.</li>
 <li><strong>Reinstatement:</strong> Automate reinstatement of lapsed policies when payments are received.</li>
 </ul>
 

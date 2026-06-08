@@ -323,6 +323,24 @@ def render_article(config, keyword_entry, html_body: str) -> Path:
     """Render one article to content/{subdomain}/{slug}/index.html"""
     jinja_env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
 
+    # Post-process: add target="_blank" rel="noopener noreferrer" to external links
+    def _fix_external_link(m):
+        tag = m.group(0)
+        if 'target=' in tag:
+            return tag
+        return tag.replace('<a ', '<a target="_blank" rel="noopener noreferrer" ')
+
+    html_body = re.sub(r'<a\s[^>]*href="https?://[^"]*"[^>]*>', _fix_external_link, html_body)
+
+    # Add loading="lazy" to img tags
+    def _fix_img_lazy(m):
+        tag = m.group(0)
+        if 'loading=' in tag.lower():
+            return tag
+        return tag.replace('<img ', '<img loading="lazy" ')
+
+    html_body = re.sub(r'<img\s[^>]*>', _fix_img_lazy, html_body)
+
     title = extract_title(html_body)
     description = generate_description(html_body)
     slug = make_slug(title)
