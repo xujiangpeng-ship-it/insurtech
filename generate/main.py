@@ -12,7 +12,9 @@ import re
 import sys
 import textwrap
 from datetime import datetime, timezone
+from email.utils import format_datetime
 from pathlib import Path
+from xml.sax.saxutils import escape as escape_xml
 
 import yaml
 from jinja2 import Environment, FileSystemLoader
@@ -471,6 +473,69 @@ def _collect_all_articles() -> list:
     return articles
 
 
+def rebuild_rss(config) -> None:
+    """Generate /content/rss.xml (RSS 2.0 feed)."""
+    domain = config["site"].get("domain", "821224.com")
+    site_name = config["site"]["name"]
+    articles = _collect_all_articles()
+
+    items_xml = []
+    for a in articles:
+        title = a.get("title", "")
+        url = a.get("url", "")
+        description = a.get("description", "")
+        subdomain_name = a.get("subdomain_name", a.get("subdomain", ""))
+        date_display = a.get("date_display", "")
+
+        # Parse date_display ("May 12, 2026") → RFC 822
+        pub_date = ""
+        if date_display:
+            try:
+                dt = datetime.strptime(date_display, "%B %d, %Y")
+                dt = dt.replace(tzinfo=timezone.utc)
+                pub_date = format_datetime(dt, usegmt=True)
+            except ValueError:
+                pass
+        if not pub_date:
+            pub_date = format_datetime(datetime.now(timezone.utc), usegmt=True)
+
+        # Truncate description to 300 chars
+        desc = description[:300] if description else ""
+        if len(description or "") > 300:
+            desc = desc.rsplit(" ", 1)[0] + "..."
+
+        items_xml.append(
+            "<item>\n"
+            f"      <title>{escape_xml(title)}</title>\n"
+            f"      <link>https://{domain}{url}</link>\n"
+            f"      <description>{escape_xml(desc)}</description>\n"
+            f"      <pubDate>{pub_date}</pubDate>\n"
+            f"      <guid isPermaLink=\"true\">https://{domain}{url}</guid>\n"
+            f"      <category>{escape_xml(subdomain_name)}</category>\n"
+            f"    </item>"
+        )
+
+    now = format_datetime(datetime.now(timezone.utc), usegmt=True)
+
+    rss = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
+        "  <channel>\n"
+        f"    <title>{escape_xml(site_name)}</title>\n"
+        f"    <link>https://{domain}</link>\n"
+        f"    <description>In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence.</description>\n"
+        f"    <language>en-us</language>\n"
+        f"    <lastBuildDate>{now}</lastBuildDate>\n"
+        f'    <atom:link href="https://{domain}/rss.xml" rel="self" type="application/rss+xml"/>\n'
+        + "\n".join(items_xml) + "\n"
+        "  </channel>\n"
+        "</rss>\n"
+    )
+
+    (CONTENT_DIR / "rss.xml").write_text(rss, encoding="utf-8")
+    logger.info("Generated RSS feed with %d items.", len(items_xml))
+
+
 def rebuild_home(config) -> None:
     """Rebuild /content/index.html with one article per subdomain + one extra (7 total)."""
     import random as _random
@@ -670,8 +735,9 @@ def main():
     config = load_config()
 
     if args.rebuild:
-        logger.info("Rebuild-only mode: regenerating home, category pages, and sitemaps.")
+        logger.info("Rebuild-only mode: regenerating home, category pages, sitemaps, and RSS.")
         rebuild_home(config)
+        rebuild_rss(config)
         rebuild_sitemap(config)
         rebuild_html_sitemap(config)
         rebuild_category_pages(config)
@@ -725,6 +791,7 @@ def main():
     if articles_meta:
         rebuild_index_json(articles_meta)
         rebuild_home(config)
+        rebuild_rss(config)
         rebuild_sitemap(config)
         rebuild_html_sitemap(config)
         rebuild_category_pages(config)
