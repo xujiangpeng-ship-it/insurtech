@@ -77,8 +77,8 @@
     "subdomain": "embedded-insurance",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "pending"
   },
   {
     "keyword": "parametric insurance AI embedded IoT data sources",
