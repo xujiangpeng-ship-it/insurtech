@@ -12,6 +12,13 @@ from html.parser import HTMLParser
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
+# PIL for image dimension retrieval (WebP width/height injection)
+try:
+    from PIL import Image
+    HAS_PIL = True
+except ImportError:
+    HAS_PIL = False
+
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
 TEMPLATES_DIR = ROOT / "templates"
@@ -64,6 +71,30 @@ class TagBalancer(HTMLParser):
             self.output.append(f'</{tag}>')
 
 
+DEFAULT_IMG_W = 800
+DEFAULT_IMG_H = 450
+
+
+def get_image_dimensions(src: str) -> tuple:
+    """Resolve img src to local file, return (width, height) or defaults."""
+    if not HAS_PIL:
+        return DEFAULT_IMG_W, DEFAULT_IMG_H
+    # Resolve absolute-relative paths like /images/logo.webp
+    if src.startswith("/"):
+        img_path = CONTENT_DIR / src.lstrip("/")
+    elif src.startswith("http"):
+        return DEFAULT_IMG_W, DEFAULT_IMG_H
+    else:
+        img_path = CONTENT_DIR / src
+    try:
+        if img_path.exists():
+            with Image.open(str(img_path)) as img:
+                return img.size  # (width, height)
+    except Exception:
+        pass
+    return DEFAULT_IMG_W, DEFAULT_IMG_H
+
+
 def fix_html_body(html_body: str) -> str:
     """Fix HTML body: fix malformed tags, strip divs, balance all tags, add external link attrs, lazy-load imgs."""
     # Fix malformed closing tags like </p\n (missing >)
@@ -82,14 +113,25 @@ def fix_html_body(html_body: str) -> str:
 
     html_body = re.sub(r'<a\s[^>]*href="https?://[^"]*"[^>]*>', _fix_external_link, html_body)
 
-    # Add loading="lazy" to img tags that don't already have it
-    def _fix_img_lazy(m):
+    # Add loading="lazy" and width/height to img tags
+    def _fix_img(m):
         tag = m.group(0)
-        if 'loading=' in tag.lower():
+        src_match = re.search(r'src="([^"]*)"', tag)
+        if not src_match:
             return tag
-        return tag.replace('<img ', '<img loading="lazy" ')
+        src = src_match.group(1)
+        # Add loading="lazy" if missing
+        if 'loading=' not in tag.lower():
+            tag = tag.replace('<img ', '<img loading="lazy" ')
+        # Add width/height if missing
+        if 'width=' not in tag.lower() or 'height=' not in tag.lower():
+            w, h = get_image_dimensions(src)
+            # Remove existing width/height if present (partial)
+            tag = re.sub(r'\s(width|height)="[^"]*"', '', tag)
+            tag = tag.replace('<img ', f'<img width="{w}" height="{h}" ')
+        return tag
 
-    html_body = re.sub(r'<img\s[^>]*>', _fix_img_lazy, html_body)
+    html_body = re.sub(r'<img\s[^>]*>', _fix_img, html_body)
 
     # Balance all remaining tags
     parser = TagBalancer()
