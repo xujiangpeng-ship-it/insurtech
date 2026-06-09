@@ -46,7 +46,9 @@
     
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BT3L3QFNX"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0BT3L3QFNX');</script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0BT3L3QFNX');
+function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'engagement','event_label':answer,'page_path':window.location.pathname});var fb=document.getElementById('feedback-buttons');if(fb)fb.innerHTML='<span style="color:var(--muted);font-size:0.85rem">Thanks for your feedback!</span>';}
+</script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -481,10 +483,22 @@
 
             <div class="feedback-widget" style="margin:28px 0 0;padding:16px 0;text-align:center;border-top:1px solid #e2e8f0">
                 <p style="font-size:0.92rem;color:#64748b;margin:0 0 8px">Was this article helpful?</p>
-                <div style="display:flex;gap:12px;justify-content:center">
-                    <button style="padding:8px 20px;background:#2563eb;color:#fff;border:none;border-radius:6px;font-size:0.88rem;font-weight:500;cursor:pointer">Yes</button>
-                    <button style="padding:8px 20px;background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;border-radius:6px;font-size:0.88rem;font-weight:500;cursor:pointer">No</button>
+                <div id="feedback-buttons" style="display:flex;gap:12px;justify-content:center">
+                    <button onclick="ga4Feedback('yes')" style="padding:8px 20px;background:#2563eb;color:#fff;border:none;border-radius:6px;font-size:0.88rem;font-weight:500;cursor:pointer">Yes</button>
+                    <button onclick="ga4Feedback('no')" style="padding:8px 20px;background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;border-radius:6px;font-size:0.88rem;font-weight:500;cursor:pointer">No</button>
                 </div>
+            </div>
+
+            <!-- COMMENTS -->
+            <div id="comments" style="max-width:var(--content-width);margin:48px auto 0;padding:0 24px">
+              <h3 style="font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:24px">Comments</h3>
+              <script src="https://utteranc.es/client.js"
+                      repo="cowcomzw/insurtech-repo"
+                      issue-term="pathname"
+                      theme="github-light"
+                      crossorigin="anonymous"
+                      async>
+              </script>
             </div>
 
             <script type="application/ld+json">
