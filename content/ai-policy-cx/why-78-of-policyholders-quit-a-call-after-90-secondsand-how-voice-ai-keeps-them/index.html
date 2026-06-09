@@ -44,6 +44,47 @@
 }
 </script>
     
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Why 78% of policyholders quit a call after 90 seconds—and how voice AI keeps them on the line",
+  "description": "It’s not a mystery: the average customer’s patience for a traditional call center call is measured in seconds, not minutes. Studies by Coveo and others show...",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Step 1",
+      "text": "Start with a narrow use case: Don’t try to handle everything. Pick one workflow—say, FNOL intake for auto claims—and master it. Hippo started with earthquake parametric; Lemonade started with renters..."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Step 2",
+      "text": "Measure latency in milliseconds: Any call that takes longer than 2 seconds to respond triggers customer complaints. I’ve seen carriers where a single misconfigured AWS Lambda function added 1.8..."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Step 3",
+      "text": "Run bias audits monthly: Use tools like IBM’s AI Fairness 360 to check for disparate impact across demographics. One carrier in Florida discovered their bot was denying more claims from policyholders..."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Step 4",
+      "text": "Test escalation paths under load: Simulate 1,000 concurrent calls. If your human escalation queue can’t handle the volume, you’ll have policyholders stuck in limbo. I’ve seen carriers where the..."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Step 5",
+      "text": "Negotiate data retention clauses: Voice recordings count as biometric data under Illinois BIPA. Negotiate with your vendor to delete raw audio within 30 days. Most vendors will do it—for a price."
+    }
+  ]
+}
+</script>
+    
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BT3L3QFNX"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0BT3L3QFNX');
@@ -167,6 +208,8 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 
         
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0B1A2E">
 </head>
 <body>
     <div id="cookie-consent" style="position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;padding:16px 24px;z-index:1000;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:0.85rem;box-shadow:0 -4px 20px rgba(0,0,0,0.15)">
@@ -230,7 +273,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
                 <div class="article-meta">
                     <span>May 20, 2026</span>
                     <span class="dot"></span>
-                    <span>~11 min read</span>
+                    <span>~12 min read</span>
                 </div>
                 <div class="article-byline" style="color:#6b7280;font-size:0.9rem;margin-top:12px;">
                     By <a href="/about/" style="color:#3b82f6;text-decoration:none;">Bin Sun</a>
@@ -390,6 +433,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 <li><strong>Real-time subrogation negotiation:</strong> Lemonade is testing a voice bot that negotiates subrogation claims with third parties in real time. If the bot can shave $50 off each claim, that’s $5M annually for a carrier with 100k claims. But the legal team is already pushing back—who’s liable if the bot makes a mistake?</li>
 <li><strong>Multilingual edge computing:</strong> AWS is rolling out real-time translation for voice AI, but it adds 300ms of latency. Carriers in Texas and Florida are scrambling to deploy edge devices to cut</li></ul>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-policy-cx/why-conversational-ai-is-failing-your-insurance-sales-pipeline-and-how-to-fix-it/">Why conversational AI is failing your insurance sales pipeline — and how to fix it</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/">Why 70% of carriers won’t have a profitable AI chatbot by 2026</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/">AI Policy Administration Automation: A Practitioner’s Implementation Guide</a></p>
+<p class="also-read"><strong>Also Read:</strong> <a href="/ai-policy-cx/why-conversational-ai-is-failing-your-insurance-sales-pipeline-and-how-to-fix-it/">Why conversational AI is failing your insurance sales pipeline — and how to fix it</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/">Why 70% of carriers won’t have a profitable AI chatbot by 2026</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/">AI Policy Administration Automation: A Practitioner’s Implementation Guide</a></p>
             </div>
 
             
@@ -466,5 +510,13 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
             </div>
         </div>
     </footer>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
 </body>
 </html>

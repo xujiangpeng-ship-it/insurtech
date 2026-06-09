@@ -44,6 +44,83 @@
 }
 </script>
     
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How Hiscox Slashed Quote Cycle Time by 99% with AI – And What It Cost Them",
+  "description": "In 2019, Hiscox’s small business insurance unit was drowning in quotes. The manual underwriting (UW) process for commercial policies took an average of 14 days...",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Step 1",
+      "text": "Automated data ingestion: Used Amazon Textract and Google Document AI to extract structured data from PDFs, emails, and broker portals."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Step 2",
+      "text": "Integrated with D&B; Direct and Experian BusinessIQ to auto-populate risk factors (industry, revenue, employee count, years in business)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Step 3",
+      "text": "Accuracy rate: 89% on first pass; the rest required human review."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Step 4",
+      "text": "Smart risk classification: A custom gradient-boosted decision tree model (trained on 500,000 historical quotes) classified risks into tiers: Low, Medium, High, or Declined ."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Step 5",
+      "text": "Factors included SIC code, payroll, location, and prior claims history (via CLUE reports )."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Step 6",
+      "text": "Model precision: 94% on training data; 87% on validation (real-world drift was a constant issue)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 7,
+      "name": "Step 7",
+      "text": "Dynamic pricing engine: Replaced the legacy rate engine with a microservices-based pricing API that ran in <4 seconds."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 8,
+      "name": "Step 8",
+      "text": "Used XGBoost to adjust premiums based on real-time market data (e.g., catastrophe loadings, reinsurance costs)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 9,
+      "name": "Step 9",
+      "text": "Supported parametric triggers for micro-adjustments (e.g., +15% if ZIP code had a recent hail event)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 10,
+      "name": "Step 10",
+      "text": "Human-in-the-loop (HITL) for edge cases: Only 11% of quotes required human review—typically for complex risks (e.g., restaurants with alcohol sales, contractors with high subcontractor exposure)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 11,
+      "name": "Step 11",
+      "text": "Underwriters used a collaborative UX (built with Retool ) to override AI recommendations with justification notes."
+    }
+  ]
+}
+</script>
+    
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BT3L3QFNX"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0BT3L3QFNX');
@@ -167,6 +244,8 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 
         
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0B1A2E">
 </head>
 <body>
     <div id="cookie-consent" style="position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;padding:16px 24px;z-index:1000;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:0.85rem;box-shadow:0 -4px 20px rgba(0,0,0,0.15)">
@@ -230,7 +309,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
                 <div class="article-meta">
                     <span>May 17, 2026</span>
                     <span class="dot"></span>
-                    <span>~9 min read</span>
+                    <span>~10 min read</span>
                 </div>
                 <div class="article-byline" style="color:#6b7280;font-size:0.9rem;margin-top:12px;">
                     By <a href="/about/" style="color:#3b82f6;text-decoration:none;">Bin Sun</a>
@@ -394,6 +473,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 
 <p>One thing is clear: Hiscox’s 99% quote cycle time reduction wasn’t just about speed. It was a catalyst for a broader digital transformation—one that forced the company to confront its legacy processes, data gaps, and underwriting assumptions. The result? A small commercial line that’s now more profitable, scalable, and competitive than ever.</p>
 <p>And for an industry often accused of moving at glacial speed? That’s worth the trade-offs.</p>
+<p class="also-read"><strong>Also Read:</strong> <a href="/ai-underwriting/hiscox-cut-us-property-quote-cycle-time-from-14-days-to-15-minutes-a-99-reductio/">Hiscox cut U.S. property quote cycle time from 14 days to 15 minutes — a 99% reduction</a> &nbsp;·&nbsp; <a href="/ai-underwriting/why-68-of-pc-underwriters-still-ignore-90-of-their-dataand-how-ai-can-fix-it/">Why 68% of P&C; underwriters still ignore 90% of their data—and how AI can fix it</a> &nbsp;·&nbsp; <a href="/ai-underwriting/ai-risk-assessment-in-insurance-5-platforms-compared/">AI Risk Assessment in Insurance: 5 Platforms Compared</a></p>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-underwriting/hiscox-cut-us-property-quote-cycle-time-from-14-days-to-15-minutes-a-99-reductio/">Hiscox cut U.S. property quote cycle time from 14 days to 15 minutes — a 99% reduction</a> &nbsp;·&nbsp; <a href="/ai-underwriting/why-68-of-pc-underwriters-still-ignore-90-of-their-dataand-how-ai-can-fix-it/">Why 68% of P&C underwriters still ignore 90% of their data—and how AI can fix it</a> &nbsp;·&nbsp; <a href="/ai-underwriting/ai-risk-assessment-in-insurance-5-platforms-compared/">AI Risk Assessment in Insurance: 5 Platforms Compared</a></p>
             </div>
 
@@ -471,5 +551,13 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
             </div>
         </div>
     </footer>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
 </body>
 </html>

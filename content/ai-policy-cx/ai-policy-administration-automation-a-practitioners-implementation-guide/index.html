@@ -44,6 +44,95 @@
 }
 </script>
     
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "AI Policy Administration Automation: A Practitioner’s Implementation Guide",
+  "description": "I’ve seen claims teams drown in paperwork while underwriters struggle with manual data entry. Policy administration automation isn’t just about saving...",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Step 1",
+      "text": "Feature engineering: Convert policy data into features for models. Example features:"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Step 2",
+      "text": "Insured age (from tax ID + DOB)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Step 3",
+      "text": "Property age (from ZIP code + construction year)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Step 4",
+      "text": "Prior losses (from CLUE reports)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Step 5",
+      "text": "Distance to fire station (from geocoding)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Step 6",
+      "text": "Model training: Use XGBoost for risk scoring (faster than deep learning for tabular data). Train on 3 years of historical policies with loss ratios as the target."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 7,
+      "name": "Step 7",
+      "text": "Pricing adjustment: Use the risk score to adjust base rates. For example:"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 8,
+      "name": "Step 8",
+      "text": "Risk score < 0.8 → 5% discount"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 9,
+      "name": "Step 9",
+      "text": "Risk score > 1.2 → 10% surcharge"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 10,
+      "name": "Step 10",
+      "text": "Exception routing: Use a simple decision tree to determine when to send a policy to a human:"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 11,
+      "name": "Step 11",
+      "text": "If risk score > 1.5 → Human review"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 12,
+      "name": "Step 12",
+      "text": "If prior losses > 3 → Human review"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 13,
+      "name": "Step 13",
+      "text": "If coverage limit > $2M → Human review"
+    }
+  ]
+}
+</script>
+    
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BT3L3QFNX"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0BT3L3QFNX');
@@ -167,6 +256,8 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 
         
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0B1A2E">
 </head>
 <body>
     <div id="cookie-consent" style="position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;padding:16px 24px;z-index:1000;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:0.85rem;box-shadow:0 -4px 20px rgba(0,0,0,0.15)">
@@ -230,7 +321,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
                 <div class="article-meta">
                     <span>May 17, 2026</span>
                     <span class="dot"></span>
-                    <span>~12 min read</span>
+                    <span>~13 min read</span>
                 </div>
                 <div class="article-byline" style="color:#6b7280;font-size:0.9rem;margin-top:12px;">
                     By <a href="/about/" style="color:#3b82f6;text-decoration:none;">Bin Sun</a>
@@ -602,6 +693,7 @@ print(f"RMSE: {model.score(X_test, y_test):.2f}")</code></pre>
 <li><strong>Data drift detection:</strong> Use statistical tests (e.g., Kolmogorov-Smirnov) to detect changes in feature distributions. For example, if “property_age” suddenly shifts from 20 to 40 years, your model is outdated.</li>
 <li><strong>Latency SLOs:</strong> Enforce <300ms for quote/binding. If latency >500ms for 5 minutes, page</li></ul>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-policy-cx/why-conversational-ai-is-failing-your-insurance-sales-pipeline-and-how-to-fix-it/">Why conversational AI is failing your insurance sales pipeline — and how to fix it</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/">Why 70% of carriers won’t have a profitable AI chatbot by 2026</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-78-of-policyholders-quit-a-call-after-90-secondsand-how-voice-ai-keeps-them/">Why 78% of policyholders quit a call after 90 seconds—and how voice AI keeps them on the line</a></p>
+<p class="also-read"><strong>Also Read:</strong> <a href="/ai-policy-cx/why-conversational-ai-is-failing-your-insurance-sales-pipeline-and-how-to-fix-it/">Why conversational AI is failing your insurance sales pipeline — and how to fix it</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/">Why 70% of carriers won’t have a profitable AI chatbot by 2026</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-78-of-policyholders-quit-a-call-after-90-secondsand-how-voice-ai-keeps-them/">Why 78% of policyholders quit a call after 90 seconds—and how voice AI keeps them on the line</a></p>
             </div>
 
             
@@ -678,5 +770,13 @@ print(f"RMSE: {model.score(X_test, y_test):.2f}")</code></pre>
             </div>
         </div>
     </footer>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
 </body>
 </html>

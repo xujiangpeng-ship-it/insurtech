@@ -44,6 +44,59 @@
 }
 </script>
     
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Insurance Claims AI ROI Calculation Framework: A Practitioner’s Step-by-Step Guide",
+  "description": "I’ve reviewed dozens of claims AI ROI models. Most overpromise by 300–500% because they ignore three critical inputs: claim leakage amortized over the policy...",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Step 1",
+      "text": "Export bordereaux from your admin system (Guidewire, Duck Creek, etc.) for the last 24 months. Filter for ClaimStatus = \"Closed\" . You’ll need raw JSON or CSV, not summaries."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Step 2",
+      "text": "Tag each source with: Data Gravity = annual GB/day generated (e.g., 120 GB/day from drone imagery for CAT events)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Step 3",
+      "text": "API Latency = time to pull a full claim record (e.g., 4.2s via SOAP vs. 800ms via GraphQL)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Step 4",
+      "text": "Storage Cost = $/GB/month (e.g., AWS S3 IA = $0.0125/GB)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Step 5",
+      "text": "Add TPA/MGA fee layers : Rule of thumb: 0.7–1.2% of written premium for mid-market carriers. For a $500M P&C; book, that’s $3.5–6M/year."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Step 6",
+      "text": "Check contracts for data escrow clauses . One insurer I audited paid $220K/year to export claims data from a TPA—until they renegotiated to a flat $50K API fee."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 7,
+      "name": "Step 7",
+      "text": "Calculate your current data tax : Source Annual GB Storage Cost ($) Egress Cost ($) TPA Fee ($) Total Data Tax ($)"
+    }
+  ]
+}
+</script>
+    
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BT3L3QFNX"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0BT3L3QFNX');
@@ -167,6 +220,8 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 
         
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0B1A2E">
 </head>
 <body>
     <div id="cookie-consent" style="position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;padding:16px 24px;z-index:1000;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:0.85rem;box-shadow:0 -4px 20px rgba(0,0,0,0.15)">
@@ -230,7 +285,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
                 <div class="article-meta">
                     <span>June 04, 2026</span>
                     <span class="dot"></span>
-                    <span>~9 min read</span>
+                    <span>~10 min read</span>
                 </div>
                 <div class="article-byline" style="color:#6b7280;font-size:0.9rem;margin-top:12px;">
                     By <a href="/about/" style="color:#3b82f6;text-decoration:none;">Bin Sun</a>
@@ -531,6 +586,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
   <li><strong>Recovery Uplift Range</strong>: 0.5% to 2.5% (slider).</li>
   <li><strong>Adjuster Cost Range</strong>: $100 to $250</li></ol>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-claims/predictive-analytics-in-insurance-claims-settlement-optimization-a-practitioners/">Predictive Analytics in Insurance Claims Settlement Optimization: A Practitioner’s Build Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/are-ai-claims-chatbots-actually-saving-insurers-moneyor-just-annoying-customers/">Are AI Claims Chatbots Actually Saving Insurers Money—or Just Annoying Customers?</a> &nbsp;·&nbsp; <a href="/ai-claims/ai-claims-documentation-automation-tools-three-weeks-with-the-big-three/">AI Claims Documentation Automation Tools: Three Weeks with the Big Three</a></p>
+<p class="also-read"><strong>Also Read:</strong> <a href="/ai-claims/predictive-analytics-in-insurance-claims-settlement-optimization-a-practitioners/">Predictive Analytics in Insurance Claims Settlement Optimization: A Practitioner’s Build Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/are-ai-claims-chatbots-actually-saving-insurers-moneyor-just-annoying-customers/">Are AI Claims Chatbots Actually Saving Insurers Money—or Just Annoying Customers?</a> &nbsp;·&nbsp; <a href="/ai-claims/ai-claims-documentation-automation-tools-three-weeks-with-the-big-three/">AI Claims Documentation Automation Tools: Three Weeks with the Big Three</a></p>
             </div>
 
             
@@ -607,5 +663,13 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
             </div>
         </div>
     </footer>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
 </body>
 </html>

@@ -44,6 +44,35 @@
 }
 </script>
     
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Parametric Insurance Meets AI and Embedded IoT: A Build-Your-Own Guide",
+  "description": "I’ve helped three MGAs launch parametric products in the last 18 months. Two flamed out because they underestimated the data plumbing; one is now writing $12 M...",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Step 1",
+      "text": "White-label OEM (e.g., Sensirion, Bosch). Order 100 units at ~$110 each, MOQ 500, lead time 6 weeks."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Step 2",
+      "text": "Embedded cellular module (e.g., Twilio Super SIM + STM32). Bill of materials ≈ $95, but you need a cellular plan (~$2 per device/month)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Step 3",
+      "text": "Third-party API (e.g., RoofScan.io). They charge $0.07 per reading; no hardware risk, but you rely on their uptime."
+    }
+  ]
+}
+</script>
+    
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BT3L3QFNX"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0BT3L3QFNX');
@@ -167,6 +196,8 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 
         
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0B1A2E">
 </head>
 <body>
     <div id="cookie-consent" style="position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;padding:16px 24px;z-index:1000;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:0.85rem;box-shadow:0 -4px 20px rgba(0,0,0,0.15)">
@@ -535,6 +566,7 @@ app.listen(3000);</code></pre>
 <ul>
 </ul>
 <p class="also-read"><strong>Also Read:</strong> <a href="/embedded-insurance/embedded-insurance-customer-experience-ais-role-in-personalizing-real-time-prote/">Embedded insurance customer experience: AI’s role in personalizing real-time protection</a> &nbsp;·&nbsp; <a href="/embedded-insurance/bnpl-embedded-insurance-is-the-next-great-ai-experiment-and-it-might-blow-up/">BNPL Embedded Insurance Is the Next Great AI Experiment — and It Might Blow Up</a> &nbsp;·&nbsp; <a href="/embedded-insurance/parametric-insurance-on-autopilot-how-to-wire-iot-data-streams-into-ai-models-in/">Parametric Insurance on Autopilot: How to Wire IoT Data Streams into AI Models in 7 Weeks</a></p>
+<p class="also-read"><strong>Also Read:</strong> <a href="/embedded-insurance/embedded-insurance-customer-experience-ais-role-in-personalizing-real-time-prote/">Embedded insurance customer experience: AI’s role in personalizing real-time protection</a> &nbsp;·&nbsp; <a href="/embedded-insurance/bnpl-embedded-insurance-is-the-next-great-ai-experiment-and-it-might-blow-up/">BNPL Embedded Insurance Is the Next Great AI Experiment — and It Might Blow Up</a> &nbsp;·&nbsp; <a href="/embedded-insurance/parametric-insurance-on-autopilot-how-to-wire-iot-data-streams-into-ai-models-in/">Parametric Insurance on Autopilot: How to Wire IoT Data Streams into AI Models in 7 Weeks</a></p>
             </div>
 
             
@@ -611,5 +643,13 @@ app.listen(3000);</code></pre>
             </div>
         </div>
     </footer>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
 </body>
 </html>

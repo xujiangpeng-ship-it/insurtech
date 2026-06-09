@@ -43,6 +43,8 @@
   "foundingDate": "2023-04-10"
 }
 </script>
+    {% if faq_schema %}{{ faq_schema }}{% endif %}
+    {% if howto_schema %}{{ howto_schema }}{% endif %}
     {% if adsense_pub_id %}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ adsense_pub_id }}" crossorigin="anonymous"></script>
     {% endif %}
@@ -176,6 +178,8 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
             'decision-intelligence':'tag-purple'
         } %}
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0B1A2E">
 </head>
 <body>
     <div id="cookie-consent" style="position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;padding:16px 24px;z-index:1000;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:0.85rem;box-shadow:0 -4px 20px rgba(0,0,0,0.15)">
@@ -337,5 +341,13 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
             </div>
         </div>
     </footer>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
 </body>
 </html>

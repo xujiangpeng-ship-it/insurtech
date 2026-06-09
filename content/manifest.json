@@ -1,0 +1,13 @@
+{
+  "name": "Insurtech Insights",
+  "short_name": "Insurtech",
+  "description": "AI meets Insurance Technology — in-depth coverage of how artificial intelligence is reshaping insurance",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1A2E",
+  "theme_color": "#0B1A2E",
+  "icons": [
+    {"src": "/images/logo.png", "sizes": "822x217", "type": "image/png"},
+    {"src": "/images/logo.webp", "sizes": "822x217", "type": "image/webp"}
+  ]
+}

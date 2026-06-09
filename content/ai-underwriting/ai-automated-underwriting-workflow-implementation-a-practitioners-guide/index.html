@@ -45,6 +45,8 @@
 </script>
     
     
+    
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BT3L3QFNX"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0BT3L3QFNX');
 function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'engagement','event_label':answer,'page_path':window.location.pathname});var fb=document.getElementById('feedback-buttons');if(fb)fb.innerHTML='<span style="color:var(--muted);font-size:0.85rem">Thanks for your feedback!</span>';}
@@ -167,6 +169,8 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 
         
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0B1A2E">
 </head>
 <body>
     <div id="cookie-consent" style="position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;padding:16px 24px;z-index:1000;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:0.85rem;box-shadow:0 -4px 20px rgba(0,0,0,0.15)">
@@ -230,7 +234,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
                 <div class="article-meta">
                     <span>May 20, 2026</span>
                     <span class="dot"></span>
-                    <span>~10 min read</span>
+                    <span>~11 min read</span>
                 </div>
                 <div class="article-byline" style="color:#6b7280;font-size:0.9rem;margin-top:12px;">
                     By <a href="/about/" style="color:#3b82f6;text-decoration:none;">Bin Sun</a>
@@ -500,6 +504,7 @@ POST /api/v1/policies
   "policy_term": {
     "start": "2024-06-01",
     "end":</pre>
+<p class="also-read"><strong>Also Read:</strong> <a href="/ai-underwriting/hiscox-cut-us-property-quote-cycle-time-from-14-days-to-15-minutes-a-99-reductio/">Hiscox cut U.S. property quote cycle time from 14 days to 15 minutes — a 99% reduction</a> &nbsp;·&nbsp; <a href="/ai-underwriting/why-68-of-pc-underwriters-still-ignore-90-of-their-dataand-how-ai-can-fix-it/">Why 68% of P&C; underwriters still ignore 90% of their data—and how AI can fix it</a> &nbsp;·&nbsp; <a href="/ai-underwriting/ai-risk-assessment-in-insurance-5-platforms-compared/">AI Risk Assessment in Insurance: 5 Platforms Compared</a></p>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-underwriting/hiscox-cut-us-property-quote-cycle-time-from-14-days-to-15-minutes-a-99-reductio/">Hiscox cut U.S. property quote cycle time from 14 days to 15 minutes — a 99% reduction</a> &nbsp;·&nbsp; <a href="/ai-underwriting/why-68-of-pc-underwriters-still-ignore-90-of-their-dataand-how-ai-can-fix-it/">Why 68% of P&C underwriters still ignore 90% of their data—and how AI can fix it</a> &nbsp;·&nbsp; <a href="/ai-underwriting/ai-risk-assessment-in-insurance-5-platforms-compared/">AI Risk Assessment in Insurance: 5 Platforms Compared</a></p>
             </div>
 
@@ -577,5 +582,13 @@ POST /api/v1/policies
             </div>
         </div>
     </footer>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
 </body>
 </html>

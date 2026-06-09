@@ -23,8 +23,8 @@
     "subdomain": "embedded-insurance",
     "difficulty": "medium",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "pending"
   },
   {
     "keyword": "how embedded insurance works with AI technology explained",

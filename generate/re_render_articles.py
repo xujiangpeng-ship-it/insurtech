@@ -213,6 +213,164 @@ def extract_article_body(html_text: str) -> str:
     return body.strip()
 
 
+def extract_faq_schema(body_html: str, max_qa: int = 5) -> str:
+    """Extract Q&A pairs from HTML body and return FAQPage JSON-LD string.
+
+    Scans for h2/h3 headings ending with '?' as questions, then extracts
+    the following paragraph(s) up to the next heading as answers.
+    Returns empty string if no Q&A pairs found.
+    """
+    if not body_html:
+        return ""
+
+    qa_pairs = []
+
+    # Find all h2/h3 headings that end with a question mark
+    heading_re = re.compile(
+        r'<h([23])\b[^>]*>(.*?\?)</h\1>',
+        re.DOTALL | re.IGNORECASE,
+    )
+
+    matches = list(heading_re.finditer(body_html))
+    if not matches:
+        return ""
+
+    for i, m in enumerate(matches):
+        if len(qa_pairs) >= max_qa:
+            break
+
+        question = re.sub(r'<[^>]+>', '', m.group(2)).strip()
+        # Clean up HTML entities
+        question = question.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&quot;', '"').replace('&#39;', "'")
+
+        # Extract answer: content from after this heading to before the next heading
+        start = m.end()
+        if i + 1 < len(matches):
+            end = matches[i + 1].start()
+        else:
+            end = len(body_html)
+
+        answer_raw = body_html[start:end]
+
+        # Strip all HTML tags
+        answer = re.sub(r'<[^>]+>', ' ', answer_raw)
+        # Collapse whitespace
+        answer = re.sub(r'\s+', ' ', answer).strip()
+        # Clean up HTML entities
+        answer = answer.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&quot;', '"').replace('&#39;', "'")
+        # Limit length
+        if len(answer) > 300:
+            answer = answer[:300].rsplit(' ', 1)[0] + '...'
+
+        if len(answer) > 20:  # require meaningful answer
+            # Escape for JSON
+            qa_pairs.append((question, answer))
+
+    if not qa_pairs:
+        return ""
+
+    entities = []
+    for q, a in qa_pairs:
+        # JSON-escape strings
+        q_escaped = q.replace('\\', '\\\\').replace('"', '\\"')
+        a_escaped = a.replace('\\', '\\\\').replace('"', '\\"')
+        entities.append(f'''    {{
+      "@type": "Question",
+      "name": "{q_escaped}",
+      "acceptedAnswer": {{
+        "@type": "Answer",
+        "text": "{a_escaped}"
+      }}
+    }}''')
+
+    ent_str = ",\n".join(entities)
+    schema = f'''<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+{ent_str}
+  ]
+}}
+</script>'''
+
+    return schema
+
+
+def extract_howto_schema(body_html: str, title: str, description: str = "") -> str:
+    """Extract HowTo steps from HTML body and return HowTo JSON-LD string.
+
+    Looks for ordered list items or paragraphs starting with 'Step N' / 'N.'
+    patterns. Returns empty string if fewer than 2 steps found.
+    """
+    if not body_html:
+        return ""
+
+    steps = []
+
+    # Strategy 1: Look for ordered list items <li> inside <ol>
+    ol_match = re.search(r'<ol[^>]*>(.*?)</ol>', body_html, re.DOTALL)
+    if ol_match:
+        items = re.findall(r'<li[^>]*>(.*?)</li>', ol_match.group(1), re.DOTALL)
+        for item in items:
+            text = re.sub(r'<[^>]+>', ' ', item)
+            text = re.sub(r'\s+', ' ', text).strip()
+            text = text.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&quot;', '"').replace('&#39;', "'")
+            if len(text) > 10:
+                if len(text) > 200:
+                    text = text[:200].rsplit(' ', 1)[0] + '...'
+                steps.append(text)
+
+    # Strategy 2: Look for "Step N:" or "Step N." patterns in paragraphs/headings
+    if not steps:
+        step_patterns = re.findall(
+            r'(?:<h[23][^>]*>|<p>)\s*(?:Step\s*(\d+)[:\.\)]\s*)(.*?)(?:</h[23]>|</p>)',
+            body_html,
+            re.IGNORECASE | re.DOTALL,
+        )
+        if step_patterns:
+            steps = []
+            for num, text in step_patterns:
+                text = re.sub(r'<[^>]+>', ' ', text).strip()
+                text = re.sub(r'\s+', ' ', text)
+                text = text.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&quot;', '"').replace('&#39;', "'")
+                if len(text) > 10:
+                    if len(text) > 200:
+                        text = text[:200].rsplit(' ', 1)[0] + '...'
+                    steps.append(text)
+
+    if len(steps) < 2:
+        return ""
+
+    step_entities = []
+    for i, step_text in enumerate(steps, 1):
+        escaped = step_text.replace('\\', '\\\\').replace('"', '\\"')
+        step_entities.append(f'''    {{
+      "@type": "HowToStep",
+      "position": {i},
+      "name": "Step {i}",
+      "text": "{escaped}"
+    }}''')
+
+    desc_escaped = description.replace('\\', '\\\\').replace('"', '\\"') if description else ""
+    title_escaped = title.replace('\\', '\\\\').replace('"', '\\"')
+
+    steps_str = ",\n".join(step_entities)
+    schema = f'''<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "{title_escaped}",
+  "description": "{desc_escaped}",
+  "step": [
+{steps_str}
+  ]
+}}
+</script>'''
+
+    return schema
+
+
 def build_also_read(current_url: str, current_subdomain: str, article_index: list, limit: int = 3) -> list:
     """Find related articles for Also Read section.
 
@@ -343,6 +501,12 @@ def main():
             date_display = meta.get("date_display", "")
             keyword = meta.get("keyword", slug.replace("-", " "))
 
+            # Extract FAQ Schema
+            faq_schema = extract_faq_schema(body)
+
+            # Extract HowTo Schema
+            howto_schema = extract_howto_schema(body, title, description)
+
             # Inject Also Read section at end of body
             also_reads = build_also_read(url, subdomain, article_index)
             if also_reads:
@@ -389,6 +553,8 @@ def main():
                 ad_slot_bottom=ad_slots.get("bottom", {}).get("slot", ""),
                 canonical_url=url,
                 ga_id=config.get("analytics", {}).get("ga_id", ""),
+                faq_schema=faq_schema or None,
+                howto_schema=howto_schema or None,
             )
 
             article_file.write_text(html, encoding="utf-8")

@@ -44,6 +44,47 @@
 }
 </script>
     
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "AI Policy Administration Automation in Insurance: A Practitioner’s Implementation Guide",
+  "description": "A policy administration system (PAS) is the backbone of an insurer’s operations. Modernizing it with AI isn’t about replacing humans—it’s about reducing manual...",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Step 1",
+      "text": "Document Ingestion: Use Apache Tika or Unstructured.io to extract text and layout from PDFs, Word, and scanned docs. Tika handles 300+ formats."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Step 2",
+      "text": "Layout Analysis: Feed the raw text and bounding boxes into LayoutLMv3 to extract fields: policy number, insured name, coverage lines, limits, deductibles, premium, endorsements."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Step 3",
+      "text": "Coverage Classification: Use the RoBERTa classifier to detect whether the document is BOP, GL, WC, Auto, etc. This prevents feeding a workers’ comp application into a homeowners rating engine."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Step 4",
+      "text": "Post-Processing: Apply regex + custom rules to fix common OCR errors (“$250.00” → “250.00”, “GL” → “General Liability”)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Step 5",
+      "text": "Validation: Use Pydantic models to validate extracted data against your PAS schema. Reject documents with missing required fields (e.g., effective date) and route to manual review."
+    }
+  ]
+}
+</script>
+    
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BT3L3QFNX"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0BT3L3QFNX');
@@ -167,6 +208,8 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 
         
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0B1A2E">
 </head>
 <body>
     <div id="cookie-consent" style="position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;padding:16px 24px;z-index:1000;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:0.85rem;box-shadow:0 -4px 20px rgba(0,0,0,0.15)">
@@ -548,6 +591,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 <p>    document_url TEXT,</p>
 <p>    extracted_data JSONB NOT NULL,</p></p></p></p></p></p></p></p></p></p></p></p></p>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-policy-cx/why-conversational-ai-is-failing-your-insurance-sales-pipeline-and-how-to-fix-it/">Why conversational AI is failing your insurance sales pipeline — and how to fix it</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/">Why 70% of carriers won’t have a profitable AI chatbot by 2026</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-78-of-policyholders-quit-a-call-after-90-secondsand-how-voice-ai-keeps-them/">Why 78% of policyholders quit a call after 90 seconds—and how voice AI keeps them on the line</a></p>
+<p class="also-read"><strong>Also Read:</strong> <a href="/ai-policy-cx/why-conversational-ai-is-failing-your-insurance-sales-pipeline-and-how-to-fix-it/">Why conversational AI is failing your insurance sales pipeline — and how to fix it</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/">Why 70% of carriers won’t have a profitable AI chatbot by 2026</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-78-of-policyholders-quit-a-call-after-90-secondsand-how-voice-ai-keeps-them/">Why 78% of policyholders quit a call after 90 seconds—and how voice AI keeps them on the line</a></p>
             </div>
 
             
@@ -624,5 +668,13 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
             </div>
         </div>
     </footer>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
 </body>
 </html>

@@ -45,6 +45,8 @@
 </script>
     
     
+    
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BT3L3QFNX"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0BT3L3QFNX');
 function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'engagement','event_label':answer,'page_path':window.location.pathname});var fb=document.getElementById('feedback-buttons');if(fb)fb.innerHTML='<span style="color:var(--muted);font-size:0.85rem">Thanks for your feedback!</span>';}
@@ -167,6 +169,8 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 
         
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0B1A2E">
 </head>
 <body>
     <div id="cookie-consent" style="position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;padding:16px 24px;z-index:1000;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:0.85rem;box-shadow:0 -4px 20px rgba(0,0,0,0.15)">
@@ -514,6 +518,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 
 <p>For everyone else, hybrid is the least-worst compromise. But watch the glue. One carrier I advised spent $6M on a feature store integration layer that became a single point of failure during the 2023 wildfire season; the API latency spiked to 1.2 seconds, and their direct channel quote-to-bind time doubled. The model itself was fine; the integration was the weak link.</p>
 <p class="also-read"><strong>Also Read:</strong> <a href="/decision-intelligence/why-78-of-insurers-ai-models-fail-internal-ethics-reviews-despite-explainability/">Why 78% of insurers’ AI models fail internal ethics reviews despite “explainability” tools</a> &nbsp;·&nbsp; <a href="/decision-intelligence/insurance-data-quality-ai-readiness-assessment-a-practitioners-checklist/">Insurance Data Quality AI Readiness Assessment: A Practitioner’s Checklist</a> &nbsp;·&nbsp; <a href="/decision-intelligence/building-an-ai-maturity-model-for-insurance-a-practitioners-guide/">Building an AI Maturity Model for Insurance: A Practitioner’s Guide</a></p>
+<p class="also-read"><strong>Also Read:</strong> <a href="/decision-intelligence/why-78-of-insurers-ai-models-fail-internal-ethics-reviews-despite-explainability/">Why 78% of insurers’ AI models fail internal ethics reviews despite “explainability” tools</a> &nbsp;·&nbsp; <a href="/decision-intelligence/insurance-data-quality-ai-readiness-assessment-a-practitioners-checklist/">Insurance Data Quality AI Readiness Assessment: A Practitioner’s Checklist</a> &nbsp;·&nbsp; <a href="/decision-intelligence/building-an-ai-maturity-model-for-insurance-a-practitioners-guide/">Building an AI Maturity Model for Insurance: A Practitioner’s Guide</a></p>
             </div>
 
             
@@ -590,5 +595,13 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
             </div>
         </div>
     </footer>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
 </body>
 </html>

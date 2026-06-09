@@ -44,6 +44,29 @@
 }
 </script>
     
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Natural Language Processing for Insurance Claims Documents: A Practitioner’s Implementation Guide",
+  "description": "I’ve processed thousands of claims documents across P&C, life, and specialty lines. Most carriers still rely on armies of clerks to extract data from PDFs,...",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Step 1",
+      "text": "Rule-based: Regex + keyword matching. Fast to build, brittle to noise."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Step 2",
+      "text": "ML-based: NER (Named Entity Recognition) + sequence models. Slower, but generalizes."
+    }
+  ]
+}
+</script>
+    
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BT3L3QFNX"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0BT3L3QFNX');
@@ -167,6 +190,8 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 
         
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0B1A2E">
 </head>
 <body>
     <div id="cookie-consent" style="position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;padding:16px 24px;z-index:1000;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:0.85rem;box-shadow:0 -4px 20px rgba(0,0,0,0.15)">
@@ -230,7 +255,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
                 <div class="article-meta">
                     <span>May 13, 2026</span>
                     <span class="dot"></span>
-                    <span>~10 min read</span>
+                    <span>~11 min read</span>
                 </div>
                 <div class="article-byline" style="color:#6b7280;font-size:0.9rem;margin-top:12px;">
                     By <a href="/about/" style="color:#3b82f6;text-decoration:none;">Bin Sun</a>
@@ -635,6 +660,7 @@ print(nlp(text))
 <li><strong>Redaction:</strong> Use spaCy’s <code>phrasematcher</code> to find and mask SSNs, emails, and medical record numbers.</li>
 <li><strong>Tokenization:</strong> Replace PHI with tokens (e.g., "<EMAIL></email></li></ul>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-claims/insurance-claims-ai-roi-calculation-framework-a-practitioners-step-by-step-guide/">Insurance Claims AI ROI Calculation Framework: A Practitioner’s Step-by-Step Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/predictive-analytics-in-insurance-claims-settlement-optimization-a-practitioners/">Predictive Analytics in Insurance Claims Settlement Optimization: A Practitioner’s Build Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/are-ai-claims-chatbots-actually-saving-insurers-moneyor-just-annoying-customers/">Are AI Claims Chatbots Actually Saving Insurers Money—or Just Annoying Customers?</a></p>
+<p class="also-read"><strong>Also Read:</strong> <a href="/ai-claims/insurance-claims-ai-roi-calculation-framework-a-practitioners-step-by-step-guide/">Insurance Claims AI ROI Calculation Framework: A Practitioner’s Step-by-Step Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/predictive-analytics-in-insurance-claims-settlement-optimization-a-practitioners/">Predictive Analytics in Insurance Claims Settlement Optimization: A Practitioner’s Build Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/are-ai-claims-chatbots-actually-saving-insurers-moneyor-just-annoying-customers/">Are AI Claims Chatbots Actually Saving Insurers Money—or Just Annoying Customers?</a></p>
             </div>
 
             
@@ -711,5 +737,13 @@ print(nlp(text))
             </div>
         </div>
     </footer>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
 </body>
 </html>

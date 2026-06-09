@@ -45,6 +45,8 @@
 </script>
     
     
+    
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BT3L3QFNX"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0BT3L3QFNX');
 function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'engagement','event_label':answer,'page_path':window.location.pathname});var fb=document.getElementById('feedback-buttons');if(fb)fb.innerHTML='<span style="color:var(--muted);font-size:0.85rem">Thanks for your feedback!</span>';}
@@ -167,6 +169,8 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 
         
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0B1A2E">
 </head>
 <body>
     <div id="cookie-consent" style="position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;padding:16px 24px;z-index:1000;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:0.85rem;box-shadow:0 -4px 20px rgba(0,0,0,0.15)">
@@ -561,6 +565,7 @@ nlp_score = 1.0 if "prior claim" in text else 0.0
 <li><strong>Over-engineering</strong>: Don’t build a real-time streaming pipeline for a 500-claims/day book. Start with daily batch.</li>
 <li><strong>Ignoring adjuster workflow</strong>: If your fraud score isn’t visible in</li></ul>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-fraud-detection/how-zurichs-canadian-operation-cut-suspected-fraud-losses-by-35-using-ai/">How Zurich’s Canadian Operation Cut Suspected Fraud Losses by 35% Using AI</a> &nbsp;·&nbsp; <a href="/ai-fraud-detection/ai-anomaly-detection-for-claims-fraud-a-practitioners-implementation-guide/">AI Anomaly Detection for Claims Fraud: A Practitioner’s Implementation Guide</a> &nbsp;·&nbsp; <a href="/ai-fraud-detection/can-image-recognition-ai-really-stop-40-billion-in-annual-insurance-fraud/">Can Image Recognition AI Really Stop $40 Billion in Annual Insurance Fraud?</a></p>
+<p class="also-read"><strong>Also Read:</strong> <a href="/ai-fraud-detection/how-zurichs-canadian-operation-cut-suspected-fraud-losses-by-35-using-ai/">How Zurich’s Canadian Operation Cut Suspected Fraud Losses by 35% Using AI</a> &nbsp;·&nbsp; <a href="/ai-fraud-detection/ai-anomaly-detection-for-claims-fraud-a-practitioners-implementation-guide/">AI Anomaly Detection for Claims Fraud: A Practitioner’s Implementation Guide</a> &nbsp;·&nbsp; <a href="/ai-fraud-detection/can-image-recognition-ai-really-stop-40-billion-in-annual-insurance-fraud/">Can Image Recognition AI Really Stop $40 Billion in Annual Insurance Fraud?</a></p>
             </div>
 
             
@@ -637,5 +642,13 @@ nlp_score = 1.0 if "prior claim" in text else 0.0
             </div>
         </div>
     </footer>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+
 </body>
 </html>
