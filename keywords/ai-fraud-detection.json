@@ -1,20 +1,164 @@
 [
-  {"keyword": "AI powered fraud detection insurance complete guide", "type": "tutorial", "subdomain": "ai-fraud-detection", "difficulty": "low", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "real time AI fraud analytics insurance claims 2026", "type": "explainer", "subdomain": "ai-fraud-detection", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "predictive AI fraud prevention insurance software comparison", "type": "comparison", "subdomain": "ai-fraud-detection", "difficulty": "medium", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "AI anomaly detection claims fraud techniques explained", "type": "tutorial", "subdomain": "ai-fraud-detection", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "Deloitte AI fraud analytics insurance 160 billion savings", "type": "news", "subdomain": "ai-fraud-detection", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "how insurers deploy AI fraud detection systems step by step", "type": "tutorial", "subdomain": "ai-fraud-detection", "difficulty": "medium", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "network analysis AI insurance fraud rings detection", "type": "explainer", "subdomain": "ai-fraud-detection", "difficulty": "medium", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "AI fraud detection insurance ROI calculator framework", "type": "tutorial", "subdomain": "ai-fraud-detection", "difficulty": "medium", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "image recognition AI insurance claim fraud detection", "type": "explainer", "subdomain": "ai-fraud-detection", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "NLP text analysis insurance fraud investigation AI", "type": "tutorial", "subdomain": "ai-fraud-detection", "difficulty": "medium", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "AI fraud detection insurance implementation case studies", "type": "case-study", "subdomain": "ai-fraud-detection", "difficulty": "low", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "claims fraud scoring AI model development guide", "type": "tutorial", "subdomain": "ai-fraud-detection", "difficulty": "medium", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "generative AI synthetic fraud detection insurance", "type": "explainer", "subdomain": "ai-fraud-detection", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "AI fraud detection vs traditional rule based systems comparison", "type": "comparison", "subdomain": "ai-fraud-detection", "difficulty": "low", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "healthcare insurance fraud AI detection solutions 2026", "type": "explainer", "subdomain": "ai-fraud-detection", "difficulty": "medium", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "property casualty insurance AI fraud trends 2026", "type": "news", "subdomain": "ai-fraud-detection", "difficulty": "low", "intent": "informational", "is_used": false, "generated_at": null},
-  {"keyword": "AI fraud detection vendor selection criteria for insurers", "type": "comparison", "subdomain": "ai-fraud-detection", "difficulty": "medium", "intent": "commercial", "is_used": false, "generated_at": null},
-  {"keyword": "real world AI fraud detection results insurance industry data", "type": "case-study", "subdomain": "ai-fraud-detection", "difficulty": "low", "intent": "commercial", "is_used": false, "generated_at": null}
+  {
+    "keyword": "AI powered fraud detection insurance complete guide",
+    "type": "tutorial",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "low",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "real time AI fraud analytics insurance claims 2026",
+    "type": "explainer",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": true,
+    "generated_at": "2026-06-10T23:57:54.590190+00:00"
+  },
+  {
+    "keyword": "predictive AI fraud prevention insurance software comparison",
+    "type": "comparison",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "medium",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "AI anomaly detection claims fraud techniques explained",
+    "type": "tutorial",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "Deloitte AI fraud analytics insurance 160 billion savings",
+    "type": "news",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "how insurers deploy AI fraud detection systems step by step",
+    "type": "tutorial",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "medium",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "network analysis AI insurance fraud rings detection",
+    "type": "explainer",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "medium",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "AI fraud detection insurance ROI calculator framework",
+    "type": "tutorial",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "medium",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "image recognition AI insurance claim fraud detection",
+    "type": "explainer",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "NLP text analysis insurance fraud investigation AI",
+    "type": "tutorial",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "medium",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "AI fraud detection insurance implementation case studies",
+    "type": "case-study",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "low",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "claims fraud scoring AI model development guide",
+    "type": "tutorial",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "medium",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "generative AI synthetic fraud detection insurance",
+    "type": "explainer",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "AI fraud detection vs traditional rule based systems comparison",
+    "type": "comparison",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "low",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "healthcare insurance fraud AI detection solutions 2026",
+    "type": "explainer",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "medium",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "property casualty insurance AI fraud trends 2026",
+    "type": "news",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "low",
+    "intent": "informational",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "AI fraud detection vendor selection criteria for insurers",
+    "type": "comparison",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "medium",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  },
+  {
+    "keyword": "real world AI fraud detection results insurance industry data",
+    "type": "case-study",
+    "subdomain": "ai-fraud-detection",
+    "difficulty": "low",
+    "intent": "commercial",
+    "is_used": false,
+    "generated_at": null
+  }
 ]
