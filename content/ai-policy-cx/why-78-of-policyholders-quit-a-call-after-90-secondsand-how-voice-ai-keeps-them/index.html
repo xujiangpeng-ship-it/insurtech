@@ -161,7 +161,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
         .cat-dot-blue{background:var(--cat-blue)}.cat-dot-teal{background:var(--cat-teal)}.cat-dot-amber{background:var(--cat-amber)}.cat-dot-indigo{background:var(--cat-indigo)}.cat-dot-emerald{background:var(--cat-emerald)}.cat-dot-purple{background:var(--cat-purple)}
 
         /* ====== ARTICLE ====== */
-        .article-container{max-width:var(--site-width);margin:0 auto;padding-top:48px}
+        .article-container{width:100%;max-width:var(--site-width);margin:0 auto;padding-top:48px}
         .article-breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--muted);margin-bottom:24px}
         .article-breadcrumb a{color:var(--accent);text-decoration:none;font-weight:500;transition:color 0.15s}
         .article-breadcrumb a:hover{color:var(--accent-hover)}
@@ -188,6 +188,10 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
         .article-content pre code{background:none;color:inherit;padding:0}
         .article-content img{max-width:100%;height:auto;border-radius:var(--radius-md);margin:24px 0}
         .article-content hr{margin:40px 0;border:none;border-top:1px solid var(--border)}
+        .article-content table{border-collapse:collapse;width:100%;margin:24px 0;font-size:0.95rem}
+        .article-content th,.article-content td{border:1px solid var(--border);padding:10px 14px;text-align:left;vertical-align:top}
+        .article-content th{background:var(--border-light);font-weight:600;color:var(--navy);font-size:0.88rem}
+        .article-content tr:nth-child(even){background:var(--bg)}
 
         /* ====== AD ====== */
         .ad-slot{background:var(--accent-light);border:1px dashed var(--accent);border-radius:var(--radius-md);padding:16px;text-align:center;margin:32px 0;color:var(--muted);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;min-height:60px;display:flex;align-items:center;justify-content:center}
@@ -255,6 +259,10 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
                         <span class="cat-bar-dot cat-dot-purple"></span>
                         Decision Intelligence
                     </a>
+                    <a href="/bookmark/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-blue"></span>
+                        Bookmark
+                    </a>
                 </div>
             </div>
             <button class="cat-arrow cat-arrow-right" aria-label="Scroll right" onclick="document.getElementById('catTrack').scrollBy({left:200,behavior:'smooth'})">&#8250;</button>
@@ -274,7 +282,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
                 <div class="article-meta">
                     <span>May 20, 2026</span>
                     <span class="dot"></span>
-                    <span>~12 min read</span>
+                    <span>~13 min read</span>
                 </div>
                 <div class="article-byline" style="color:#6b7280;font-size:0.9rem;margin-top:12px;">
                     By <a href="/about/" style="color:#3b82f6;text-decoration:none;">Bin Sun</a>
@@ -433,6 +441,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 <li><strong>Emotion-aware underwriting:</strong> Carriers like Prudential are piloting voice AI that analyzes vocal biomarkers (pitch, pace, pauses) to flag high-risk applicants. Early tests show a 12% lift in loss ratio prediction accuracy—but raise serious ethical questions about genetic-style profiling.</li>
 <li><strong>Real-time subrogation negotiation:</strong> Lemonade is testing a voice bot that negotiates subrogation claims with third parties in real time. If the bot can shave $50 off each claim, that’s $5M annually for a carrier with 100k claims. But the legal team is already pushing back—who’s liable if the bot makes a mistake?</li>
 <li><strong>Multilingual edge computing:</strong> AWS is rolling out real-time translation for voice AI, but it adds 300ms of latency. Carriers in Texas and Florida are scrambling to deploy edge devices to cut</li></ul>
+<p class="also-read"><strong>Also Read:</strong> <a href="/ai-policy-cx/why-conversational-ai-is-failing-your-insurance-sales-pipeline-and-how-to-fix-it/">Why conversational AI is failing your insurance sales pipeline — and how to fix it</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/">Why 70% of carriers won’t have a profitable AI chatbot by 2026</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/">AI Policy Administration Automation: A Practitioner’s Implementation Guide</a></p>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-policy-cx/why-conversational-ai-is-failing-your-insurance-sales-pipeline-and-how-to-fix-it/">Why conversational AI is failing your insurance sales pipeline — and how to fix it</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/">Why 70% of carriers won’t have a profitable AI chatbot by 2026</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/">AI Policy Administration Automation: A Practitioner’s Implementation Guide</a></p>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-policy-cx/why-conversational-ai-is-failing-your-insurance-sales-pipeline-and-how-to-fix-it/">Why conversational AI is failing your insurance sales pipeline — and how to fix it</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/">Why 70% of carriers won’t have a profitable AI chatbot by 2026</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/">AI Policy Administration Automation: A Practitioner’s Implementation Guide</a></p>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-policy-cx/why-conversational-ai-is-failing-your-insurance-sales-pipeline-and-how-to-fix-it/">Why conversational AI is failing your insurance sales pipeline — and how to fix it</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/">Why 70% of carriers won’t have a profitable AI chatbot by 2026</a> &nbsp;·&nbsp; <a href="/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/">AI Policy Administration Automation: A Practitioner’s Implementation Guide</a></p>

@@ -122,7 +122,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
         .cat-dot-blue{background:var(--cat-blue)}.cat-dot-teal{background:var(--cat-teal)}.cat-dot-amber{background:var(--cat-amber)}.cat-dot-indigo{background:var(--cat-indigo)}.cat-dot-emerald{background:var(--cat-emerald)}.cat-dot-purple{background:var(--cat-purple)}
 
         /* ====== ARTICLE ====== */
-        .article-container{max-width:var(--site-width);margin:0 auto;padding-top:48px}
+        .article-container{width:100%;max-width:var(--site-width);margin:0 auto;padding-top:48px}
         .article-breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--muted);margin-bottom:24px}
         .article-breadcrumb a{color:var(--accent);text-decoration:none;font-weight:500;transition:color 0.15s}
         .article-breadcrumb a:hover{color:var(--accent-hover)}
@@ -149,6 +149,10 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
         .article-content pre code{background:none;color:inherit;padding:0}
         .article-content img{max-width:100%;height:auto;border-radius:var(--radius-md);margin:24px 0}
         .article-content hr{margin:40px 0;border:none;border-top:1px solid var(--border)}
+        .article-content table{border-collapse:collapse;width:100%;margin:24px 0;font-size:0.95rem}
+        .article-content th,.article-content td{border:1px solid var(--border);padding:10px 14px;text-align:left;vertical-align:top}
+        .article-content th{background:var(--border-light);font-weight:600;color:var(--navy);font-size:0.88rem}
+        .article-content tr:nth-child(even){background:var(--bg)}
 
         /* ====== AD ====== */
         .ad-slot{background:var(--accent-light);border:1px dashed var(--accent);border-radius:var(--radius-md);padding:16px;text-align:center;margin:32px 0;color:var(--muted);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;min-height:60px;display:flex;align-items:center;justify-content:center}
@@ -216,6 +220,10 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
                         <span class="cat-bar-dot cat-dot-purple"></span>
                         Decision Intelligence
                     </a>
+                    <a href="/bookmark/" class="cat-bar-item">
+                        <span class="cat-bar-dot cat-dot-blue"></span>
+                        Bookmark
+                    </a>
                 </div>
             </div>
             <button class="cat-arrow cat-arrow-right" aria-label="Scroll right" onclick="document.getElementById('catTrack').scrollBy({left:200,behavior:'smooth'})">&#8250;</button>
@@ -235,7 +243,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
                 <div class="article-meta">
                     <span>May 22, 2026</span>
                     <span class="dot"></span>
-                    <span>~9 min read</span>
+                    <span>~10 min read</span>
                 </div>
                 <div class="article-byline" style="color:#6b7280;font-size:0.9rem;margin-top:12px;">
                     By <a href="/about/" style="color:#3b82f6;text-decoration:none;">Bin Sun</a>
@@ -376,6 +384,7 @@ function ga4Feedback(answer){gtag('event','article_feedback',{'event_category':'
 <p>The carriers that got the best results didn't pick one tool—they paired them. The most effective combo I observed was Shift Autopilot for FNOL intake plus Tractable Cognitive Adjuster for photo-heavy auto claims, with Snapsheet handling the subrogation handoff. Total cost: ~$58k/month for a 50k-claim book—roughly 1.3% of that carrier's annual claims budget. The ROI came from three places: faster cycle times, fewer missed subrogation opportunities, and duplicate claimant detection that no single tool caught on its own.</p>
 
 <p>What none of them solve yet: the human element. Our best adjusters still close cases 15% faster when they use AI as a co-pilot rather than a replacement. The tools above cut costs, but they don't yet replicate the nuance of a carrier who remembers a claimant's kid was in the hospital during the fire. That's a gap even the best AI can't fill—and it's the difference between a 12% and 22% year-over-year policyholder retention rate.</p>
+<p class="also-read"><strong>Also Read:</strong> <a href="/ai-claims/insurance-claims-ai-roi-calculation-framework-a-practitioners-step-by-step-guide/">Insurance Claims AI ROI Calculation Framework: A Practitioner’s Step-by-Step Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/predictive-analytics-in-insurance-claims-settlement-optimization-a-practitioners/">Predictive Analytics in Insurance Claims Settlement Optimization: A Practitioner’s Build Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/are-ai-claims-chatbots-actually-saving-insurers-moneyor-just-annoying-customers/">Are AI Claims Chatbots Actually Saving Insurers Money—or Just Annoying Customers?</a></p>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-claims/insurance-claims-ai-roi-calculation-framework-a-practitioners-step-by-step-guide/">Insurance Claims AI ROI Calculation Framework: A Practitioner’s Step-by-Step Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/predictive-analytics-in-insurance-claims-settlement-optimization-a-practitioners/">Predictive Analytics in Insurance Claims Settlement Optimization: A Practitioner’s Build Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/are-ai-claims-chatbots-actually-saving-insurers-moneyor-just-annoying-customers/">Are AI Claims Chatbots Actually Saving Insurers Money—or Just Annoying Customers?</a></p>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-claims/insurance-claims-ai-roi-calculation-framework-a-practitioners-step-by-step-guide/">Insurance Claims AI ROI Calculation Framework: A Practitioner’s Step-by-Step Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/predictive-analytics-in-insurance-claims-settlement-optimization-a-practitioners/">Predictive Analytics in Insurance Claims Settlement Optimization: A Practitioner’s Build Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/are-ai-claims-chatbots-actually-saving-insurers-moneyor-just-annoying-customers/">Are AI Claims Chatbots Actually Saving Insurers Money—or Just Annoying Customers?</a></p>
 <p class="also-read"><strong>Also Read:</strong> <a href="/ai-claims/insurance-claims-ai-roi-calculation-framework-a-practitioners-step-by-step-guide/">Insurance Claims AI ROI Calculation Framework: A Practitioner’s Step-by-Step Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/predictive-analytics-in-insurance-claims-settlement-optimization-a-practitioners/">Predictive Analytics in Insurance Claims Settlement Optimization: A Practitioner’s Build Guide</a> &nbsp;·&nbsp; <a href="/ai-claims/are-ai-claims-chatbots-actually-saving-insurers-moneyor-just-annoying-customers/">Are AI Claims Chatbots Actually Saving Insurers Money—or Just Annoying Customers?</a></p>
