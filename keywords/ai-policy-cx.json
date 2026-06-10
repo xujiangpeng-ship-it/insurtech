@@ -50,8 +50,8 @@
     "subdomain": "ai-policy-cx",
     "difficulty": "low",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-10T20:17:11.468629+00:00"
   },
   {
     "keyword": "insurance customer 360 AI platform comparison 2026",
