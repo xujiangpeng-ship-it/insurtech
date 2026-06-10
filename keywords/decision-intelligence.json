@@ -77,8 +77,8 @@
     "subdomain": "decision-intelligence",
     "difficulty": "low",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-10T21:37:05.883602+00:00"
   },
   {
     "keyword": "cloud migration insurance core systems AI acceleration",
