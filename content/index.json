@@ -449,5 +449,16 @@
     "subdomain_name": "AI Underwriting",
     "date_display": "June 03, 2026",
     "generated_at": "2026-06-03T10:00:00+00:00"
+  },
+  {
+    "keyword": "how embedded insurance works with AI technology explained",
+    "type": "explainer",
+    "subdomain": "embedded-insurance",
+    "url": "/embedded-insurance/embedded-insurance-isnt-embedded-anymore-its-just-ai-and-most-insurers-still-don/",
+    "title": "Embedded insurance isn't embedded anymore — it's just AI, and most insurers still don't get it",
+    "description": "In 2023, global embedded insurance premium volume reached $14 billion. By 2030, Allianz expects it to hit $750 billion. Yet 60% of these programs lose money in...",
+    "subdomain_name": "Embedded Insurance",
+    "date_display": "June 10, 2026",
+    "generated_at": "2026-06-10T17:53:59.721800+00:00"
   }
 ]
