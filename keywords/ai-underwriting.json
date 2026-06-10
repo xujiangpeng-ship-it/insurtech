@@ -104,8 +104,8 @@
     "subdomain": "ai-underwriting",
     "difficulty": "medium",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-10T22:49:20.105600+00:00"
   },
   {
     "keyword": "small commercial insurance AI underwriting platforms",
