@@ -537,5 +537,16 @@
     "subdomain_name": "Decision Intelligence",
     "date_display": "June 11, 2026",
     "generated_at": "2026-06-11T07:25:20.982927+00:00"
+  },
+  {
+    "keyword": "claims AI implementation challenges and solutions 2026",
+    "type": "explainer",
+    "subdomain": "ai-claims",
+    "url": "/ai-claims/why-68-of-claims-ai-projects-fail-before-2026-and-what-separates-the-32-that-suc/",
+    "title": "Why 68% of Claims AI Projects Fail Before 2026 — And What Separates the 32% That Succeed",
+    "description": "Hiscox’s 2023 internal audit revealed that 68% of its AI-driven claims initiatives were either shelved or underperforming within 12 months, despite $12M in...",
+    "subdomain_name": "AI Claims",
+    "date_display": "June 11, 2026",
+    "generated_at": "2026-06-11T11:57:00.017811+00:00"
   }
 ]
