@@ -548,5 +548,16 @@
     "subdomain_name": "AI Claims",
     "date_display": "June 11, 2026",
     "generated_at": "2026-06-11T11:57:00.017811+00:00"
+  },
+  {
+    "keyword": "predictive underwriting analytics insurance data sources",
+    "type": "tutorial",
+    "subdomain": "ai-underwriting",
+    "url": "/ai-underwriting/why-predictive-underwriting-analytics-fails-60-of-the-time-and-how-to-build-the/",
+    "title": "Why Predictive Underwriting Analytics Fails 60% of the Time — and How to Build the 40% That Succeeds",
+    "description": "In 2023, Lemonade disclosed that its AI-driven underwriting model added $32 million to its combined ratio over two years because of 12% higher loss costs on...",
+    "subdomain_name": "AI Underwriting",
+    "date_display": "June 11, 2026",
+    "generated_at": "2026-06-11T12:38:47.093119+00:00"
   }
 ]

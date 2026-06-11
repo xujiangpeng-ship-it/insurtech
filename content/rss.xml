@@ -5,8 +5,16 @@
     <link>https://821224.com</link>
     <description>In-depth coverage of how artificial intelligence is reshaping insurance — from claims automation to underwriting intelligence.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jun 2026 11:57:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 12:38:47 GMT</lastBuildDate>
     <atom:link href="https://821224.com/rss.xml" rel="self" type="application/rss+xml"/>
+<item>
+      <title>Why Predictive Underwriting Analytics Fails 60% of the Time — and How to Build the 40% That Succeeds</title>
+      <link>https://821224.com/ai-underwriting/why-predictive-underwriting-analytics-fails-60-of-the-time-and-how-to-build-the/</link>
+      <description>In 2023, Lemonade disclosed that its AI-driven underwriting model added $32 million to its combined ratio over two years because of 12% higher loss costs on...</description>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://821224.com/ai-underwriting/why-predictive-underwriting-analytics-fails-60-of-the-time-and-how-to-build-the/</guid>
+      <category>Ai Underwriting</category>
+    </item>
 <item>
       <title>Why 68% of Claims AI Projects Fail Before 2026 — And What Separates the 32% That Succeed</title>
       <link>https://821224.com/ai-claims/why-68-of-claims-ai-projects-fail-before-2026-and-what-separates-the-32-that-suc/</link>
@@ -184,20 +192,20 @@
       <category>Decision Intelligence</category>
     </item>
 <item>
-      <title>Why 70% of carriers won’t have a profitable AI chatbot by 2026</title>
-      <link>https://821224.com/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/</link>
-      <description>Insurers spent $1.2B on AI chatbots in 2023. By 2026, that number will hit $4.1B, according to Gartner. Yet only 30% of those deployments will deliver a sub-5%...</description>
-      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
-      <guid isPermaLink="true">https://821224.com/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/</guid>
-      <category>Ai Policy Cx</category>
-    </item>
-<item>
       <title>AI Risk Assessment in Insurance: 5 Platforms Compared</title>
       <link>https://821224.com/ai-underwriting/ai-risk-assessment-in-insurance-5-platforms-compared/</link>
       <description>Risk assessment is the dirty work of insurance. Underwriters hate it, actuaries can’t live without it, and anyone who’s had to explain a denied claim to a...</description>
       <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://821224.com/ai-underwriting/ai-risk-assessment-in-insurance-5-platforms-compared/</guid>
       <category>Ai Underwriting</category>
+    </item>
+<item>
+      <title>Why 70% of carriers won’t have a profitable AI chatbot by 2026</title>
+      <link>https://821224.com/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/</link>
+      <description>Insurers spent $1.2B on AI chatbots in 2023. By 2026, that number will hit $4.1B, according to Gartner. Yet only 30% of those deployments will deliver a sub-5%...</description>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://821224.com/ai-policy-cx/why-70-of-carriers-wont-have-a-profitable-ai-chatbot-by-2026/</guid>
+      <category>Ai Policy Cx</category>
     </item>
 <item>
       <title>AI Claims Documentation Automation Tools: Three Weeks with the Big Three</title>
@@ -216,14 +224,6 @@
       <category>Ai Fraud Detection</category>
     </item>
 <item>
-      <title>BNPL Embedded Insurance Is the Next Great AI Experiment — and It Might Blow Up</title>
-      <link>https://821224.com/embedded-insurance/bnpl-embedded-insurance-is-the-next-great-ai-experiment-and-it-might-blow-up/</link>
-      <description>Embedded insurance in buy-now-pay-later (BNPL) products has grown from $500 million in GWP in 2019 to over $4.8 billion in 2023, according to Mordor...</description>
-      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
-      <guid isPermaLink="true">https://821224.com/embedded-insurance/bnpl-embedded-insurance-is-the-next-great-ai-experiment-and-it-might-blow-up/</guid>
-      <category>Embedded Insurance</category>
-    </item>
-<item>
       <title>Building an AI Maturity Model for Insurance: A Practitioner’s Guide</title>
       <link>https://821224.com/decision-intelligence/building-an-ai-maturity-model-for-insurance-a-practitioners-guide/</link>
       <description>I’ve reviewed dozens of AI maturity models over the years, and most of them miss the mark for insurers. They either read like academic papers with no...</description>
@@ -232,12 +232,12 @@
       <category>Decision Intelligence</category>
     </item>
 <item>
-      <title>Why 78% of policyholders quit a call after 90 seconds—and how voice AI keeps them on the line</title>
-      <link>https://821224.com/ai-policy-cx/why-78-of-policyholders-quit-a-call-after-90-secondsand-how-voice-ai-keeps-them/</link>
-      <description>It’s not a mystery: the average customer’s patience for a traditional call center call is measured in seconds, not minutes. Studies by Coveo and others show...</description>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <guid isPermaLink="true">https://821224.com/ai-policy-cx/why-78-of-policyholders-quit-a-call-after-90-secondsand-how-voice-ai-keeps-them/</guid>
-      <category>Ai Policy Cx</category>
+      <title>BNPL Embedded Insurance Is the Next Great AI Experiment — and It Might Blow Up</title>
+      <link>https://821224.com/embedded-insurance/bnpl-embedded-insurance-is-the-next-great-ai-experiment-and-it-might-blow-up/</link>
+      <description>Embedded insurance in buy-now-pay-later (BNPL) products has grown from $500 million in GWP in 2019 to over $4.8 billion in 2023, according to Mordor...</description>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://821224.com/embedded-insurance/bnpl-embedded-insurance-is-the-next-great-ai-experiment-and-it-might-blow-up/</guid>
+      <category>Embedded Insurance</category>
     </item>
 <item>
       <title>AI Automated Underwriting Workflow Implementation: A Practitioner's Guide</title>
@@ -246,6 +246,14 @@
       <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://821224.com/ai-underwriting/ai-automated-underwriting-workflow-implementation-a-practitioners-guide/</guid>
       <category>Ai Underwriting</category>
+    </item>
+<item>
+      <title>Why 78% of policyholders quit a call after 90 seconds—and how voice AI keeps them on the line</title>
+      <link>https://821224.com/ai-policy-cx/why-78-of-policyholders-quit-a-call-after-90-secondsand-how-voice-ai-keeps-them/</link>
+      <description>It’s not a mystery: the average customer’s patience for a traditional call center call is measured in seconds, not minutes. Studies by Coveo and others show...</description>
+      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://821224.com/ai-policy-cx/why-78-of-policyholders-quit-a-call-after-90-secondsand-how-voice-ai-keeps-them/</guid>
+      <category>Ai Policy Cx</category>
     </item>
 <item>
       <title>Can AI really cut claims audit labor by 60%? Not yet—but it can cut the nonsense first</title>
@@ -264,14 +272,6 @@
       <category>Ai Fraud Detection</category>
     </item>
 <item>
-      <title>Parametric Insurance on Autopilot: How to Wire IoT Data Streams into AI Models in 7 Weeks</title>
-      <link>https://821224.com/embedded-insurance/parametric-insurance-on-autopilot-how-to-wire-iot-data-streams-into-ai-models-in/</link>
-      <description>I’ve worked with half a dozen MGAs rolling out parametric products since 2020. The difference between pilots that die on the vine and those that actually price...</description>
-      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
-      <guid isPermaLink="true">https://821224.com/embedded-insurance/parametric-insurance-on-autopilot-how-to-wire-iot-data-streams-into-ai-models-in/</guid>
-      <category>Embedded Insurance</category>
-    </item>
-<item>
       <title>Can Your Insurance AI Transformation Survive the First 90 Days?</title>
       <link>https://821224.com/decision-intelligence/can-your-insurance-ai-transformation-survive-the-first-90-days/</link>
       <description>Less than 12% of insurers hit their AI adoption goals within a year, according to McKinsey’s 2023 Insurance AI Survey. The culprit isn’t the tech—it’s the...</description>
@@ -280,12 +280,12 @@
       <category>Decision Intelligence</category>
     </item>
 <item>
-      <title>AI Policy Administration Automation: A Practitioner’s Implementation Guide</title>
-      <link>https://821224.com/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/</link>
-      <description>I’ve seen claims teams drown in paperwork while underwriters struggle with manual data entry. Policy administration automation isn’t just about saving...</description>
-      <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
-      <guid isPermaLink="true">https://821224.com/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/</guid>
-      <category>Ai Policy Cx</category>
+      <title>Parametric Insurance on Autopilot: How to Wire IoT Data Streams into AI Models in 7 Weeks</title>
+      <link>https://821224.com/embedded-insurance/parametric-insurance-on-autopilot-how-to-wire-iot-data-streams-into-ai-models-in/</link>
+      <description>I’ve worked with half a dozen MGAs rolling out parametric products since 2020. The difference between pilots that die on the vine and those that actually price...</description>
+      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://821224.com/embedded-insurance/parametric-insurance-on-autopilot-how-to-wire-iot-data-streams-into-ai-models-in/</guid>
+      <category>Embedded Insurance</category>
     </item>
 <item>
       <title>How Hiscox Slashed Quote Cycle Time by 99% with AI – And What It Cost Them</title>
@@ -294,6 +294,14 @@
       <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://821224.com/ai-underwriting/how-hiscox-slashed-quote-cycle-time-by-99-with-ai-and-what-it-cost-them/</guid>
       <category>Ai Underwriting</category>
+    </item>
+<item>
+      <title>AI Policy Administration Automation: A Practitioner’s Implementation Guide</title>
+      <link>https://821224.com/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/</link>
+      <description>I’ve seen claims teams drown in paperwork while underwriters struggle with manual data entry. Policy administration automation isn’t just about saving...</description>
+      <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://821224.com/ai-policy-cx/ai-policy-administration-automation-a-practitioners-implementation-guide/</guid>
+      <category>Ai Policy Cx</category>
     </item>
 <item>
       <title>Cut Claims Cycle Time by 40%: A Step-by-Step AI Playbook</title>
@@ -312,14 +320,6 @@
       <category>Ai Fraud Detection</category>
     </item>
 <item>
-      <title>Global Regulators Are Circling Embedded Insurance – and It’s Not Pretty</title>
-      <link>https://821224.com/embedded-insurance/global-regulators-are-circling-embedded-insurance-and-its-not-pretty/</link>
-      <description>Last week, the European Insurance and Occupational Pensions Authority (EIOPA) dropped a bombshell: it's reviewing embedded insurance for potential systemic...</description>
-      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
-      <guid isPermaLink="true">https://821224.com/embedded-insurance/global-regulators-are-circling-embedded-insurance-and-its-not-pretty/</guid>
-      <category>Embedded Insurance</category>
-    </item>
-<item>
       <title>Insurance AI Talent: Build vs Buy vs Borrow vs Bypass</title>
       <link>https://821224.com/decision-intelligence/insurance-ai-talent-build-vs-buy-vs-borrow-vs-bypass/</link>
       <description>Insurers face a brutal choice: who builds and runs the AI systems that will decide underwriting wins, claims outcomes, and customer retention. The talent...</description>
@@ -328,12 +328,12 @@
       <category>Decision Intelligence</category>
     </item>
 <item>
-      <title>Omnichannel Insurance CX Orchestration: A Practitioner’s Implementation Guide</title>
-      <link>https://821224.com/ai-policy-cx/omnichannel-insurance-cx-orchestration-a-practitioners-implementation-guide/</link>
-      <description>I’ve watched claims teams drown in siloed systems while policyholders bounce between chatbots, portals, and phone trees. The promise of omnichannel customer...</description>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <guid isPermaLink="true">https://821224.com/ai-policy-cx/omnichannel-insurance-cx-orchestration-a-practitioners-implementation-guide/</guid>
-      <category>Ai Policy Cx</category>
+      <title>Global Regulators Are Circling Embedded Insurance – and It’s Not Pretty</title>
+      <link>https://821224.com/embedded-insurance/global-regulators-are-circling-embedded-insurance-and-its-not-pretty/</link>
+      <description>Last week, the European Insurance and Occupational Pensions Authority (EIOPA) dropped a bombshell: it's reviewing embedded insurance for potential systemic...</description>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://821224.com/embedded-insurance/global-regulators-are-circling-embedded-insurance-and-its-not-pretty/</guid>
+      <category>Embedded Insurance</category>
     </item>
 <item>
       <title>Is Your Underwriting Data Still Stuck in the 1990s?</title>
@@ -342,6 +342,14 @@
       <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://821224.com/ai-underwriting/is-your-underwriting-data-still-stuck-in-the-1990s/</guid>
       <category>Ai Underwriting</category>
+    </item>
+<item>
+      <title>Omnichannel Insurance CX Orchestration: A Practitioner’s Implementation Guide</title>
+      <link>https://821224.com/ai-policy-cx/omnichannel-insurance-cx-orchestration-a-practitioners-implementation-guide/</link>
+      <description>I’ve watched claims teams drown in siloed systems while policyholders bounce between chatbots, portals, and phone trees. The promise of omnichannel customer...</description>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://821224.com/ai-policy-cx/omnichannel-insurance-cx-orchestration-a-practitioners-implementation-guide/</guid>
+      <category>Ai Policy Cx</category>
     </item>
 <item>
       <title>Natural Language Processing for Insurance Claims Documents: A Practitioner’s Implementation Guide</title>
@@ -360,14 +368,6 @@
       <category>Ai Fraud Detection</category>
     </item>
 <item>
-      <title>AI-Powered Embedded Insurance Platforms: A Head-to-Head Comparison</title>
-      <link>https://821224.com/embedded-insurance/ai-powered-embedded-insurance-platforms-a-head-to-head-comparison/</link>
-      <description>Embedded insurance is no longer a novelty—it’s a survival tactic for insurers and a convenience play for customers. But not all embedded insurance platforms...</description>
-      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
-      <guid isPermaLink="true">https://821224.com/embedded-insurance/ai-powered-embedded-insurance-platforms-a-head-to-head-comparison/</guid>
-      <category>Embedded Insurance</category>
-    </item>
-<item>
       <title>AI in Insurance Is a Regulatory Powder Keg — And Most Carriers Aren’t Ready</title>
       <link>https://821224.com/decision-intelligence/ai-in-insurance-is-a-regulatory-powder-keg-and-most-carriers-arent-ready/</link>
       <description>By 2027, the EU’s AI Act will force every insurer operating in Europe to classify AI models as either "unacceptable risk" (banned), "high risk" (heavily...</description>
@@ -376,12 +376,12 @@
       <category>Decision Intelligence</category>
     </item>
 <item>
-      <title>AI Policy Administration Automation in Insurance: A Practitioner’s Implementation Guide</title>
-      <link>https://821224.com/ai-policy-cx/ai-policy-administration-automation-in-insurance-a-practitioners-implementation/</link>
-      <description>A policy administration system (PAS) is the backbone of an insurer’s operations. Modernizing it with AI isn’t about replacing humans—it’s about reducing manual...</description>
-      <pubDate>Mon, 11 May 2026 00:00:00 GMT</pubDate>
-      <guid isPermaLink="true">https://821224.com/ai-policy-cx/ai-policy-administration-automation-in-insurance-a-practitioners-implementation/</guid>
-      <category>Ai Policy Cx</category>
+      <title>AI-Powered Embedded Insurance Platforms: A Head-to-Head Comparison</title>
+      <link>https://821224.com/embedded-insurance/ai-powered-embedded-insurance-platforms-a-head-to-head-comparison/</link>
+      <description>Embedded insurance is no longer a novelty—it’s a survival tactic for insurers and a convenience play for customers. But not all embedded insurance platforms...</description>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://821224.com/embedded-insurance/ai-powered-embedded-insurance-platforms-a-head-to-head-comparison/</guid>
+      <category>Embedded Insurance</category>
     </item>
 <item>
       <title>AI-Driven Life Insurance Underwriting Will Hit 60% Adoption by 2026, Per Deloitte</title>
@@ -390,6 +390,14 @@
       <pubDate>Mon, 11 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://821224.com/ai-underwriting/ai-driven-life-insurance-underwriting-will-hit-60-adoption-by-2026-per-deloitte/</guid>
       <category>Ai Underwriting</category>
+    </item>
+<item>
+      <title>AI Policy Administration Automation in Insurance: A Practitioner’s Implementation Guide</title>
+      <link>https://821224.com/ai-policy-cx/ai-policy-administration-automation-in-insurance-a-practitioners-implementation/</link>
+      <description>A policy administration system (PAS) is the backbone of an insurer’s operations. Modernizing it with AI isn’t about replacing humans—it’s about reducing manual...</description>
+      <pubDate>Mon, 11 May 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://821224.com/ai-policy-cx/ai-policy-administration-automation-in-insurance-a-practitioners-implementation/</guid>
+      <category>Ai Policy Cx</category>
     </item>
 <item>
       <title>Can AI-driven claims processing cut your loss ratio by 15% or just move the fraud?</title>

@@ -86,8 +86,8 @@
     "subdomain": "ai-underwriting",
     "difficulty": "medium",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-11T12:38:47.092785+00:00"
   },
   {
     "keyword": "AI driven life insurance underwriting transformation 2026",
