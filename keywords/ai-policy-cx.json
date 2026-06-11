@@ -95,8 +95,8 @@
     "subdomain": "ai-policy-cx",
     "difficulty": "low",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-11T06:19:13.543898+00:00"
   },
   {
     "keyword": "digital endorsements insurance AI processing workflow",
