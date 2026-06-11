@@ -104,8 +104,8 @@
     "subdomain": "embedded-insurance",
     "difficulty": "medium",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-11T02:52:14.009245+00:00"
   },
   {
     "keyword": "automotive embedded insurance AI telematics integration",
