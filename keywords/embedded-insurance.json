@@ -41,8 +41,8 @@
     "subdomain": "embedded-insurance",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-11T18:08:51.461073+00:00"
   },
   {
     "keyword": "travel insurance embedded AI real time underwriting",
