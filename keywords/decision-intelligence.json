@@ -14,8 +14,8 @@
     "subdomain": "decision-intelligence",
     "difficulty": "medium",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-11T22:48:23.077469+00:00"
   },
   {
     "keyword": "AI insurance legacy modernization step by step guide",

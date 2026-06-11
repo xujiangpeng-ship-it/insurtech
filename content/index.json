@@ -592,5 +592,16 @@
     "subdomain_name": "AI Policy & CX",
     "date_display": "June 11, 2026",
     "generated_at": "2026-06-11T21:36:34.650028+00:00"
+  },
+  {
+    "keyword": "insurance data architecture for AI at scale best practices",
+    "type": "tutorial",
+    "subdomain": "decision-intelligence",
+    "url": "/decision-intelligence/1-why-insurance-data-architecture-for-ai-at-scale-fails-before-it-starts/",
+    "title": "1. Why “insurance data architecture for AI at scale” fails before it starts",
+    "description": "In 2023, a Tier-1 P&C carrier spent $14 M building a real-time underwriting pipeline on Apache Kafka, only to scrap it six months later when the actuarial team...",
+    "subdomain_name": "Decision Intelligence",
+    "date_display": "June 11, 2026",
+    "generated_at": "2026-06-11T22:48:23.077899+00:00"
   }
 ]
