@@ -371,34 +371,6 @@ def extract_howto_schema(body_html: str, title: str, description: str = "") -> s
     return schema
 
 
-def build_also_read(current_url: str, current_subdomain: str, article_index: list, limit: int = 3) -> list:
-    """Find related articles for Also Read section.
-
-    Preference: same subdomain first, then fill from other subdomains.
-    Excludes the current article itself. Sorted by generated_at descending.
-    """
-    candidates = [
-        a for a in article_index
-        if a.get("url", "") != current_url and a.get("title", "")
-    ]
-    if not candidates:
-        return []
-
-    # Separate by subdomain
-    same_cat = [a for a in candidates if a.get("subdomain", "") == current_subdomain]
-    other_cat = [a for a in candidates if a.get("subdomain", "") != current_subdomain]
-
-    # Sort by generated_at descending
-    same_cat.sort(key=lambda a: a.get("generated_at", "") or "", reverse=True)
-    other_cat.sort(key=lambda a: a.get("generated_at", "") or "", reverse=True)
-
-    result = same_cat[:limit]
-    if len(result) < limit:
-        result.extend(other_cat[:(limit - len(result))])
-
-    return result[:limit]
-
-
 def split_content_at_third(html_body: str) -> tuple:
     """Split HTML content at approximately 1/3 mark, at a paragraph boundary."""
     paragraphs = re.findall(r'<p>.*?</p>', html_body, re.DOTALL)
@@ -506,15 +478,6 @@ def main():
 
             # Extract HowTo Schema
             howto_schema = extract_howto_schema(body, title, description)
-
-            # Inject Also Read section at end of body
-            also_reads = build_also_read(url, subdomain, article_index)
-            if also_reads:
-                links = []
-                for ar in also_reads:
-                    links.append(f'<a href="{ar["url"]}">{ar["title"]}</a>')
-                also_read_html = '<p class="also-read"><strong>Also Read:</strong> ' + ' &nbsp;·&nbsp; '.join(links) + '</p>'
-                body = body + '\n' + also_read_html
 
             # Split content
             content_first, content_rest = split_content_at_third(body)
