@@ -680,5 +680,16 @@
     "subdomain_name": "AI Claims",
     "date_display": "June 12, 2026",
     "generated_at": "2026-06-12T16:32:27.722501+00:00"
+  },
+  {
+    "keyword": "machine learning insurance pricing models tutorial",
+    "type": "tutorial",
+    "subdomain": "ai-underwriting",
+    "url": "/ai-underwriting/why-this-guide-exists/",
+    "title": "Why This Guide Exists",
+    "description": "Insurers that bet $500 million on ML-driven pricing models without proper guardrails saw their combined ratio rise by 12 points within two years. In 2023, the...",
+    "subdomain_name": "AI Underwriting",
+    "date_display": "June 12, 2026",
+    "generated_at": "2026-06-12T17:33:56.451262+00:00"
   }
 ]
