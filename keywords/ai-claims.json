@@ -59,8 +59,8 @@
     "subdomain": "ai-claims",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-12T16:32:27.722202+00:00"
   },
   {
     "keyword": "digital claims AI end to end case study 2026",

@@ -669,5 +669,16 @@
     "subdomain_name": "Decision Intelligence",
     "date_display": "June 12, 2026",
     "generated_at": "2026-06-12T12:13:16.951666+00:00"
+  },
+  {
+    "keyword": "AI claims leakage detection technology explained",
+    "type": "explainer",
+    "subdomain": "ai-claims",
+    "url": "/ai-claims/ai-claims-leakage-detection-solving-the-11-problem-insurers-still-ignore/",
+    "title": "AI claims leakage detection: solving the 11% problem insurers still ignore",
+    "description": "Allstate’s 2022 10-K filing disclosed $1.1 billion in \"fraud, misrepresentation, and policy violations\"—a direct admission that 11% of claims expenditure leaks...",
+    "subdomain_name": "AI Claims",
+    "date_display": "June 12, 2026",
+    "generated_at": "2026-06-12T16:32:27.722501+00:00"
   }
 ]
