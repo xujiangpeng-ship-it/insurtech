@@ -77,8 +77,8 @@
     "subdomain": "ai-underwriting",
     "difficulty": "medium",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-12T17:33:56.450983+00:00"
   },
   {
     "keyword": "predictive underwriting analytics insurance data sources",
