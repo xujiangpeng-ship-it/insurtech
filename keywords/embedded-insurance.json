@@ -5,8 +5,8 @@
     "subdomain": "embedded-insurance",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-12T21:15:02.255236+00:00"
   },
   {
     "keyword": "API first embedded insurance architecture guide",
