@@ -176,7 +176,7 @@
     "subdomain": "ai-claims",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-12T00:05:14.805601+00:00"
   }
 ]
