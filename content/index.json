@@ -625,5 +625,16 @@
     "subdomain_name": "AI Underwriting",
     "date_display": "June 12, 2026",
     "generated_at": "2026-06-12T02:48:48.494554+00:00"
+  },
+  {
+    "keyword": "predictive AI fraud prevention insurance software comparison",
+    "type": "comparison",
+    "subdomain": "ai-fraud-detection",
+    "url": "/ai-fraud-detection/fraudulent-claims-cost-us-insurers-80-billion-annually-but-ai-detection-vendors/",
+    "title": "Fraudulent claims cost U.S. insurers $80 billion annually — but AI detection vendors promise to claw back 30–40% of that loss. My review of a dozen platforms shows half of those claims are inflated by 15–25%. Here’s how the top four stack up in real deployments.",
+    "description": "I’ve reviewed dozens of predictive AI fraud prevention deployments across P&C carriers over the past 24 months, from Tier-1 mutuals to MGAs writing $50M GWP....",
+    "subdomain_name": "AI Fraud Detection",
+    "date_display": "June 12, 2026",
+    "generated_at": "2026-06-12T06:14:45.208835+00:00"
   }
 ]
