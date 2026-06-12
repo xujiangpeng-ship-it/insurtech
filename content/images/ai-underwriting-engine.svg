@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0FDFA"/><stop offset="100%" stop-color="#CCFBF1"/></linearGradient>
+  </defs>
+  <rect width="800" height="200" rx="12" fill="url(#bg2)" stroke="#99F6E4" stroke-width="2"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#134E4A">AI Underwriting Engine</text>
+
+  <!-- Input -->
+  <rect x="20" y="55" width="110" height="45" rx="8" fill="#0D9488"/>
+  <text x="75" y="82" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#fff">Application Data</text>
+
+  <line x1="135" y1="77" x2="195" y2="77" stroke="#0D9488" stroke-width="2" marker-end="url(#arrow2)"/>
+  <defs><marker id="arrow2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#0D9488"/></marker></defs>
+
+  <!-- Risk Scoring -->
+  <rect x="205" y="45" width="140" height="65" rx="8" fill="#0F766E"/>
+  <text x="275" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#fff">Risk Scoring</text>
+  <text x="275" y="92" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#CCFBF1">ML Model Engine</text>
+
+  <line x1="350" y1="77" x2="410" y2="77" stroke="#0D9488" stroke-width="2" marker-end="url(#arrow2)"/>
+
+  <!-- Rules Engine -->
+  <rect x="420" y="45" width="140" height="65" rx="8" fill="#0F766E"/>
+  <text x="490" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#fff">Rules Engine</text>
+  <text x="490" y="92" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#CCFBF1">Underwriting Rules</text>
+
+  <line x1="565" y1="77" x2="625" y2="77" stroke="#0D9488" stroke-width="2" marker-end="url(#arrow2)"/>
+
+  <!-- Decision -->
+  <rect x="635" y="45" width="140" height="65" rx="8" fill="#065F46"/>
+  <text x="705" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#fff">Decision Output</text>
+  <text x="705" y="92" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#A7F3D0">Approve / Refer / Decline</text>
+
+  <!-- Bottom labels -->
+  <text x="75" y="150" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#64748B">Structured</text>
+  <text x="275" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#64748B">XGBoost + NN</text>
+  <text x="490" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#64748B">Drools / Red Hat</text>
+  <text x="705" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#64748B">JSON / API Response</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F5F3FF"/><stop offset="100%" stop-color="#EDE9FE"/></linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="12" fill="url(#bg3)" stroke="#C4B5FD" stroke-width="2"/>
+  <text x="400" y="35" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#4C1D95">Underwriting Workflow Reference Architecture</text>
+
+  <!-- Top: User/Agent -->
+  <rect x="300" y="55" width="200" height="45" rx="22" fill="#7C3AED"/>
+  <text x="400" y="82" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#fff">Agent / Broker Portal</text>
+
+  <!-- Down arrow -->
+  <line x1="400" y1="100" x2="400" y2="125" stroke="#7C3AED" stroke-width="2" marker-end="url(#arrow3)"/>
+  <defs><marker id="arrow3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#7C3AED"/></marker></defs>
+
+  <!-- Middle row: 3 services -->
+  <rect x="40" y="130" width="210" height="70" rx="8" fill="#6D28D9"/>
+  <text x="145" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#fff">Policy Admin System</text>
+  <text x="145" y="182" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#DDD6FE">(PAS) via REST API</text>
+
+  <rect x="295" y="130" width="210" height="70" rx="8" fill="#6D28D9"/>
+  <text x="400" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#fff">Rating Engine</text>
+  <text x="400" y="182" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#DDD6FE">CSV Upload / gRPC</text>
+
+  <rect x="550" y="130" width="210" height="70" rx="8" fill="#6D28D9"/>
+  <text x="655" y="157" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#fff">Third-Party Admin</text>
+  <text x="655" y="182" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#DDD6FE">(TPA) via EDI 144/148</text>
+
+  <!-- Down arrows from middle -->
+  <line x1="145" y1="200" x2="145" y2="235" stroke="#7C3AED" stroke-width="2" marker-end="url(#arrow3)"/>
+  <line x1="400" y1="200" x2="400" y2="235" stroke="#7C3AED" stroke-width="2" marker-end="url(#arrow3)"/>
+  <line x1="655" y1="200" x2="655" y2="235" stroke="#7C3AED" stroke-width="2" marker-end="url(#arrow3)"/>
+
+  <!-- Central workflow engine -->
+  <rect x="150" y="240" width="500" height="80" rx="10" fill="#4C1D95"/>
+  <text x="400" y="270" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#fff">Underwriting Workflow Engine</text>
+  <text x="400" y="295" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#C4B5FD">Orchestration | Risk Assessment | Decision Rules | Audit Logging</text>
+
+  <!-- Down arrow from workflow -->
+  <line x1="400" y1="320" x2="400" y2="355" stroke="#7C3AED" stroke-width="2" marker-end="url(#arrow3)"/>
+
+  <!-- Bottom: Output -->
+  <rect x="250" y="360" width="300" height="55" rx="8" fill="#5B21B6"/>
+  <text x="400" y="385" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#fff">Decision / Quote Output</text>
+  <text x="400" y="405" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#DDD6FE">Approve · Refer to UW · Decline · Quote Generation</text>
+</svg>
