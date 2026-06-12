@@ -113,8 +113,8 @@
     "subdomain": "decision-intelligence",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-12T12:13:16.951459+00:00"
   },
   {
     "keyword": "insurance AI ethics explainability regulatory compliance",
