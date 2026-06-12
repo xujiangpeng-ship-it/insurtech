@@ -158,7 +158,7 @@
     "subdomain": "ai-fraud-detection",
     "difficulty": "low",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-12T19:58:24.896472+00:00"
   }
 ]
