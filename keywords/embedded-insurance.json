@@ -140,7 +140,7 @@
     "subdomain": "embedded-insurance",
     "difficulty": "medium",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-12T07:17:37.439942+00:00"
   }
 ]
