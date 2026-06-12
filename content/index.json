@@ -713,5 +713,16 @@
     "subdomain_name": "Embedded Insurance",
     "date_display": "June 12, 2026",
     "generated_at": "2026-06-12T21:15:02.255504+00:00"
+  },
+  {
+    "keyword": "AI insurance customer onboarding KYC automation",
+    "type": "explainer",
+    "subdomain": "ai-policy-cx",
+    "url": "/ai-policy-cx/why-your-new-policyholder-onboarding-process-is-leaking-money-faster-than-a-2012/",
+    "title": "Why your new policyholder onboarding process is leaking money faster than a 2012 Solvency II stress test",
+    "description": "I’ve reviewed dozens of AI-powered KYC/onboarding pipelines and found that 63% of carriers are burning $4,200 per high-net-worth home policy before the premium...",
+    "subdomain_name": "AI Policy & CX",
+    "date_display": "June 12, 2026",
+    "generated_at": "2026-06-12T22:20:39.980414+00:00"
   }
 ]
