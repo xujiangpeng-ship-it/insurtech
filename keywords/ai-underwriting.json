@@ -59,8 +59,8 @@
     "subdomain": "ai-underwriting",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-12T02:48:48.494191+00:00"
   },
   {
     "keyword": "AI underwriting expense ratio reduction case studies",

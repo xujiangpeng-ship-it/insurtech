@@ -614,5 +614,16 @@
     "subdomain_name": "AI Claims",
     "date_display": "June 12, 2026",
     "generated_at": "2026-06-12T00:05:14.805860+00:00"
+  },
+  {
+    "keyword": "generative AI underwriting commercial insurance lines",
+    "type": "explainer",
+    "subdomain": "ai-underwriting",
+    "url": "/ai-underwriting/why-underwriting-automation-keeps-failing-and-why-genai-looks-different/",
+    "title": "Why underwriting automation keeps failing (and why genAI looks different)",
+    "description": "14% of commercial insurance underwriters still manually review 90% of submissions — and carriers aren’t growing fast enough to justify the cost. That’s not a...",
+    "subdomain_name": "AI Underwriting",
+    "date_display": "June 12, 2026",
+    "generated_at": "2026-06-12T02:48:48.494554+00:00"
   }
 ]
