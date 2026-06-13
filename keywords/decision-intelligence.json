@@ -59,8 +59,8 @@
     "subdomain": "decision-intelligence",
     "difficulty": "medium",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-13T17:54:25.725712+00:00"
   },
   {
     "keyword": "AI governance framework insurance regulatory requirements",
