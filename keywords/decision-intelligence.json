@@ -68,8 +68,8 @@
     "subdomain": "decision-intelligence",
     "difficulty": "medium",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-13T11:10:36.488062+00:00"
   },
   {
     "keyword": "insurance AI talent strategy build vs buy decision",
