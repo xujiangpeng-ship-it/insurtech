@@ -131,8 +131,8 @@
     "subdomain": "ai-claims",
     "difficulty": "low",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-13T19:13:08.829761+00:00"
   },
   {
     "keyword": "insurance claims AI ROI calculation framework",

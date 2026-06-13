@@ -845,5 +845,16 @@
     "subdomain_name": "Decision Intelligence",
     "date_display": "June 13, 2026",
     "generated_at": "2026-06-13T17:54:25.725973+00:00"
+  },
+  {
+    "keyword": "AI powered claims triage vs manual triage comparison",
+    "type": "comparison",
+    "subdomain": "ai-claims",
+    "url": "/ai-claims/candidate-stacks-for-claims-triage/",
+    "title": "Candidate Stacks for Claims Triage",
+    "description": "I’m comparing six real-world stacks that have run at least 10,000 claims in production. Four are AI-first; two remain predominantly manual. Each stack is live...",
+    "subdomain_name": "AI Claims",
+    "date_display": "June 13, 2026",
+    "generated_at": "2026-06-13T19:13:08.830152+00:00"
   }
 ]
