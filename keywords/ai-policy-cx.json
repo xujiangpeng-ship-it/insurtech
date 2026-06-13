@@ -68,8 +68,8 @@
     "subdomain": "ai-policy-cx",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-13T23:42:03.726407+00:00"
   },
   {
     "keyword": "sentiment analysis AI insurance customer retention",
