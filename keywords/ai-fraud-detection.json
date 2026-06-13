@@ -32,8 +32,8 @@
     "subdomain": "ai-fraud-detection",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-13T06:53:32.034134+00:00"
   },
   {
     "keyword": "Deloitte AI fraud analytics insurance 160 billion savings",

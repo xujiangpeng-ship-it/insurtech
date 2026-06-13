@@ -757,5 +757,16 @@
     "subdomain_name": "AI Underwriting",
     "date_display": "June 13, 2026",
     "generated_at": "2026-06-13T05:58:37.193164+00:00"
+  },
+  {
+    "keyword": "AI anomaly detection claims fraud techniques explained",
+    "type": "tutorial",
+    "subdomain": "ai-fraud-detection",
+    "url": "/ai-fraud-detection/32-of-auto-claims-flagged-for-fraud-investigation-are-closed-with-no-evidence-of/",
+    "title": "32% of auto claims flagged for fraud investigation are closed with no evidence of fraud. Insurers waste $3.4B annually chasing false positives.",
+    "description": "I've reviewed dozens of AI anomaly detection implementations across Tier 1 and Tier 2 carriers. The ones that deliver real ROI don't start with the model. They...",
+    "subdomain_name": "AI Fraud Detection",
+    "date_display": "June 13, 2026",
+    "generated_at": "2026-06-13T06:53:32.034548+00:00"
   }
 ]
