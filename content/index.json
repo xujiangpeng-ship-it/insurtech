@@ -867,5 +867,16 @@
     "subdomain_name": "AI Underwriting",
     "date_display": "June 13, 2026",
     "generated_at": "2026-06-13T20:50:00.098486+00:00"
+  },
+  {
+    "keyword": "how insurers deploy AI fraud detection systems step by step",
+    "type": "tutorial",
+    "subdomain": "ai-fraud-detection",
+    "url": "/ai-fraud-detection/ai-fraud-detection-in-claims-a-practitioners-build-plan/",
+    "title": "AI Fraud Detection in Claims: A Practitioner’s Build Plan",
+    "description": "In 2023, the Coalition Against Insurance Fraud estimated that U.S. insurers lost $308.6 billion to fraudulent claims across property/casualty and life/health...",
+    "subdomain_name": "AI Fraud Detection",
+    "date_display": "June 13, 2026",
+    "generated_at": "2026-06-13T21:57:51.659760+00:00"
   }
 ]

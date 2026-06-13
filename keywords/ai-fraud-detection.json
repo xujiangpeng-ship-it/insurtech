@@ -50,8 +50,8 @@
     "subdomain": "ai-fraud-detection",
     "difficulty": "medium",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-13T21:57:51.659396+00:00"
   },
   {
     "keyword": "network analysis AI insurance fraud rings detection",
