@@ -735,5 +735,16 @@
     "subdomain_name": "Decision Intelligence",
     "date_display": "June 13, 2026",
     "generated_at": "2026-06-13T00:01:55.962870+00:00"
+  },
+  {
+    "keyword": "AI claims audit automation benefits for insurers",
+    "type": "explainer",
+    "subdomain": "ai-claims",
+    "url": "/ai-claims/ai-claims-audit-automation-the-8020-rule-no-one-wants-to-talk-about/",
+    "title": "AI Claims Audit Automation: The 80/20 Rule No One Wants to Talk About",
+    "description": "In 2023, a top-20 U.S. P&C carrier’s internal audit team flagged $120 million in overpaid claims after deploying an AI audit system. That’s 1.8% of the...",
+    "subdomain_name": "AI Claims",
+    "date_display": "June 13, 2026",
+    "generated_at": "2026-06-13T02:41:21.204468+00:00"
   }
 ]

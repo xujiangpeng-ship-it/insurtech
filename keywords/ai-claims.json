@@ -77,8 +77,8 @@
     "subdomain": "ai-claims",
     "difficulty": "low",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-13T02:41:21.204198+00:00"
   },
   {
     "keyword": "natural language processing insurance claims documents",
