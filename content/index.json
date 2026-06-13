@@ -812,5 +812,16 @@
     "subdomain_name": "AI Underwriting",
     "date_display": "June 13, 2026",
     "generated_at": "2026-06-13T13:44:02.575680+00:00"
+  },
+  {
+    "keyword": "Deloitte AI fraud analytics insurance 160 billion savings",
+    "type": "news",
+    "subdomain": "ai-fraud-detection",
+    "url": "/ai-fraud-detection/deloitte-claims-ai-could-save-insurers-160b-in-fraud-the-numbers-dont-add-up/",
+    "title": "Deloitte Claims AI Could Save Insurers $160B in Fraud — The Numbers Don’t Add Up",
+    "description": "Deloitte’s June 2024 report claims AI-driven fraud analytics could save global insurers $160 billion annually by 2026. That’s a 13% reduction in the industry’s...",
+    "subdomain_name": "AI Fraud Detection",
+    "date_display": "June 13, 2026",
+    "generated_at": "2026-06-13T15:18:39.657680+00:00"
   }
 ]
