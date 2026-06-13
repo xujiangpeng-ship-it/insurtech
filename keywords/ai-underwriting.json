@@ -32,8 +32,8 @@
     "subdomain": "ai-underwriting",
     "difficulty": "medium",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-13T13:44:02.575383+00:00"
   },
   {
     "keyword": "how Hiscox reduced quote cycle time 99 percent with AI",

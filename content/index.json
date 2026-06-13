@@ -801,5 +801,16 @@
     "subdomain_name": "AI Claims",
     "date_display": "June 13, 2026",
     "generated_at": "2026-06-13T12:10:02.861658+00:00"
+  },
+  {
+    "keyword": "AI risk assessment insurance use cases and platforms",
+    "type": "comparison",
+    "subdomain": "ai-underwriting",
+    "url": "/ai-underwriting/14-of-pc-carriers-now-use-third-party-ai-risk-models-for-underwriting-but-60-of/",
+    "title": "14% of P&C carriers now use third-party AI risk models for underwriting, but 60% of those implementations fail to materially improve loss ratio",
+    "description": "Insurance Information Institute, 2024 P/C Issues",
+    "subdomain_name": "AI Underwriting",
+    "date_display": "June 13, 2026",
+    "generated_at": "2026-06-13T13:44:02.575680+00:00"
   }
 ]
