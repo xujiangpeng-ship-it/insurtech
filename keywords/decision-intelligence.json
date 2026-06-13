@@ -50,8 +50,8 @@
     "subdomain": "decision-intelligence",
     "difficulty": "medium",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-13T00:01:55.962553+00:00"
   },
   {
     "keyword": "McKinsey AI insurance leaders 6x TSR performance analysis",
