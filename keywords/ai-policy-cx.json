@@ -14,8 +14,8 @@
     "subdomain": "ai-policy-cx",
     "difficulty": "medium",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-13T10:13:18.243249+00:00"
   },
   {
     "keyword": "AI chatbots insurance use cases 2026 trends",
