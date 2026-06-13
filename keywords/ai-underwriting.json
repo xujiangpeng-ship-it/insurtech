@@ -50,8 +50,8 @@
     "subdomain": "ai-underwriting",
     "difficulty": "medium",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-13T05:58:37.192874+00:00"
   },
   {
     "keyword": "generative AI underwriting commercial insurance lines",
