@@ -122,8 +122,8 @@
     "subdomain": "ai-underwriting",
     "difficulty": "medium",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-13T20:50:00.098185+00:00"
   },
   {
     "keyword": "AI underwriting regulatory compliance challenges 2026",

@@ -856,5 +856,16 @@
     "subdomain_name": "AI Claims",
     "date_display": "June 13, 2026",
     "generated_at": "2026-06-13T19:13:08.830152+00:00"
+  },
+  {
+    "keyword": "agentic AI multi agent underwriting systems architecture",
+    "type": "explainer",
+    "subdomain": "ai-underwriting",
+    "url": "/ai-underwriting/why-agentic-ai-claims-40-lower-combined-ratios-and-why-your-architecture-will-bu/",
+    "title": "Why agentic AI claims 40% lower combined ratios — and why your architecture will buckle under it",
+    "description": "In a controlled pilot, Lemonade’s GenAI-powered underwriting stack cut the combined ratio on renters policies by 5.2 points in 18 months — from 84.2 to 79.0....",
+    "subdomain_name": "AI Underwriting",
+    "date_display": "June 13, 2026",
+    "generated_at": "2026-06-13T20:50:00.098486+00:00"
   }
 ]
