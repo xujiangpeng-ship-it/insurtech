@@ -5,8 +5,8 @@
     "subdomain": "decision-intelligence",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-14T13:45:13.661261+00:00"
   },
   {
     "keyword": "insurance data architecture for AI at scale best practices",
