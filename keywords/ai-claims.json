@@ -104,8 +104,8 @@
     "subdomain": "ai-claims",
     "difficulty": "low",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-14T22:04:16.220382+00:00"
   },
   {
     "keyword": "claims lifecycle management AI software guide",

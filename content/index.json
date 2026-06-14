@@ -1010,5 +1010,16 @@
     "subdomain_name": "Decision Intelligence",
     "date_display": "June 14, 2026",
     "generated_at": "2026-06-14T20:49:38.620923+00:00"
+  },
+  {
+    "keyword": "AI claims documentation automation tools review",
+    "type": "tool-review",
+    "subdomain": "ai-claims",
+    "url": "/ai-claims/ai-claims-documentation-automation-two-weeks-with-duck-creek-claims-genai-and-du/",
+    "title": "AI Claims Documentation Automation: Two Weeks with Duck Creek Claims GenAI and Duck Creek Claims Lens",
+    "description": "Claims teams processing 1,500 auto files per month spend at least 28% of adjuster time on documentation alone—transcribing calls, extracting data, and drafting...",
+    "subdomain_name": "AI Claims",
+    "date_display": "June 14, 2026",
+    "generated_at": "2026-06-14T22:04:16.220759+00:00"
   }
 ]
