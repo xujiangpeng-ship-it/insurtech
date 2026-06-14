@@ -955,5 +955,16 @@
     "subdomain_name": "Decision Intelligence",
     "date_display": "June 14, 2026",
     "generated_at": "2026-06-14T13:45:13.661509+00:00"
+  },
+  {
+    "keyword": "computer vision insurance claims damage assessment AI",
+    "type": "explainer",
+    "subdomain": "ai-claims",
+    "url": "/ai-claims/why-68-of-auto-claims-with-computer-vision-assessments-still-require-manual-re-i/",
+    "title": "Why 68% of Auto Claims with Computer Vision Assessments Still Require Manual Re-Inspection",
+    "description": "In 2023, Lemonade processed 2.2 million claims and reported that 32% were fully paid within three seconds using AI. The company’s 2023 10-K filing touts this...",
+    "subdomain_name": "AI Claims",
+    "date_display": "June 14, 2026",
+    "generated_at": "2026-06-14T15:27:00.779853+00:00"
   }
 ]

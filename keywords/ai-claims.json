@@ -149,8 +149,8 @@
     "subdomain": "ai-claims",
     "difficulty": "medium",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-14T15:27:00.779523+00:00"
   },
   {
     "keyword": "claims AI implementation challenges and solutions 2026",
