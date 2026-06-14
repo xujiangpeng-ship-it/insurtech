@@ -95,8 +95,8 @@
     "subdomain": "ai-underwriting",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-14T16:17:36.065921+00:00"
   },
   {
     "keyword": "automated medical underwriting AI tools review",
