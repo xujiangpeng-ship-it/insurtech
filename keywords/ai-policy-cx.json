@@ -86,8 +86,8 @@
     "subdomain": "ai-policy-cx",
     "difficulty": "medium",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-14T19:14:24.198251+00:00"
   },
   {
     "keyword": "AI insurance policy servicing automation case studies",
