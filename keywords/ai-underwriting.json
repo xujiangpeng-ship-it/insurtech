@@ -23,8 +23,8 @@
     "subdomain": "ai-underwriting",
     "difficulty": "low",
     "intent": "informational",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-14T23:47:25.309118+00:00"
   },
   {
     "keyword": "AI risk assessment insurance use cases and platforms",
