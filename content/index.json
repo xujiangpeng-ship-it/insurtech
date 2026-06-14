@@ -900,5 +900,16 @@
     "subdomain_name": "Decision Intelligence",
     "date_display": "June 14, 2026",
     "generated_at": "2026-06-14T02:52:55.602060+00:00"
+  },
+  {
+    "keyword": "insurance claims AI ROI calculation framework",
+    "type": "tutorial",
+    "subdomain": "ai-claims",
+    "url": "/ai-claims/insurance-claims-ai-roi-calculation-framework-a-practitioners-build-it-guide/",
+    "title": "Insurance Claims AI ROI Calculation Framework: A Practitioner’s Build-It Guide",
+    "description": "In 2023, Lemonade’s AI-powered FNOL bot processed 36% of homeowners claims without human touch—yet the company’s loss ratio rose to 76.1%, up from 71.9% in...",
+    "subdomain_name": "AI Claims",
+    "date_display": "June 14, 2026",
+    "generated_at": "2026-06-14T06:17:32.443925+00:00"
   }
 ]

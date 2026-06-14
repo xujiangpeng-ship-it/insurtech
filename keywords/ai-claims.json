@@ -140,8 +140,8 @@
     "subdomain": "ai-claims",
     "difficulty": "medium",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-14T06:17:32.443537+00:00"
   },
   {
     "keyword": "computer vision insurance claims damage assessment AI",
