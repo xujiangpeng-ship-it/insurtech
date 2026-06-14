@@ -86,8 +86,8 @@
     "subdomain": "decision-intelligence",
     "difficulty": "medium",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-14T02:52:55.601828+00:00"
   },
   {
     "keyword": "insurance data quality AI readiness assessment checklist",
