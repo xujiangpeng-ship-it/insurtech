@@ -922,5 +922,16 @@
     "subdomain_name": "AI Underwriting",
     "date_display": "June 14, 2026",
     "generated_at": "2026-06-14T07:18:37.327577+00:00"
+  },
+  {
+    "keyword": "generative AI synthetic fraud detection insurance",
+    "type": "explainer",
+    "subdomain": "ai-fraud-detection",
+    "url": "/ai-fraud-detection/can-generative-ai-stop-synthetic-fraud-before-it-crosses-the-loss-ratio-threshol/",
+    "title": "Can Generative AI Stop Synthetic Fraud Before It Crosses the Loss Ratio Threshold?",
+    "description": "In 2023, the Coalition Against Insurance Fraud estimated that synthetic identity fraud alone cost U.S. insurers $2 billion in paid claims, with an average loss...",
+    "subdomain_name": "AI Fraud Detection",
+    "date_display": "June 14, 2026",
+    "generated_at": "2026-06-14T10:38:55.872029+00:00"
   }
 ]
