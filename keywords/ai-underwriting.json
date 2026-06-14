@@ -5,8 +5,8 @@
     "subdomain": "ai-underwriting",
     "difficulty": "low",
     "intent": "commercial",
-    "is_used": false,
-    "generated_at": null
+    "is_used": true,
+    "generated_at": "2026-06-14T07:18:37.327281+00:00"
   },
   {
     "keyword": "AI automated underwriting workflow implementation",
